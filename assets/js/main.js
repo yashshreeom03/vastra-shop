@@ -82,3 +82,29 @@ $(document).ready(function(){
       dots: true,
     });
   });
+
+    $(document).ready(function(){
+    $('.designer-slick').slick({
+      dots: true,
+      infinite: true,
+      arrows: false,
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      autoplaySpeed: 8000,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: { slidesToShow: 3 }
+        },
+        {
+          breakpoint: 768,
+          settings: { slidesToShow: 2 }
+        },
+        {
+          breakpoint: 480,
+          settings: { slidesToShow: 1 }
+        }
+      ]
+    });
+  });
