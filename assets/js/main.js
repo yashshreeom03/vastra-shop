@@ -61,11 +61,9 @@ document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
     const header = document.getElementById("siteHeader");
 
     if (window.scrollY > 180) {
-      header.classList.add("fixed-header", "py-2");
-      header.classList.remove("py-4");
+      header.classList.add("fixed-header");
     } else {
-      header.classList.remove("fixed-header", "py-2");
-      header.classList.add("py-4");
+      header.classList.remove("fixed-header");
     }
   });
 
