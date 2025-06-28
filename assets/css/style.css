@@ -1,0 +1,146 @@
+
+@theme {
+	--breakpoint-sm: 567px;
+}
+
+:root {
+	--primary-color: #0bcb45;
+	--text-color: #1A1A1A;
+	--gray-color: #4A4A4A;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+  
+body {
+	background: white;
+	font-family: 'Satoshi', sans-serif;
+}
+  
+.container {
+	max-width: 1200px;
+	padding: 0px 15px;
+	margin: auto;
+}
+  
+p {
+	font-family: 'DM Sans', sans-serif;
+}
+
+li{
+	list-style-type: none;
+}
+  
+.lato-fontfamily{
+	font-family: 'Lato', sans-serif;
+}
+
+
+
+.before-icon::before {
+    content: "";
+	position: absolute;
+    background: 0 0;
+    border: 6px solid transparent;
+    z-index: 1000001;
+	border-top-color: #383838;
+	margin-bottom: -11px;
+    left: calc(50% - 6px);
+    transform: translate3d(0, 0, 0);
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s
+}
+
+.before-icon:hover .social-title,
+.before-icon:hover:before {
+	transform: translateY(-8px);
+	visibility: visible;
+    opacity: 1;
+    transition-delay: .1s;
+}
+
+.before-icon:hover .social-title{
+	transform: translateY(-18px);
+}
+
+.slick-dots{
+	bottom: 25px;
+}
+
+.slick-dots li button:before{
+	font-size: 15px;
+	color: rgb(65, 65, 65);
+	opacity: .50;
+}
+
+.slick-dots li.slick-active button:before{
+	color: rgb(0, 0, 0);
+	opacity: 1;
+}
+
+.slick-next{
+	right: 50px;
+}
+
+.slick-prev{
+	left: 25px;
+	z-index: 99;
+}
+
+.slick-prev:before, .slick-next:before{
+	font-size: 45px;
+}
+
+.slick-dotted.slick-slider{
+	margin-bottom: 0;
+}
+
+.fixed-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	animation: sticky 0.4s ease-out forwards;
+	-webkit-animation: sticky 0.6s ease-out forwards;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+@keyframes sticky {
+	0% {
+		top: -200px;
+	}
+	100% {
+		top: 0;
+	}
+}
+
+
+@media (max-width: 768px) {
+	.slick-prev:before, .slick-next:before{
+		font-size: 30px;
+	}	
+	.slick-dots{
+		bottom: 5px;
+	}
+	.slick-dots li button:before{
+		font-size: 10px;
+	}
+
+}
+
+@media (max-width: 768px) {
+	.slick-prev:before, .slick-next:before{
+		font-size: 25px;
+	}
+	.slick-next{
+	right: 30px;
+}
+
+.slick-prev{
+	left: 15px;
+}	
+	
+}
