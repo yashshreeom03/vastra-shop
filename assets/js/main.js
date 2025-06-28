@@ -60,7 +60,7 @@ document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
   window.addEventListener("scroll", function () {
     const header = document.getElementById("siteHeader");
 
-    if (window.scrollY > 230) {
+    if (window.scrollY > 180) {
       header.classList.add("fixed-header", "py-2");
       header.classList.remove("py-4");
     } else {
@@ -74,7 +74,7 @@ $(document).ready(function(){
     $('.hero-slider').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
-      // autoplay: true,
+      autoplay: true,
       autoplaySpeed: 3000,
       dots: true,
     });

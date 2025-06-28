@@ -44,10 +44,10 @@ li{
     background: 0 0;
     border: 6px solid transparent;
     z-index: 1000001;
-	border-top-color: #383838;
+	border-bottom-color: #383838;
 	margin-bottom: -11px;
     left: calc(50% - 6px);
-    transform: translate3d(0, 0, 0);
+    transform: translateY(20px);
     visibility: hidden;
     opacity: 0;
     transition: .3s
@@ -55,14 +55,14 @@ li{
 
 .before-icon:hover .social-title,
 .before-icon:hover:before {
-	transform: translateY(-8px);
+	transform: translateY(15px);
 	visibility: visible;
     opacity: 1;
     transition-delay: .1s;
 }
 
 .before-icon:hover .social-title{
-	transform: translateY(-18px);
+	transform: translateY(-1px);
 }
 
 .slick-dots{
