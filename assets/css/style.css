@@ -36,8 +36,6 @@ li{
 	font-family: 'Lato', sans-serif;
 }
 
-
-
 .before-icon::before {
     content: "";
 	position: absolute;
@@ -117,7 +115,6 @@ li{
 	}
 }
 
-
 @media (max-width: 768px) {
 	.slick-prev:before, .slick-next:before{
 		font-size: 30px;
@@ -128,7 +125,6 @@ li{
 	.slick-dots li button:before{
 		font-size: 10px;
 	}
-
 }
 
 @media (max-width: 768px) {
@@ -136,11 +132,9 @@ li{
 		font-size: 25px;
 	}
 	.slick-next{
-	right: 30px;
-}
-
-.slick-prev{
-	left: 15px;
-}	
-	
+		right: 30px;
+	}
+	.slick-prev{
+		left: 15px;
+	}	
 }
