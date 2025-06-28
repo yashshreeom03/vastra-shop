@@ -2,12 +2,14 @@ const menuToggle = document.getElementById('menuToggle');
 const menuClose = document.getElementById('menuClose');
 const sidebarMenu = document.getElementById('sidebarMenu');
 const overlay = document.getElementById('overlay');
+const body = document.body;
 
 // Open sidebar
 menuToggle.addEventListener('click', () => {
   sidebarMenu.classList.remove('-translate-x-full');
   sidebarMenu.classList.add('translate-x-0');
   overlay.classList.remove('hidden');
+  body.classList.add('overflow-hidden'); // Prevent scrolling
 });
 
 // Close sidebar
@@ -15,14 +17,17 @@ menuClose.addEventListener('click', () => {
   sidebarMenu.classList.add('-translate-x-full');
   sidebarMenu.classList.remove('translate-x-0');
   overlay.classList.add('hidden');
+  body.classList.remove('overflow-hidden'); // Restore scrolling
 });
 
-// Optional: Close when clicking outside
+// Close on overlay click
 overlay.addEventListener('click', () => {
   sidebarMenu.classList.add('-translate-x-full');
   sidebarMenu.classList.remove('translate-x-0');
   overlay.classList.add('hidden');
+  body.classList.remove('overflow-hidden'); // Restore scrolling
 });
+
 
 
 document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
