@@ -154,3 +154,69 @@ function openQuickView() {
       input.value = currentValue - 1;
     }
   }
+
+const minRange = document.getElementById('minRange');
+const maxRange = document.getElementById('maxRange');
+const minPrice = document.getElementById('minPrice');
+const maxPrice = document.getElementById('maxPrice');
+const rangeHighlight = document.getElementById('rangeHighlight');
+
+const maxValue = 17249;
+
+const formatPrice = (val) => {
+  return `₹${parseFloat(val).toLocaleString('en-IN', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  })}`;
+};
+
+const updateRange = () => {
+  let min = parseInt(minRange.value);
+  let max = parseInt(maxRange.value);
+
+  // Prevent thumb crossover
+  if (min > max) {
+    min = max;
+    minRange.value = min;
+  }
+
+  if (max < min) {
+    max = min;
+    maxRange.value = max;
+  }
+
+  const percent1 = (min / maxValue) * 100;
+  const percent2 = (max / maxValue) * 100;
+
+  rangeHighlight.style.left = `${percent1}%`;
+  rangeHighlight.style.right = `${100 - percent2}%`;
+
+  // Apply formatted prices
+  minPrice.textContent = formatPrice(min);
+  maxPrice.textContent = formatPrice(max);
+};
+
+minRange.addEventListener('input', updateRange);
+maxRange.addEventListener('input', updateRange);
+
+updateRange(); // Initial call
+
+
+ const toggleBtn     = document.getElementById('filterToggle');
+  const filterPanel   = document.getElementById('filterPanel');
+  const filterOverlay = document.getElementById('filterOverlay');
+  const filterClose   = document.getElementById('filterClose');
+
+  function openFilters() {
+    filterPanel.classList.remove('-translate-x-full');
+    filterOverlay.classList.remove('hidden');
+  }
+
+  function closeFilters() {
+    filterPanel.classList.add('-translate-x-full');
+    filterOverlay.classList.add('hidden');
+  }
+
+  toggleBtn.addEventListener('click', openFilters);
+  filterOverlay.addEventListener('click', closeFilters);
+  filterClose.addEventListener('click', closeFilters);
