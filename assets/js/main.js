@@ -202,21 +202,23 @@ maxRange.addEventListener('input', updateRange);
 updateRange(); // Initial call
 
 
- const toggleBtn     = document.getElementById('filterToggle');
-  const filterPanel   = document.getElementById('filterPanel');
-  const filterOverlay = document.getElementById('filterOverlay');
-  const filterClose   = document.getElementById('filterClose');
+const toggleBtn     = document.getElementById('filterToggle');
+const filterPanel   = document.getElementById('filterPanel');
+const filterOverlay = document.getElementById('filterOverlay');
+const filterClose   = document.getElementById('filterClose');
 
-  function openFilters() {
-    filterPanel.classList.remove('-translate-x-full');
-    filterOverlay.classList.remove('hidden');
-  }
+function openFilters() {
+  filterPanel.classList.remove('-translate-x-full');
+  filterOverlay.classList.remove('hidden');
+  document.body.classList.add('overflow-hidden');
+}
 
-  function closeFilters() {
-    filterPanel.classList.add('-translate-x-full');
-    filterOverlay.classList.add('hidden');
-  }
+function closeFilters() {
+  filterPanel.classList.add('-translate-x-full');
+  filterOverlay.classList.add('hidden');
+  document.body.classList.remove('overflow-hidden');
+}
 
-  toggleBtn.addEventListener('click', openFilters);
-  filterOverlay.addEventListener('click', closeFilters);
-  filterClose.addEventListener('click', closeFilters);
+toggleBtn.addEventListener('click', openFilters);
+filterOverlay.addEventListener('click', closeFilters);
+filterClose.addEventListener('click', closeFilters);
