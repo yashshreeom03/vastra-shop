@@ -31,7 +31,25 @@ p {
 li{
 	list-style-type: none;
 }
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+  	-moz-appearance: textfield;
+}
   
+input:focus-visible{
+	outline: none;
+}
+
+a{
+	text-decoration: none;
+}
+
 .lato-fontfamily{
 	font-family: 'Lato', sans-serif;
 }
@@ -95,6 +113,20 @@ li{
 	font-size: 45px;
 }
 
+.quickview-slider .slick-next{
+	right: 20px;
+}
+
+.quickview-slider .slick-prev{
+	left: 12px;
+	z-index: 99;
+}
+
+.quickview-slider .slick-prev:before, .quickview-slider .slick-next:before{
+	font-size: 30px;
+	color: black;
+}
+
 .slick-dotted.slick-slider{
 	margin-bottom: 0;
 }
@@ -120,25 +152,81 @@ li{
 }
 
 @media (max-width: 768px) {
-	.slick-prev:before, .slick-next:before{
+	.hero-slider.slick-prev:before, .hero-slider .slick-next:before{
 		font-size: 30px;
 	}	
 	.hero-slider .slick-dots{
 		bottom: 5px;
 	}
-	.slick-dots li button:before{
+	.hero-slider .slick-dots li button:before{
 		font-size: 10px;
 	}
 }
 
-@media (max-width: 768px) {
-	.slick-prev:before, .slick-next:before{
+@media (max-width: 520px) {
+	.hero-slider .slick-prev:before, .hero-slider .slick-next:before{
 		font-size: 25px;
 	}
-	.slick-next{
+	.hero-slider.slick-next{
 		right: 30px;
 	}
-	.slick-prev{
+	.hero-slider .slick-prev{
 		left: 15px;
 	}	
+}
+
+
+.tooltip-btn {
+  position: relative;
+}
+
+.tooltip-btn .tooltip-text {
+  position: absolute;
+  right: 100%;
+  bottom: 50%;
+  margin-bottom: -14px;
+  background: #383838;
+  color: #fff;
+  padding: 8px 10px;
+  font-size: 12px;
+  line-height: 12px;
+  white-space: nowrap;
+  border-radius: 3px;
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000000;
+
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+.tooltip-btn:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-8px);
+  transition-delay: 0.1s;
+}
+
+/* Tooltip Arrow */
+.tooltip-btn::before {
+	content: '';
+	position: absolute;
+	right: 116%;
+    TOP: 50%;
+	transform: translateY(-50%);
+	border: 6px solid transparent;
+	border-left-color: #383838;
+	margin-right: -11px;
+    margin-bottom: -6px;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.tooltip-btn:hover::before {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0.1s;
 }

@@ -117,3 +117,40 @@ $(document).ready(function(){
     ]
   });
 });
+
+
+function openQuickView() {
+    $('#quickViewModal').fadeIn();
+
+    // Prevent multiple initializations
+    if (!$('.quickview-slider').hasClass('slick-initialized')) {
+      $('.quickview-slider').slick({
+        dots: false,
+        arrows: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        prevArrow: '<button type="button" class="slick-prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow w-8 h-8 rounded-full z-10">‹</button>',
+        nextArrow: '<button type="button" class="slick-next absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow w-8 h-8 rounded-full z-10">›</button>'
+      });
+    }
+  }
+
+
+    function incrementValue(button) {
+    const input = button.parentElement.querySelector('input[type="number"]');
+    let currentValue = parseInt(input.value) || 0;
+    const max = parseInt(input.max) || 1000;
+    if (currentValue < max) {
+      input.value = currentValue + 1;
+    }
+  }
+
+  function decrementValue(button) {
+    const input = button.parentElement.querySelector('input[type="number"]');
+    let currentValue = parseInt(input.value) || 1;
+    const min = parseInt(input.min) || 1;
+    if (currentValue > min) {
+      input.value = currentValue - 1;
+    }
+  }
