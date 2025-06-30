@@ -217,6 +217,12 @@ a{
 	}
 }
 
+@media (max-width: 639px) {
+	.collection-grid{
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
 @media (max-width: 520px) {
 	.hero-slider .slick-prev:before, .hero-slider .slick-next:before{
 		font-size: 25px;
@@ -227,6 +233,14 @@ a{
 	.hero-slider .slick-prev{
 		left: 15px;
 	}	
+	
+}
+
+@media (max-width: 399px) {
+	.collection-grid{
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+	
 }
 
 
