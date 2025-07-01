@@ -46,10 +46,6 @@ input:focus-visible{
 	outline: none;
 }
 
-a{
-	text-decoration: none;
-}
-
 .lato-fontfamily{
 	font-family: 'Lato', sans-serif;
 }

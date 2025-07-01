@@ -18,8 +18,8 @@
 		<link rel="stylesheet" href="assets/css/slick.min.css" />
 		<!-- Style CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
-		<!-- Tialwind JS -->
-		<script src="assets/js/tialwindcss.js"></script>
+		<!-- Style CSS -->
+		<link rel="stylesheet" href="src/output.css">
 	</head>
 	<body>   
 	
@@ -235,10 +235,7 @@
 
                     <!-- Sort dropdown (always visible or adjust as needed) -->
                     <div class="lg:ml-auto">
-                        <select
-                        class="border border-gray-300 rounded-full py-2 px-4 text-sm focus:outline-none"
-                        >
-                        <option>Featured</option>
+                        <select class="appearance-none border border-gray-300 rounded-full py-2 pl-4 pr-10 text-sm focus:outline-none bg-no-repeat" style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22/%3E%3C/svg%3E'); background-position: right 0.7rem top 50%; background-size: 0.65rem auto;">                       <option>Featured</option>
                         <option>Best selling</option>
                         <option>Alphabetically, A-Z</option>
                         <option>Alphabetically, Z-A</option>
@@ -252,265 +249,288 @@
 
                 <div class="flex flex-col lg:flex-row gap-6">
                     <div id="filterOverlay" class="fixed inset-0 bg-black/50 z-[9991] hidden lg:hidden" ></div>
-                    <div id="filterPanel" class="sticky lg:top-[150px] lg:max-h-fit max-lg:fixed inset-y-0 left-0 max-lg:z-[999999] w-3/4 max-w-[300px] bg-white p-4 shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out overflow-y-auto space-y-6">
+                    <div id="filterPanel" class="sticky lg:top-[150px] lg:max-h-fit max-lg:fixed inset-y-0 left-0 max-lg:z-[999999] w-3/4 max-w-[300px] bg-white p-4 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out overflow-y-auto space-y-6">
                         <button id="filterClose" class="absolute top-4 right-4 text-xl lg:hidden text-gray-600 hover:text-black" aria-label="Close filters" >
                             <i class="far fa-times"></i>
                         </button>
-                        <h2 class="text-xl font-bold tracking-[1px]">Filters</h2>
-                        <div>
-                            <h3 class="font-semibold mb-2">Product status</h3>
-                            <div class="space-y-2 text-sm">
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" checked> In stock
-                                </label>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold mb-2">By Price</h3>
-                            <div class="w-full">
-                                <div class="relative h-6">
-                                    <div class="absolute top-1/2 left-0 right-0 h-1 bg-gray-300 rounded transform -translate-y-1/2"></div>
-                                    <div id="rangeHighlight" class="absolute top-1/2 h-1 bg-black rounded transform -translate-y-1/2"></div>
-                                    <input type="range" id="minRange" min="0" max="17249" value="0"
-                                    class="absolute pointer-events-none w-full h-6 appearance-none bg-transparent [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-black [&::-webkit-slider-thumb]:appearance-none">
-                                    <input type="range" id="maxRange" min="0" max="17249" value="17249"
-                                    class="absolute pointer-events-none w-full h-6 appearance-none bg-transparent [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-black [&::-webkit-slider-thumb]:appearance-none">
-                                </div>
-                                <div class="flex justify-between text-sm mt-2">
-                                    <span id="minPrice">₹1,949.00</span>
-                                    <span id="maxPrice">₹7,499.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                        <h3 class="font-semibold mb-2">By Size</h3>
-                            <div class="max-h-40 overflow-y-auto space-y-1 text-sm pr-1">
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> 2XL <span class="text-gray-500">(17)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> 3XL <span class="text-gray-500">(123)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> 3XL [46] <span class="text-gray-500">(9)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> L <span class="text-gray-500">(123)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> L [40] <span class="text-gray-500">(30)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> M <span class="text-gray-500">(378)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> M up to L Margin <span class="text-gray-500">(22)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> M [38] <span class="text-gray-500">(16)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> S <span class="text-gray-500">(116)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> S [36] <span class="text-gray-500">(6)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> XL <span class="text-gray-500">(372)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> XL up to 2XL Margin <span class="text-gray-500">(22)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> XL with XXL Margin <span class="text-gray-500">(12)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> XL [42] <span class="text-gray-500">(16)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> XS <span class="text-gray-500">(63)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> XS [34] <span class="text-gray-500">(3)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> XXL <span class="text-gray-500">(232)</span>
-                                </label>
-                                <label class="flex items-center gap-2">
-                                    <input type="checkbox" class="accent-black" /> XX <span class="text-gray-500">(16)</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="font-semibold mb-2">By Color</h3>
-                            <ul class="flex gap-2 flex-wrap pr-1">
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#e70019]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#000000]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#232d44]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#cccccc]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#e238c2]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block  border-inherit">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#ffffff]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#601a35]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#b0e0e6]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#0000ff]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#ffd700]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#e0ffff]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#7fffd4]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#87cefa]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#2f4f4f]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#a52a2a]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#ffa500]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#008000]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#ffff00]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#fff8dc]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#da70d6]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#ffc0cb]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#ff6347]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
-                                            <span class="inline-block w-full h-full rounded-full bg-[#87ceeb]"></span>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+						<div class="flex justify-between items-center mt-7">
+							<h2 class="text-xl font-bold tracking-[1px]">Filters</h2>
+							<a href="#" class="underline">Clear All</a>
+						</div>
+						<div class="max-w-xs">
+							<div class="border-b">
+								<button type="button" onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-3 font-medium">
+									Product status
+									<i class="far fa-chevron-down chevron transition-transform duration-300"></i>
+								</button>
+								<div class="filter-content overflow-hidden max-h-0 transition-all duration-300">
+									<label class="flex items-center gap-2 py-1">
+										<input type="checkbox" class="accent-black"> In stock
+									</label>
+								</div>
+							</div>
+
+							<div class="border-b">
+								<button type="button" onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-3 font-medium">
+									By Price
+									<i class="far fa-chevron-down chevron transition-transform duration-300"></i>
+								</button>
+								<div class="filter-content overflow-hidden max-h-0 transition-all duration-300">
+									<div class="w-full">
+										<div class="relative h-6">
+											<div class="absolute top-1/2 left-0 right-0 h-1 bg-gray-300 rounded transform -translate-y-1/2 cursor-ew-resize"></div>
+											<div id="rangeHighlight" class="absolute top-1/2 h-1 bg-black rounded transform -translate-y-1/2"></div>
+											<input type="range" id="minRange" min="0" max="17249" value="0" class="absolute pointer-events-none w-full h-6 appearance-none bg-transparent [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-black [&::-webkit-slider-thumb]:appearance-none">
+											<input type="range" id="maxRange" min="0" max="17249" value="17249" class="absolute pointer-events-none w-full h-6 appearance-none bg-transparent [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-black [&::-webkit-slider-thumb]:appearance-none">
+										</div>
+										<div class="flex justify-between text-sm my-2">
+											<span id="minPrice">₹1,949.00</span>
+											<span id="maxPrice">₹7,499.00</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="border-b">
+								<button type="button" onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-3 font-medium">
+									By Size
+									<i class="far fa-chevron-down chevron transition-transform duration-300"></i>
+								</button>
+								<div class="filter-content overflow-hidden max-h-0 transition-all duration-300 space-y-1 text-sm pr-1">
+									<div class="max-h-40 overflow-y-auto mb-2">
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> 2XL <span class="text-gray-500">(17)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> 3XL <span class="text-gray-500">(123)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> 3XL [46] <span class="text-gray-500">(9)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> L <span class="text-gray-500">(123)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> L [40] <span class="text-gray-500">(30)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> M <span class="text-gray-500">(378)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> M up to L Margin <span class="text-gray-500">(22)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> M [38] <span class="text-gray-500">(16)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> S <span class="text-gray-500">(116)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> S [36] <span class="text-gray-500">(6)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> XL <span class="text-gray-500">(372)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> XL up to 2XL Margin <span class="text-gray-500">(22)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> XL with XXL Margin <span class="text-gray-500">(12)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> XL [42] <span class="text-gray-500">(16)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> XS <span class="text-gray-500">(63)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> XS [34] <span class="text-gray-500">(3)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> XXL <span class="text-gray-500">(232)</span>
+										</label>
+										<label class="flex items-center gap-2">
+											<input type="checkbox" class="accent-black" /> XX <span class="text-gray-500">(16)</span>
+										</label>
+									</div>
+    							</div>
+							</div>
+							<div class="border-b">
+								<button type="button" onclick="toggleAccordion(this)" class="w-full flex justify-between items-center py-3 font-medium">
+									By Color
+									<i class="far fa-chevron-down chevron transition-transform duration-300"></i>
+								</button>
+								<div class="filter-content overflow-hidden max-h-0 transition-all duration-300">
+									<ul class="flex gap-2 flex-wrap pr-1 pb-2">
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#e70019]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#000000]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#232d44]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#cccccc]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#e238c2]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block  border-inherit">
+													<span class="inline-block w-full h-full rounded-full bg-[#ffffff]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#601a35]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#b0e0e6]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#0000ff]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#ffd700]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent">
+													<span class="inline-block w-full h-full rounded-full bg-[#e0ffff]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#7fffd4]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#87cefa]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#2f4f4f]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#a52a2a]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#ffa500]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#008000]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#ffff00]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#fff8dc]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#da70d6]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#ffc0cb]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#ff6347]"></span>
+												</div>
+											</a>
+										</li>
+										<li>
+											<a href="#">
+												<div class="rounded-full h-[30px] w-[30px] duration-150 border-[1px] block border-transparent ">
+													<span class="inline-block w-full h-full rounded-full bg-[#87ceeb]"></span>
+												</div>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
                     </div>
                     <div class="collection-grid grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-x-3 gap-y-6 sm:gap-6">
                         <div class="text-center relative group px-2">
-                            <a href="#">
+                            <a href="product-details.html">
                                 <div class="relative overflow-hidden group/image">
                                     <img src="assets/images/lehenga-choli/lehenga-choli-1.jpg" alt="lehenga-choli Front" class="mx-auto w-full xl:h-[489px] h-[300px] object-cover transition-opacity duration-500 group-hover:opacity-0" />
                                     <img src="assets/images/lehenga-choli/lehenga-choli-5.jpg" alt="lehenga-choli Back" class="mx-auto w-full xl:h-[489px] h-[300px] object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
