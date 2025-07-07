@@ -1,0 +1,79 @@
+
+@theme {
+	--breakpoint-sm: 567px;
+}
+
+:root {
+	--primary-color: #0bcb45;
+	--text-color: #1A1A1A;
+	--gray-color: #4A4A4A;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+  
+body {
+	background: white;
+	font-family: 'General Sans', sans-serif;
+}
+  
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Playfair Display', sans-serif;
+}
+
+.container {
+	max-width: 1740px;
+	padding: 0px 15px;
+	margin: auto;
+}
+
+li{
+	list-style-type: none;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+  	-moz-appearance: textfield;
+}
+  
+input:focus-visible{
+	outline: none;
+}
+
+.fixed-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+	animation: sticky 0.4s ease-out forwards;
+	-webkit-animation: sticky 0.6s ease-out forwards;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+@keyframes sticky {
+	0% {
+		top: -200px;
+	}
+	100% {
+		top: 0;
+	}
+}
+
+.hero-section .swiper-pagination-bullet-active{
+	background-color: #A50505;
+}
+
+
+
+@media (min-width: 768px) {
+	.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal{
+		bottom: 32px;
+	}
+}
