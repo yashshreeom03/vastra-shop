@@ -12,62 +12,60 @@
 		<link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
 		<!-- Google Fonts -->
 		<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Kalnia:wght@400;500;600;700&display=swap" rel="stylesheet">
 		<!-- Swiper CSS -->
 		<link rel="stylesheet" href="assets/css/swiper.min.css" />
 		<!-- Custom Style CSS -->
 		<link rel="stylesheet" href="assets/css/custom-style.css">
 		<!-- Custom Style CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
-
 	</head>
 	<body>   
 	
 		<!-- Announcement Bar -->
-		<div class="bg-[#800000] text-center py-[18px]">
+		<div class="bg-[var(--primary-color)] text-center py-3">
 			<diV class="container">
-				<span class="text-white text-[15px] font-medium lato-fontfamily leading-[20px]">
+				<span class="text-white text-[13px] leading-[20px]">
 					<span>Monsoon Special</span> - <span>20% Off</span> - Discount Applied at checkout !
 				</span>
 			</diV>
 		</div>
 
 		<!-- Start Header Area -->
-		<header id="siteHeader" class="absolute left-0 right-0 bg-white transition-all z-[999999] duration-300 ease-in-out pt-[30px] pb-5">
+		<header id="siteHeader" class="absolute left-0 right-0 bg-white transition-all z-[999999] duration-300 ease-in-out py-[22px]">
 			<div class="container">
 				<!-- Start Header Area -->
-				<div class="w-full flex justify-between items-center gap-2.5">
-					<div class="flex gap-5">
+				<div class="w-full flex justify-between items-center gap-1">
+					<div class="flex gap-3">
 						<a href="javascript:void(0)" id="menuToggle" class="xl:hidden flex items-center">
-							<img src="assets/images/icons/menu-bar.svg" alt="" class="w-6">
+							<img src="assets/images/icons/menu-bar.svg" alt="" class="sm:w-6 w-5">
 						</a>
 						<div>
 							<a href="index.html">
-								<img src="assets/images/logo/logo.png" alt="">
+								<img src="assets/images/logo/logo.png" alt="" class="max-sm:w-[150px]">
 							</a>
 						</div>
-						<!-- Nav menu -->
+					</div>
+					<div>
 						<nav id="sidebarMenu" class="fixed top-0 left-0 z-[1000] bg-white w-[300px] h-full transform -translate-x-full transition-transform duration-300 xl:translate-x-0 xl:static xl:h-auto xl:w-auto max-xl:overflow-y-scroll">
 							<div id="menuClose" class="absolute top-[18px] right-[18px] cursor-pointer xl:hidden">
 								<img src="assets/images/icons/close.svg" alt="close" class="w-6 h-auto">
 							</div>
-							<ul class="min-h-[50px] xl:flex justify-center items-center font-medium text-base max-lg:mt-[70px]">
+							<ul class="min-h-[50px] xl:flex font-vietnam justify-center items-center text-base max-xl:mt-[70px]">
 								<li class="relative group">
 									<a href="premium-saree.html"
-										class="dropdown-toggle flex h-[50px] items-center justify-between px-[10px] w-full lg:w-auto max-lg:border-b max-lg:border-[#81818133] text-black">
-									Premium Collection
-										<span class="max-lg:hidden text-[10px] ml-[4px]">
-											<img src="assets/images/icons/chevron-down.svg" alt="chevron-down">
-										</span>
-										<span class="dropdown-icon lg:hidden ml-[4px] transition-all duration-300 ease-in-out">
-											<img src="assets/images/icons/plus.svg" alt="plus" class="w-2.5">
+										class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
+										Premium Collection
+										<span class="ml-1 dropdown-icon transition-transform duration-300">
+											<img src="assets/images/icons/separator.svg" alt="chevron-down">
 										</span>
 									</a>
 									<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
-												lg:overflow-visible lg:max-h-none
-												lg:absolute lg:top-full lg:left-0 lg:w-[260px] lg:bg-white lg:shadow-md lg:z-[380]
-												lg:rounded-[3px] lg:text-sm lg:leading-[1.4] lg:opacity-0 lg:invisible lg:pointer-events-none lg:translate-y-4
-												lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:pointer-events-auto lg:group-hover:translate-y-0">
+												xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
+												xl:rounded-[3px] xl:text-sm xl:leading-[1.4]
+												xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
+												xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
 										<a href="premium-saree.html" class="block text-gray-500 hover:text-black p-4 border-b border-gray-200">Saree</a>
 										<a href="#" class="block text-gray-500 hover:text-black p-4 border-b border-gray-200">Sharara</a>
 										<a href="#" class="block text-gray-500 hover:text-black p-4 border-b border-gray-200">Lehenga</a>
@@ -77,124 +75,109 @@
 								</li>
 								<li class="relative group">
 									<a href="javascript:void(0)"
-										class="dropdown-toggle flex h-[50px] items-center justify-between px-[10px] w-full lg:w-auto max-lg:border-b max-lg:border-[#81818133] text-black">
+										class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
 										Lehenga Choli
-										<span class="max-lg:hidden text-[10px] ml-[4px]">
-											<img src="assets/images/icons/chevron-down.svg" alt="chevron-down">
-										</span>
-										<span class="dropdown-icon lg:hidden ml-[4px] transition-all duration-300 ease-in-out">
-											<img src="assets/images/icons/plus.svg" alt="plus" class="w-2.5">
+										<span class="ml-1 dropdown-icon transition-transform duration-300">
+											<img src="assets/images/icons/separator.svg" alt="chevron-down">
 										</span>
 									</a>
 									<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
-												lg:overflow-visible lg:max-h-none
-												lg:absolute lg:top-full lg:left-0 lg:w-[260px] lg:bg-white lg:shadow-md lg:z-[380]
-												lg:rounded-[3px] lg:text-sm lg:leading-[1.4] lg:opacity-0 lg:invisible lg:pointer-events-none lg:translate-y-4
-												lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:pointer-events-auto lg:group-hover:translate-y-0">
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Designer Lehenga</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Traditional Lehenga</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Bridal Lehenga</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Navratri Collection</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Organza Lehenga</a>
+												xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
+												xl:rounded-[3px] xl:text-sm xl:leading-[1.4]
+												xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
+												xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Designer Lehenga</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Traditional Lehenga</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Bridal Lehenga</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Navratri Collection</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Organza Lehenga</a>
 									</div>
 								</li>
 								<li class="relative group">
 									<a href="javascript:void(0)"
-										class="dropdown-toggle flex h-[50px] items-center justify-between px-[10px] w-full lg:w-auto max-lg:border-b max-lg:border-[#81818133] text-black">
+										class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
 										Saree
-										<span class="max-lg:hidden text-[10px] ml-[4px]">
-											<img src="assets/images/icons/chevron-down.svg" alt="chevron-down">
-										</span>
-										<span class="dropdown-icon lg:hidden ml-[4px] transition-all duration-300 ease-in-out">
-											<img src="assets/images/icons/plus.svg" alt="plus" class="w-2.5">
+										<span class="ml-1 dropdown-icon transition-transform duration-300">
+											<img src="assets/images/icons/separator.svg" alt="chevron-down">
 										</span>
 									</a>
 									<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
-												lg:overflow-visible lg:max-h-none
-												lg:absolute lg:top-full lg:left-0 lg:w-[260px] lg:bg-white lg:shadow-md lg:z-[380]
-												lg:rounded-[3px] lg:text-sm lg:leading-[1.4] lg:opacity-0 lg:invisible lg:pointer-events-none lg:translate-y-4
-												lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:pointer-events-auto lg:group-hover:translate-y-0">
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Bollywood Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Designer Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Linen Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Organza Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Printed Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Sequin Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Pleated Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Silk Sarees</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Ready To Wear Saree</a>
+												xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
+												xl:rounded-[3px] xl:text-sm xl:leading-[1.4]
+												xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
+												xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Bollywood Saree</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Designer Saree</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Linen Saree</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Organza Saree</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Printed Saree</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Sequin Saree</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Pleated Saree</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Silk Sarees</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Ready To Wear Saree</a>
 									</div>
 								</li>
 								<li class="relative group">
 									<a href="javascript:void(0)"
-										class="dropdown-toggle flex h-[50px] items-center justify-between px-[10px] w-full lg:w-auto max-lg:border-b max-lg:border-[#81818133] text-black">
+										class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
 										Indian Dresses
-										<span class="max-lg:hidden text-[10px] ml-[4px]">
-											<img src="assets/images/icons/chevron-down.svg" alt="chevron-down">
-										</span>
-										<span class="dropdown-icon lg:hidden ml-[4px] transition-all duration-300 ease-in-out">
-											<img src="assets/images/icons/plus.svg" alt="plus" class="w-2.5">
+										<span class="ml-1 dropdown-icon transition-transform duration-300">
+											<img src="assets/images/icons/separator.svg" alt="chevron-down">
 										</span>
 									</a>
 									<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
-												lg:overflow-visible lg:max-h-none
-												lg:absolute lg:top-full lg:left-0 lg:w-[260px] lg:bg-white lg:shadow-md lg:z-[380]
-												lg:rounded-[3px] lg:text-sm lg:leading-[1.4] lg:opacity-0 lg:invisible lg:pointer-events-none lg:translate-y-4
-												lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:pointer-events-auto lg:group-hover:translate-y-0">
+												xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
+												xl:rounded-[3px] xl:text-sm xl:leading-[1.4]
+												xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
+												xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
 										<a href="#" class="block text-[#878787] hover:text-[#222] p-4">Designer Gown</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Sharara Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Anarkali Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Anarkali Gown</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Velvet Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Palazzo Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Salwar Suit</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Sharara Suit</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Anarkali Suit</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Anarkali Gown</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Velvet Suit</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Palazzo Suit</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Salwar Suit</a>
 									</div>
 								</li>
 								<li class="relative group">
 									<a href="javascript:void(0)"
-										class="dropdown-toggle flex h-[50px] items-center justify-between px-[10px] w-full lg:w-auto max-lg:border-b max-lg:border-[#81818133] text-black">
+										class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
 										Pakistani Suit
-										<span class="max-lg:hidden text-[10px] ml-[4px]">
-											<img src="assets/images/icons/chevron-down.svg" alt="chevron-down">
-										</span>
-										<span class="dropdown-icon lg:hidden ml-[4px] transition-all duration-300 ease-in-out">
-											<img src="assets/images/icons/plus.svg" alt="plus" class="w-2.5">
+										<span class="ml-1 dropdown-icon transition-transform duration-300">
+											<img src="assets/images/icons/separator.svg" alt="chevron-down">
 										</span>
 									</a>
 									<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
-												lg:overflow-visible lg:max-h-none
-												lg:absolute lg:top-full lg:left-0 lg:w-[260px] lg:bg-white lg:shadow-md lg:z-[380]
-												lg:rounded-[3px] lg:text-sm lg:leading-[1.4] lg:opacity-0 lg:invisible lg:pointer-events-none lg:translate-y-4
-												lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:pointer-events-auto lg:group-hover:translate-y-0">
+												xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
+												xl:rounded-[3px] xl:text-sm xl:leading-[1.4]
+												xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
+												xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
 										<a href="#" class="block text-[#878787] hover:text-[#222] p-4">Designer Gown</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Sharara Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Anarkali Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Anarkali Gown</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Velvet Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Palazzo Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Salwar Suit</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Sharara Suit</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Anarkali Suit</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Anarkali Gown</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Velvet Suit</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Palazzo Suit</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Salwar Suit</a>
 									</div>
 								</li>
 								<li class="relative group">
 									<a href="javascript:void(0)"
-										class="dropdown-toggle flex h-[50px] items-center justify-between px-[10px] w-full lg:w-auto max-lg:border-b max-lg:border-[#81818133] text-black">
+										class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
 										Kids Wear
-										<span class="max-lg:hidden text-[10px] ml-[4px]">
-											<img src="assets/images/icons/chevron-down.svg" alt="chevron-down">
-										</span>
-										<span class="dropdown-icon lg:hidden ml-[4px] transition-all duration-300 ease-in-out">
-											<img src="assets/images/icons/plus.svg" alt="plus" class="w-2.5">
+										<span class="ml-1 dropdown-icon transition-transform duration-300">
+											<img src="assets/images/icons/separator.svg" alt="chevron-down">
 										</span>
 									</a>
 									<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
-												lg:overflow-visible lg:max-h-none
-												lg:absolute lg:top-full lg:left-0 lg:w-[260px] lg:bg-white lg:shadow-md lg:z-[380]
-												lg:rounded-[3px] lg:text-sm lg:leading-[1.4] lg:opacity-0 lg:invisible lg:pointer-events-none lg:translate-y-4
-												lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:pointer-events-auto lg:group-hover:translate-y-0">
+												xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
+												xl:rounded-[3px] xl:text-sm xl:leading-[1.4]
+												xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
+												xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
 										<a href="#" class="block text-[#878787] hover:text-[#222] p-4">Designer Gown</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Sharara Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Anarkali Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-lg:px-5 max-lg:py-3 max-lg:border-b max-lg:border-[#81818133]">Anarkali Gown</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Sharara Suit</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Anarkali Suit</a>
+										<a href="#" class="block text-[#878787] hover:text-[#222] p-4 max-xl:px-5 max-xl:py-3 max-xl:border-b max-xl:border-[#81818133]">Anarkali Gown</a>
 									</div>
 								</li>
 							</ul>
@@ -202,16 +185,18 @@
 						<div id="overlay" class="fixed inset-0 bg-[#000000b3] bg-opacity-50 z-[999] hidden xl:hidden"></div>
 					</div>	
 					<div class="flex items-center">
-						<a href="#" class="lg:px-[18px] px-3">
-							<img src="assets/images/icons/search.svg" alt="">
+						<a href="#" class="sm:px-4 px-3 py-3 xl:border-r xl:border-r-[#0000001A]">
+							<img src="assets/images/icons/search.svg" alt="" class="">
 						</a>
-						<a href="#" class="lg:px-[18px] px-3">
-							<img src="assets/images/icons/cart.svg" alt="">
+						<a href="#" class="relative sm:px-4 px-3 py-3 xl:border-r xl:border-r-[#0000001A]">
+							<img src="assets/images/icons/cart.svg" alt="" class="">
+							<span class="absolute top-[1px] right-1.5 text-[14px] bg-[var(--primary-color)] border-2 border-white text-white min-w-[22px] px-[5px] h-[22px] rounded-full flex items-center justify-center leading-0">5</span>
 						</a>
-						<a href="#" class="lg:px-[18px] px-3 max-xl:hidden">
+						<a href="#" class="relative xl:px-4 px-3 py-3 border-r border-r-[#0000001A] max-xl:hidden">
 							<img src="assets/images/icons/like.svg" alt="">
+							<span class="absolute top-[1px] right-1.5 text-[14px] bg-[var(--primary-color)] border-2 border-white text-white min-w-[22px] px-[5px] h-[22px] rounded-full flex items-center justify-center leading-0">3</span>
 						</a>
-						<a href="#" class="lg:px-[18px] px-3 max-xl:hidden">
+						<a href="#" class="xl:px-4 px-3 xl:py-3 max-xl:hidden">
 							<img src="assets/images/icons/user.svg" alt="">
 						</a>
 					</div>
@@ -222,20 +207,22 @@
 		<!-- End Header Area -->
 
 		<!-- Start Hero Section -->
-		<section class="mt-[100px] bg-[#F9F8F8] hero-section">
-			<div class="swiper mySwiper">
+		<section class="sm:mt-[96px] mt-[92px] hero-section">
+			<div class="swiper hero-swiper">
 				<div class="swiper-wrapper">
-
-					<!-- Slide 1 -->
 					<div class="swiper-slide">
 						<a href="#">
-							<img src="assets/images/hero/best-seller.png" alt="Slide 1" class="w-full h-auto" />
+							<img src="assets/images/hero/hero-1.png" alt="Slide 1" class="w-full h-auto" />
 						</a>
 					</div>
-					<!-- Slide 2 -->
 					<div class="swiper-slide">
 						<a href="#">
-							<img src="assets/images/hero/best-seller.png" alt="Slide 1" class="w-full h-auto" />
+							<img src="assets/images/hero/hero-1.png" alt="Slide 2" class="w-full h-auto" />
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<img src="assets/images/hero/hero-1.png" alt="Slide 3" class="w-full h-auto" />
 						</a>
 					</div>
 				</div>
@@ -245,136 +232,530 @@
 		<!-- End Hero Section -->
 
 		<!-- Start Collection Section -->
-		<section class="collection-section pt-16 pb-32">
+		<section class="pt-[90px]">
 			<div class="container">
-				<div class="flex items-center max-sm:flex-col justify-center max-sm:text-center mb-7 sm:justify-between gap-10 sm:gap-7">
-					<div>
-						<span class="text-lg block leading-5 font-medium mb-1.5">Trending Now</span>
-						<h2 class="sm:text-4xl text-3xl font-bold">Our Collection</h2>
+				<div class="text-center mb-14">
+					<div class="relative flex items-center justify-center mb-2.5">
+  						<div class="flex-1 relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-full before:h-[53px] before:bg-[url('../assets/images/icons/decorative-line.svg')] before:bg-repeat-x before:bg-center"></div>
+ 		 				<h2 class="sm:px-16 px-3.5 text-2xl md:text-[45px] font-medium text-[var(--gray-color)] whitespace-nowrap">Our Collection</h2>
+						<div class="flex-1 relative after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-full after:h-[53px] after:bg-[url('../assets/images/icons/decorative-line.svg')] after:bg-repeat-x after:bg-center"></div>
+					</div>	
+					<p class="text-[var(--gray-color)] tracking-[1px]">Sed viverra tellus in hac habitasse. Nulla posuere sollicitudin aliquam ultrices orci. libero volutpat sed cras ornare.</p>
+				</div>
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+					<!-- Item 1 -->
+					<div class="relative rounded-[20px] overflow-hidden group">
+						<a href="#">
+							<img src="assets/images/collection/kurta.png" alt="Kurta Suit Set"
+							class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+							<div class="absolute inset-0 z-10" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 51.78%, rgba(0, 0, 0, 0.75) 100%);"></div>
+							<div class="absolute bottom-0 left-0 right-0 z-20 p-4 text-center">
+								<div class="flex items-center justify-center gap-6 mb-2.5">
+									<span class="h-0.5 w-10 bg-white"></span>
+									<p class="text-white font-semibold uppercase xl:text-xl text-lg">Latest</p>
+									<span class="h-0.5 w-10 bg-white"></span>
+								</div>
+								<h3 class="md:text-[32px] text-2xl font-semibold text-white uppercase">Kurta Suit Set</h3>
+							</div>
+						</a>
 					</div>
-					<div class="flex gap-11">
-						<div class="swiper-button-prev !text-black"></div>
-						<div class="swiper-button-next !text-black"></div>
+
+					<!-- Item 2 -->
+					<div class="relative rounded-[20px] overflow-hidden group">
+						<a href="#">
+							<img src="assets/images/collection/choli.png" alt="Kurta Suit Set"
+							class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+							<div class="absolute inset-0 z-10" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 51.78%, rgba(0, 0, 0, 0.75) 100%);"></div>
+							<div class="absolute bottom-0 left-0 right-0 z-20 p-4 text-center">
+								<div class="flex items-center justify-center gap-6">
+									<span class="h-0.5 w-10 bg-white"></span>
+									<p class="text-white font-semibold uppercase xl:text-xl text-lg">Newest</p>
+									<span class="h-0.5 w-10 bg-white"></span>
+								</div>
+								<h3 class="md:text-[32px] text-2xl font-semibold text-white uppercase">Lehenga Choli</h3>
+							</div>
+						</a>
 					</div>
-				</div>	
-				<div class="swiper myCollectionSlider">
-					<div class="swiper-wrapper">
-						<!-- Slide 1 -->
-						<div class="swiper-slide">
-							<a href="#">
-								<div class="relative border-[10px] border-[#FFAEAE] overflow-hidden">
-									<img src="assets/images/trending/indian-dresses.png" alt="Indian Dresses" class="w-full h-auto object-cover" />
-									<div class="absolute bottom-[20px] w-full">
-										<span class="bg-[#FFFFFFC7] max-w-fit mx-auto p-5 font-playfair text-2xl tracking-[1px] flex items-center gap-1.5">Indian Dresses <img src="assets/images/icons/arrow-right.svg" alt=""></span>
-									</div>
+
+					<!-- Item 3 -->
+					<div class="relative rounded-[20px] overflow-hidden group">
+						<a href="#">
+							<img src="assets/images/collection/sarres.png" alt="Kurta Suit Set"
+							class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+							<div class="absolute inset-0 z-10" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 51.78%, rgba(0, 0, 0, 0.75) 100%);"></div>
+							<div class="absolute bottom-0 left-0 right-0 z-20 p-4 text-center">
+								<div class="flex items-center justify-center gap-6">
+									<span class="h-0.5 w-10 bg-white"></span>
+									<p class="text-white font-semibold uppercase xl:text-xl text-lg">Traditional</p>
+									<span class="h-0.5 w-10 bg-white"></span>
 								</div>
-							</a>
-						</div>
-						<!-- Slide 2 -->
-						<div class="swiper-slide">
-							<a href="#">
-								<div class="relative border-[10px] border-[#FFAEAE] overflow-hidden">
-									<img src="assets/images/trending/lehenga-choli.png" alt="Lehenga Choli" class="w-full h-auto object-cover" />
-									<div class="absolute bottom-[20px] w-full">
-										<span class="bg-[#FFFFFFC7] max-w-fit mx-auto p-5 font-playfair text-2xl tracking-[1px] flex items-center gap-1.5">Lehenga Choli <img src="assets/images/icons/arrow-right.svg" alt=""></span>
-									</div>
+								<h3 class="md:text-[32px] text-2xl font-semibold text-white uppercase">Sarees</h3>
+							</div>
+						</a>
+					</div>
+
+					<!-- Item 4 -->
+					<div class="relative rounded-[20px] overflow-hidden group">
+						<a href="#">
+							<img src="assets/images/collection/dresses.png" alt="Kurta Suit Set"
+							class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+							<div class="absolute inset-0 z-10" style="background: linear-gradient(180deg, rgba(0, 0, 0, 0) 51.78%, rgba(0, 0, 0, 0.75) 100%);"></div>
+							<div class="absolute bottom-0 left-0 right-0 z-20 p-4 text-center">
+								<div class="flex items-center justify-center gap-6">
+									<span class="h-0.5 w-10 bg-white"></span>
+									<p class="text-white font-semibold uppercase xl:text-xl text-lg">Classic</p>
+									<span class="h-0.5 w-10 bg-white"></span>
 								</div>
-							</a>
-						</div>
-						<!-- Slide 3 -->
-						<div class="swiper-slide">
-							<a href="#">
-								<div class="relative border-[10px] border-[#FFAEAE] overflow-hidden">
-									<img src="assets/images/trending/sarees.png" alt="Sarees" class="w-full h-auto object-cover" />
-									<div class="absolute bottom-[20px] w-full">
-										<span class="bg-[#FFFFFFC7] max-w-fit mx-auto p-5 font-playfair text-2xl tracking-[1px] flex items-center gap-1.5">Sarees <img src="assets/images/icons/arrow-right.svg" alt=""></span>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- Slide 4 -->
-						<div class="swiper-slide">
-							<a href="#">
-								<div class="relative border-[10px] border-[#FFAEAE] overflow-hidden">
-									<img src="assets/images/trending/anarkali.png" alt="Indian Dresses" class="w-full h-auto object-cover" />
-									<div class="absolute bottom-[20px] w-full">
-										<span class="bg-[#FFFFFFC7] max-w-fit mx-auto p-5 font-playfair text-2xl tracking-[1px] flex items-center gap-1.5">Anarkali <img src="assets/images/icons/arrow-right.svg" alt=""></span>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- Slide 5 -->
-						<div class="swiper-slide">
-							<a href="#">
-								<div class="relative border-[10px] border-[#FFAEAE] overflow-hidden">
-									<img src="assets/images/trending/indian-dresses.png" alt="Indian Dresses" class="w-full h-auto object-cover" />
-									<div class="absolute bottom-[20px] w-full">
-										<span class="bg-[#FFFFFFC7] max-w-fit mx-auto p-5 font-playfair text-2xl tracking-[1px] flex items-center gap-1.5">Indian Dresses <img src="assets/images/icons/arrow-right.svg" alt=""></span>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- Slide 6 -->
-						<div class="swiper-slide">
-							<a href="#">
-								<div class="relative border-[10px] border-[#FFAEAE] overflow-hidden">
-									<img src="assets/images/trending/lehenga-choli.png" alt="Lehenga Choli" class="w-full h-auto object-cover" />
-									<div class="absolute bottom-[20px] w-full">
-										<span class="bg-[#FFFFFFC7] max-w-fit mx-auto p-5 font-playfair text-2xl tracking-[1px] flex items-center gap-1.5">Lehenga Choli <img src="assets/images/icons/arrow-right.svg" alt=""></span>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- Slide 7 -->
-						<div class="swiper-slide">
-							<a href="#">
-								<div class="relative border-[10px] border-[#FFAEAE] overflow-hidden">
-									<img src="assets/images/trending/sarees.png" alt="Sarees" class="w-full h-auto object-cover" />
-									<div class="absolute bottom-[20px] w-full">
-										<span class="bg-[#FFFFFFC7] max-w-fit mx-auto p-5 font-playfair text-2xl tracking-[1px] flex items-center gap-1.5">Sarees <img src="assets/images/icons/arrow-right.svg" alt=""></span>
-									</div>
-								</div>
-							</a>
-						</div>
-						<!-- Slide 8 -->
-						<div class="swiper-slide">
-							<a href="#">
-								<div class="relative border-[10px] border-[#FFAEAE] overflow-hidden">
-									<img src="assets/images/trending/anarkali.png" alt="Indian Dresses" class="w-full h-auto object-cover" />
-									<div class="absolute bottom-[20px] w-full">
-										<span class="bg-[#FFFFFFC7] max-w-fit mx-auto p-5 font-playfair text-2xl tracking-[1px] flex items-center gap-1.5">Anarkali <img src="assets/images/icons/arrow-right.svg" alt=""></span>
-									</div>
-								</div>
-							</a>
-						</div>
+								<h3 class="md:text-[32px] text-2xl font-semibold text-white uppercase">Indian Dresses</h3>
+							</div>
+						</a>
 					</div>
 				</div>
 			</div>
 		</section>
+
 		<!-- End Collection Section -->
+
+		<!-- Start Exclusive Collection Section -->
+		<section class="pt-[90px]">
+			<div class="swiper exclusive-Swiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<a href="#">
+							<img src="assets/images/exclusive-collection/exclusive-collection-kurtis.png" alt="Slide 1" class="w-full h-auto" />
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<img src="assets/images/exclusive-collection/exclusive-collection-kurtis.png" alt="Slide 2" class="w-full h-auto" />
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="#">
+							<img src="assets/images/exclusive-collection/exclusive-collection-kurtis.png" alt="Slide 3" class="w-full h-auto" />
+						</a>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</section>
+		<!-- End Exclusive Collection Section -->
+
+		<!-- Start Latest Products Section -->
+		<section class="pt-[77px]">
+			<div class="container">
+				<div class="text-center mb-14">
+					<div class="relative flex items-center justify-center mb-2.5">
+  						<div class="flex-1 relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-full before:h-[53px] before:bg-[url('../assets/images/icons/decorative-line.svg')] before:bg-repeat-x before:bg-center"></div>
+ 		 				<h2 class="sm:px-16 px-3.5 text-2xl md:text-[45px] font-medium text-[var(--gray-color)] whitespace-nowrap">Latest Products</h2>
+						<div class="flex-1 relative after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-full after:h-[53px] after:bg-[url('../assets/images/icons/decorative-line.svg')] after:bg-repeat-x after:bg-center"></div>
+					</div>	
+					<p class="text-[var(--gray-color)] tracking-[1px]">Sed viverra tellus in hac habitasse. Nulla posuere sollicitudin aliquam ultrices orci. libero volutpat sed cras ornare.</p>
+				</div>
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-7 sm:gap-y-[60px] sm:mb-[88px] mb-10">
+					<div class="relative group">
+						<div class="relative overflow-hidden rounded-3xl mb-3">
+							<img src="assets/images/latest-products/latest-products-1.png" alt="gown Front" class="mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+							<img src="assets/images/latest-products/latest-products-8.png" alt="gown Back" class="mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
+								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
+								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+								<img src="assets/images/icons/cart-white.svg" alt="" class="mr-2.5">
+								<span class="text-white text-[17px] font-medium">ADD TO CART</span>
+							</a>
+							<button class="bg-[#D61D3559] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5 lg:opacity-0 transition-all duration-300 lg:group-hover:opacity-100">
+								<img src="assets/images/icons/like-white.svg" alt="">
+							</button>
+						</div>
+						<a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</a>
+						<div class="text-lg font-medium">
+							<span class="text-[var(--primary-color)] mr-2"><span>₹</span>2,780 <span>INR</span></span>
+							<span class="line-through text-[#767676]"><span>₹</span>4,999 <span>INR</span></span>
+						</div>
+					</div>
+					<div class="relative group">
+						<div class="relative overflow-hidden rounded-3xl mb-3">
+							<img src="assets/images/latest-products/latest-products-2.png" alt="gown Front" class="mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+							<img src="assets/images/latest-products/latest-products-7.png" alt="gown Back" class="mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
+								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
+								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+								<img src="assets/images/icons/cart-white.svg" alt="" class="mr-2.5">
+								<span class="text-white text-[17px] font-medium">ADD TO CART</span>
+							</a>
+							<button class="bg-[#D61D3559] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5 lg:opacity-0 transition-all duration-300 lg:group-hover:opacity-100">
+								<img src="assets/images/icons/like-white.svg" alt="">
+							</button>
+						</div>
+						<a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Classic Charm Georgette Suit Set- Stitched 3 Pc</a>
+						<div class="text-lg font-medium">
+							<span class="text-[var(--primary-color)] mr-2"><span>₹</span>3,660 <span>INR</span></span>
+							<span class="line-through text-[#767676]"><span>₹</span>5,230 <span>INR</span></span>
+						</div>
+					</div>
+					<div class="relative group">
+						<div class="relative overflow-hidden rounded-3xl mb-3">
+							<img src="assets/images/latest-products/latest-products-3.png" alt="gown Front" class="mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+							<img src="assets/images/latest-products/latest-products-6.png" alt="gown Back" class="mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
+								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
+								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+								<img src="assets/images/icons/cart-white.svg" alt="" class="mr-2.5">
+								<span class="text-white text-[17px] font-medium">ADD TO CART</span>
+							</a>
+							<button class="bg-[#D61D3559] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5 lg:opacity-0 transition-all duration-300 lg:group-hover:opacity-100">
+								<img src="assets/images/icons/like-white.svg" alt="">
+							</button>
+						</div>
+						<a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Rosette Whispers | Chinon Silk Suit Set- Stitched 3 Pc</a>
+						<div class="text-lg font-medium">
+							<span class="text-[var(--primary-color)] mr-2"><span>₹</span>2,780 <span>INR</span></span>
+							<span class="line-through text-[#767676]"><span>₹</span>4,999 <span>INR</span></span>
+						</div>
+					</div>
+					<div class="relative group">
+						<div class="relative overflow-hidden rounded-3xl mb-3">
+							<img src="assets/images/latest-products/latest-products-4.png" alt="gown Front" class="mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+							<img src="assets/images/latest-products/latest-products-5.png" alt="gown Back" class="mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
+								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
+								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+								<img src="assets/images/icons/cart-white.svg" alt="" class="mr-2.5">
+								<span class="text-white text-[17px] font-medium">ADD TO CART</span>
+							</a>
+							<button class="bg-[#D61D3559] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5 lg:opacity-0 transition-all duration-300 lg:group-hover:opacity-100">
+								<img src="assets/images/icons/like-white.svg" alt="">
+							</button>
+						</div>
+						<a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Ivory N Blush Embroidery Orange Suit- Stitched 3 Pc</a>
+						<div class="text-lg font-medium">
+							<span class="text-[var(--primary-color)] mr-2"><span>₹</span>2,780 <span>INR</span></span>
+							<span class="line-through text-[#767676]"><span>₹</span>4,999 <span>INR</span></span>
+						</div>
+					</div>
+					<div class="relative group">
+						<div class="relative overflow-hidden rounded-3xl mb-3">
+							<img src="assets/images/latest-products/latest-products-5.png" alt="gown Front" class="mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+							<img src="assets/images/latest-products/latest-products-4.png" alt="gown Back" class="mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
+								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
+								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+								<img src="assets/images/icons/cart-white.svg" alt="" class="mr-2.5">
+								<span class="text-white text-[17px] font-medium">ADD TO CART</span>
+							</a>
+							<button class="bg-[#D61D3559] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5 lg:opacity-0 transition-all duration-300 lg:group-hover:opacity-100">
+								<img src="assets/images/icons/like-white.svg" alt="">
+							</button>
+						</div>
+						<a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Ivory N Blush Embroidery Orange Suit- Stitched 3 Pc</a>
+						<div class="text-lg font-medium">
+							<span class="text-[var(--primary-color)] mr-2"><span>₹</span>2,780 <span>INR</span></span>
+							<span class="line-through text-[#767676]"><span>₹</span>4,999 <span>INR</span></span>
+						</div>
+					</div>
+					<div class="relative group">
+						<div class="relative overflow-hidden rounded-3xl mb-3">
+							<img src="assets/images/latest-products/latest-products-6.png" alt="gown Front" class="mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+							<img src="assets/images/latest-products/latest-products-3.png" alt="gown Back" class="mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
+								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
+								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+								<img src="assets/images/icons/cart-white.svg" alt="" class="mr-2.5">
+								<span class="text-white text-[17px] font-medium">ADD TO CART</span>
+							</a>
+							<button class="bg-[#D61D3559] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5 lg:opacity-0 transition-all duration-300 lg:group-hover:opacity-100">
+								<img src="assets/images/icons/like-white.svg" alt="">
+							</button>
+						</div>
+						<a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Classic Charm Georgette Suit Set- Stitched 3 Pc</a>
+						<div class="text-lg font-medium">
+							<span class="text-[var(--primary-color)] mr-2"><span>₹</span>3,660 <span>INR</span></span>
+							<span class="line-through text-[#767676]"><span>₹</span>5,230 <span>INR</span></span>
+						</div>
+					</div>
+					<div class="relative group">
+						<div class="relative overflow-hidden rounded-3xl mb-3">
+							<img src="assets/images/latest-products/latest-products-7.png" alt="gown Front" class="mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+							<img src="assets/images/latest-products/latest-products-2.png" alt="gown Back" class="mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
+								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
+								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+								<img src="assets/images/icons/cart-white.svg" alt="" class="mr-2.5">
+								<span class="text-white text-[17px] font-medium">ADD TO CART</span>
+							</a>
+							<button class="bg-[#D61D3559] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5 lg:opacity-0 transition-all duration-300 lg:group-hover:opacity-100">
+								<img src="assets/images/icons/like-white.svg" alt="">
+							</button>
+						</div>
+						<a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Rosette Whispers | Chinon Silk Suit Set- Stitched 3 Pc</a>
+						<div class="text-lg font-medium">
+							<span class="text-[var(--primary-color)] mr-2"><span>₹</span>2,780 <span>INR</span></span>
+							<span class="line-through text-[#767676]"><span>₹</span>4,999 <span>INR</span></span>
+						</div>
+					</div>
+					<div class="relative group">
+						<div class="relative overflow-hidden rounded-3xl mb-3">
+							<img src="assets/images/latest-products/latest-products-8.png" alt="gown Front" class="mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+							<img src="assets/images/latest-products/latest-products-1.png" alt="gown Back" class="mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
+								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
+								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+								<img src="assets/images/icons/cart-white.svg" alt="" class="mr-2.5">
+								<span class="text-white text-[17px] font-medium">ADD TO CART</span>
+							</a>
+							<button class="bg-[#D61D3559] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5 lg:opacity-0 transition-all duration-300 lg:group-hover:opacity-100">
+								<img src="assets/images/icons/like-white.svg" alt="">
+							</button>
+						</div>
+						<a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Ivory N Blush Embroidery Orange Suit- Stitched 3 Pc</a>
+						<div class="text-lg font-medium">
+							<span class="text-[var(--primary-color)] mr-2"><span>₹</span>2,780 <span>INR</span></span>
+							<span class="line-through text-[#767676]"><span>₹</span>4,999 <span>INR</span></span>
+						</div>
+					</div>
+				</div>
+				<a href="#" class="text-[19px] font-medium flex items-center justify-center gap-2 text-[var(--primary-color)] underline">View More <img src="assets/images/icons/arrow-right.svg" alt=""></a>
+			</div>
+		</section>
+		<!-- End Latest Products Section -->
+
+		<!-- Start Top Picks Section -->
+		<section class="pt-[125px]">
+			<div class="container">
+				<div class="text-center mb-14">
+					<div class="relative flex items-center justify-center">
+  						<div class="flex-1 relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-full before:h-[53px] before:bg-[url('../assets/images/icons/decorative-line.svg')] before:bg-repeat-x before:bg-center"></div>
+ 		 				<h2 class="sm:px-16 px-3.5 text-2xl md:text-[45px] font-medium text-[var(--gray-color)] break-words max-sm:max-w-[200px]">Top Picks by Influencers</h2>
+						<div class="flex-1 relative after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-full after:h-[53px] after:bg-[url('../assets/images/icons/decorative-line.svg')] after:bg-repeat-x after:bg-center"></div>
+					</div>	
+				</div>
+				<div class="swiper videoSlider w-full">
+					<div class="swiper-wrapper">
+						<!-- Slide 1 -->
+						<div class="swiper-slide rounded-xl overflow-hidden">
+							<video class="video-thumb w-full h-full object-cover rounded-xl cursor-pointer" data-src="assets/videos/top-picks-1.mp4" autoplay muted playsinline loop>
+								<source src="assets/videos/top-picks-1.mp4" type="video/mp4" />
+							</video>
+						</div>
+						<!-- Slide 2 -->
+						<div class="swiper-slide rounded-xl overflow-hidden">
+							<video class="video-thumb w-full h-full object-cover rounded-xl cursor-pointer" data-src="assets/videos/top-picks-1.mp4" autoplay muted playsinline loop>
+								<source src="assets/videos/top-picks-1.mp4" type="video/mp4" />
+							</video>
+						</div>
+						<!-- Slide 3 -->
+						<div class="swiper-slide rounded-xl overflow-hidden">
+							<video class="video-thumb w-full h-full object-cover rounded-xl cursor-pointer" data-src="assets/videos/top-picks-1.mp4" autoplay muted playsinline loop>
+								<source src="assets/videos/top-picks-1.mp4" type="video/mp4" />
+							</video>
+						</div>
+						<!-- Slide 4 -->
+						<div class="swiper-slide rounded-xl overflow-hidden">
+							<video class="video-thumb w-full h-full object-cover rounded-xl cursor-pointer" data-src="assets/videos/top-picks-1.mp4" autoplay muted playsinline loop>
+								<source src="assets/videos/top-picks-1.mp4" type="video/mp4" />
+							</video>
+						</div>
+						<!-- Slide 5 -->
+						<div class="swiper-slide rounded-xl overflow-hidden">
+							<video class="video-thumb w-full h-full object-cover rounded-xl cursor-pointer" data-src="assets/videos/top-picks-1.mp4" autoplay muted playsinline loop>
+								<source src="assets/videos/top-picks-1.mp4" type="video/mp4" />
+							</video>
+						</div>
+						<!-- Slide 6 -->
+						<div class="swiper-slide rounded-xl overflow-hidden">
+							<video class="video-thumb w-full h-full object-cover rounded-xl cursor-pointer" data-src="assets/videos/top-picks-1.mp4" autoplay muted playsinline loop>
+								<source src="assets/videos/top-picks-1.mp4" type="video/mp4" />
+							</video>
+						</div>
+						<!-- Slide 7 -->
+						<div class="swiper-slide rounded-xl overflow-hidden">
+							<video class="video-thumb w-full h-full object-cover rounded-xl cursor-pointer" data-src="assets/videos/top-picks-1.mp4" autoplay muted playsinline loop>
+								<source src="assets/videos/top-picks-1.mp4" type="video/mp4" />
+							</video>
+						</div>
+						<!-- Slide 8 -->
+						<div class="swiper-slide rounded-xl overflow-hidden">
+							<video class="video-thumb w-full h-full object-cover rounded-xl cursor-pointer" data-src="assets/videos/top-picks-1.mp4" autoplay muted playsinline loop>
+								<source src="assets/videos/top-picks-1.mp4" type="video/mp4" />
+							</video>
+						</div>
+					</div>
+				</div>
+
+				<!-- Video Modal -->
+				<div id="videoModal" class="fixed inset-0 bg-black/80 z-[9999] hidden p-4 flex justify-center items-center">
+					<div class="relative w-full max-w-3xs">
+						<button id="modalClose" class="absolute top-2 right-2 z-10 cursor-pointer">
+							<img src="assets/images/icons/close.svg" alt="" class="w-3">
+						</button>
+						<video id="modalVideo" controls autoplay class="w-full h-auto rounded-xl bg-black" ></video>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Top Picks Section -->
+
+		<!-- Start Testimonials Section -->
+		<section class="pt-[200px]">
+			<div class="container">
+				<div class="text-center mb-14">
+					<div class="relative flex items-center justify-center">
+  						<div class="flex-1 relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-full before:h-[53px] before:bg-[url('../assets/images/icons/decorative-line.svg')] before:bg-repeat-x before:bg-center"></div>
+ 		 				<h2 class="sm:px-16 px-3.5 text-2xl md:text-[45px] font-medium text-[var(--gray-color)] break-words max-sm:max-w-[200px]">Testimonials</h2>
+						<div class="flex-1 relative after:absolute after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-full after:h-[53px] after:bg-[url('../assets/images/icons/decorative-line.svg')] after:bg-repeat-x after:bg-center"></div>
+					</div>	
+				</div>
+				<div class="swiper testimonialSwiper max-w-7xl mx-auto mb-[70px]">
+					<div class="swiper-wrapper">
+
+						<!-- Slide 1 -->
+						<div class="swiper-slide min-h-[300px] items-center rounded-xl p-6 text-center transition-all duration-100">
+							<div>
+								<img src="assets/images/icons/quote-left.svg" alt="">
+								<img src="assets/images/testimonials/user-1.png" class="mx-auto w-16 h-16 rounded-full mb-5" alt="user">
+								<h4 class="font-semibold text-lg mb-2.5 text-black group-[.active-slide]:text-white">Sakshi Maheta</h4>
+								<div class="mb-4 flex items-center justify-center gap-0.5">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+								</div>
+								<p class="text-[15px] leading-7 tracking-[1px] group-[.active-slide]:text-white">
+									Such a pretty Gown.... Embroidery and colour is really very nice😄....Will give you fresh n young look.
+								</p>
+								<img src="assets/images/icons/quote-right.svg" alt="" class="ml-auto">
+							</div>
+						</div>
+
+						<!-- Slide 2 -->
+						<div class="swiper-slide min-h-[300px] items-center rounded-xl p-6 text-center transition-all duration-100">
+							<div>
+								<img src="assets/images/icons/quote-left.svg" alt="">
+								<img src="assets/images/testimonials/user-2.png" class="mx-auto w-16 h-16 rounded-full mb-5" alt="user">
+								<h4 class="font-semibold text-lg mb-2.5 text-black">Jyoti Virani</h4>
+								<div class="mb-4 flex items-center justify-center gap-0.5">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+								</div>
+								<p class="text-[15px] leading-7 tracking-[1px]">
+									Such a pretty Gown.... Embroidery and colour is really very nice😄....Will give you fresh n young look.
+								</p>
+								<img src="assets/images/icons/quote-right.svg" alt="" class="ml-auto">
+							</div>
+						</div>
+
+						<!-- Slide 3 -->
+						<div class="swiper-slide min-h-[300px] items-center rounded-xl p-6 text-center transition-all duration-100">
+							<div>
+								<img src="assets/images/icons/quote-left.svg" alt="">
+								<img src="assets/images/testimonials/user-3.png" class="mx-auto w-16 h-16 rounded-full mb-5" alt="user">
+								<h4 class="font-semibold text-lg mb-2.5 text-black">Ankit Varma</h4>
+								<div class="mb-4 flex items-center justify-center gap-0.5">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+								</div>
+								<p class="text-[15px] leading-7 tracking-[1px]">
+									Such a pretty Gown.... Embroidery and colour is really very nice😄....Will give you fresh n young look.
+								</p>
+								<img src="assets/images/icons/quote-right.svg" alt="" class="ml-auto">
+							</div>
+						</div>
+						<!-- Slide 4 -->
+						<div class="swiper-slide min-h-[300px] items-center rounded-xl p-6 text-center transition-all duration-100">
+							<div>
+								<img src="assets/images/icons/quote-left.svg" alt="">
+								<img src="assets/images/testimonials/user-1.png" class="mx-auto w-16 h-16 rounded-full mb-5" alt="user">
+								<h4 class="font-semibold text-lg mb-2.5 text-black group-[.active-slide]:text-white">Sakshi Maheta</h4>
+								<div class="mb-4 flex items-center justify-center gap-0.5">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+								</div>
+								<p class="text-[15px] leading-7 tracking-[1px] group-[.active-slide]:text-white">
+									Such a pretty Gown.... Embroidery and colour is really very nice😄....Will give you fresh n young look.
+								</p>
+								<img src="assets/images/icons/quote-right.svg" alt="" class="ml-auto">
+							</div>
+						</div>
+
+						<!-- Slide 5 -->
+						<div class="swiper-slide min-h-[300px] items-center rounded-xl p-6 text-center transition-all duration-100">
+							<div>
+								<img src="assets/images/icons/quote-left.svg" alt="">
+								<img src="assets/images/testimonials/user-2.png" class="mx-auto w-16 h-16 rounded-full mb-5" alt="user">
+								<h4 class="font-semibold text-lg mb-2.5 text-black">Jyoti Virani</h4>
+								<div class="mb-4 flex items-center justify-center gap-0.5">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+								</div>
+								<p class="text-[15px] leading-7 tracking-[1px]">
+									Such a pretty Gown.... Embroidery and colour is really very nice😄....Will give you fresh n young look.
+								</p>
+								<img src="assets/images/icons/quote-right.svg" alt="" class="ml-auto">
+							</div>
+						</div>
+
+						<!-- Slide 6 -->
+						<div class="swiper-slide min-h-[300px] items-center rounded-xl p-6 text-center transition-all duration-100">
+							<div>
+								<img src="assets/images/icons/quote-left.svg" alt="">
+								<img src="assets/images/testimonials/user-3.png" class="mx-auto w-16 h-16 rounded-full mb-5" alt="user">
+								<h4 class="font-semibold text-lg mb-2.5 text-black">Ankit Varma</h4>
+								<div class="mb-4 flex items-center justify-center gap-0.5">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+									<img src="assets/images/icons/star.svg" alt="">
+								</div>
+								<p class="text-[15px] leading-7 tracking-[1px]">
+									Such a pretty Gown.... Embroidery and colour is really very nice😄....Will give you fresh n young look.
+								</p>
+								<img src="assets/images/icons/quote-right.svg" alt="" class="ml-auto">
+							</div>
+						</div>
+					</div>
+					<div class="swiper-pagination mt-6"></div>
+				</div>
+			</div>
+		</section>
+		<!-- End Testimonials Section -->
 
 		<div class="sticky bottom-0 left-0 w-full bg-white z-[99] xl:hidden border-b border-gray-300 shadow-[0_0_9px_rgba(0,0,0,0.12)]" style="padding-bottom: env(safe-area-inset-bottom);">
 			<div class="flex justify-around items-center text-center">
 				<!-- Home -->
 				<a href="index.html" class="flex flex-col col-span-1 py-2 border-r border-gray-300 w-full items-center">
-					<img src="assets/images/icons/home.png" alt="" class="w-7">
+					<img src="assets/images/icons/like.svg" alt="" class="sm:w-7 w-5">
 					<span class="text-sm">Home</span>
 				</a>
 				<!-- Shopping -->
 				<a href="#" class="flex flex-col items-center w-full py-2 border-r border-gray-300">
-					<img src="assets/images/icons/shipping.png" alt="" class="w-7">
+					<img src="assets/images/icons/user.svg" alt="" class="sm:w-7 w-5">
 					<span class="text-sm">Shopping</span>
 				</a>
 				<!-- Like -->
 				<div class="w-full border-r py-2 border-gray-300">
 					<a href="#" class="relative flex flex-col items-center max-w-fit mx-auto">
-						<img src="assets/images/icons/like.svg" alt="" class="w-7">
+						<img src="assets/images/icons/like.svg" alt="" class="sm:w-7 w-5">
+						<span class="absolute -top-2 -right-2 sm:text-[14px] text-[10px] bg-[var(--primary-color)] border-2 border-white text-white w-5 h-5 sm:min-w-[22px] sm:px-[5px] sm:h-[22px] rounded-full flex items-center justify-center leading-0">3</span>
 						<span class="text-sm">Like</span>
 					</a>
 				</div>
 				<!-- Account -->
 				<a href="#" class="flex flex-col items-center w-full py-2 border-gray-300">
-					<img src="assets/images/icons/user.svg" alt="" class="w-7">
+					<img src="assets/images/icons/user.svg" alt="" class="sm:w-7 w-5">
 					<span class="text-sm">Account</span>
 				</a>
 			</div>	
