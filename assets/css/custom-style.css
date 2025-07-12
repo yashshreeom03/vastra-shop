@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6{
 	max-width: 1740px;
 	padding: 0px 15px;
 	margin: auto;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 li{
@@ -82,7 +82,13 @@ input:focus-visible{
 }
 
 .rotate-180 {
-	transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+@media (min-width: 1280px) {
+    .group:hover .dropdown-icon {
+      	transform: rotate(180deg);
+    }
 }
 
 .line-clamp-2 {
@@ -92,12 +98,6 @@ input:focus-visible{
 	text-overflow: ellipsis;
 	line-height: 1.4em;
 	max-height: 2.8em;
-}
-
- @media (min-width: 1280px) {
-    .group:hover .dropdown-icon {
-      	transform: rotate(180deg);
-    }
 }
 
 .testimonialSwiper .swiper-slide {

@@ -34,40 +34,54 @@ window.addEventListener('resize', () => {
 });
 
 // Dropdown menu
-document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-  toggle.addEventListener('click', function (e) {
-    // Prevent click behavior only on mobile (below xl)
-    if (window.innerWidth >= 1280) return;
+function initDropdownBehavior() {
+  const isDesktop = window.innerWidth >= 1280;
 
-    e.preventDefault();
+  document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+    const dropdown = toggle.nextElementSibling;
+    const icon = toggle.querySelector('.chevron-icon');
 
-    const dropdown = this.nextElementSibling;
-    const iconWrapper = this.querySelector('.dropdown-icon');
-
-    // Close all other open dropdowns
-    document.querySelectorAll('.dropdown-menu').forEach(menu => {
-      if (menu !== dropdown) {
-        menu.style.maxHeight = null;
-        const otherToggle = menu.previousElementSibling;
-        if (otherToggle) {
-          const otherIcon = otherToggle.querySelector('.dropdown-icon');
-          if (otherIcon) {
-            otherIcon.classList.remove('rotate-180');
-          }
-        }
-      }
-    });
-
-    // Toggle this dropdown
-    if (dropdown.style.maxHeight && dropdown.style.maxHeight !== '0px') {
+    // Remove mobile-only inline styles when on desktop
+    if (isDesktop) {
       dropdown.style.maxHeight = null;
-      iconWrapper.classList.remove('rotate-180');
-    } else {
-      dropdown.style.maxHeight = dropdown.scrollHeight + 'px';
-      iconWrapper.classList.add('rotate-180');
+      icon?.classList.remove('rotate-180');
     }
   });
-});
+}
+
+// Dropdown click
+ document.addEventListener('DOMContentLoaded', function () {
+      const toggles = document.querySelectorAll('.dropdown-toggle');
+
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', function (e) {
+          const isXL = window.innerWidth >= 1280;
+          if (isXL) return; // XL and above: handled by hover
+
+          e.preventDefault();
+          const dropdown = this.nextElementSibling;
+          const icon = this.querySelector('.dropdown-icon');
+
+          // Close other dropdowns
+          document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            if (menu !== dropdown) {
+              menu.style.maxHeight = '0';
+            }
+          });
+          document.querySelectorAll('.dropdown-icon').forEach(ic => {
+            if (ic !== icon) ic.classList.remove('rotate-180');
+          });
+
+          // Toggle current dropdown
+          dropdown.style.maxHeight = dropdown.style.maxHeight === '0px' || !dropdown.style.maxHeight
+            ? dropdown.scrollHeight + 'px'
+            : '0';
+
+          icon.classList.toggle('rotate-180');
+        });
+      });
+    });
+
 
 // sticy Header
 window.addEventListener("scroll", function () {
