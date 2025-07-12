@@ -33,7 +33,7 @@
 		</div>
 
 		<!-- Start Header Area -->
-		<header id="siteHeader" class="absolute left-0 right-0 bg-white transition-all z-[999999] duration-300 ease-in-out py-[22px]">
+		<header id="siteHeader" class="absolute left-0 right-0 bg-white transition-all z-[99] duration-300 ease-in-out py-[22px]">
 			<div class="container">
 				
 				 <!-- === Header Inner Wrapper === -->
@@ -57,7 +57,7 @@
 
 					<!-- === Center Section: Navigation Menu === -->
 					<div>
-						<nav id="sidebarMenu" class="fixed top-0 left-0 z-[1000] bg-white w-[300px] h-full transform -translate-x-full transition-transform duration-300 xl:translate-x-0 xl:static xl:h-auto xl:w-auto max-xl:overflow-y-scroll">
+						<nav id="sidebarMenu" class="fixed top-0 left-0 z-[99] bg-white w-[300px] h-full transform -translate-x-full transition-transform duration-300 xl:translate-x-0 xl:static xl:h-auto xl:w-auto max-xl:overflow-y-scroll">
 							
 							<!-- Mobile Menu Close Button -->
 							<div id="menuClose" class="absolute top-[18px] right-[18px] cursor-pointer xl:hidden">
@@ -83,11 +83,11 @@
 											xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
 											xl:rounded-[3px] xl:text-sm xl:leading-[1.4] xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
 											xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
-										<a href="premium-saree.html" class="block text-gray-500 hover:text-black p-4 border-b border-gray-200">Saree</a>
-										<a href="#" class="block text-gray-500 hover:text-black p-4 border-b border-gray-200">Sharara</a>
-										<a href="#" class="block text-gray-500 hover:text-black p-4 border-b border-gray-200">Lehenga</a>
-										<a href="#" class="block text-gray-500 hover:text-black p-4 border-b border-gray-200">Gown</a>
-										<a href="#" class="block text-gray-500 hover:text-black p-4 border-b border-gray-200">Anarkali Suit</a>
+										<a href="premium-saree.html" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Saree</a>
+										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Sharara</a>
+										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Lehenga</a>
+										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Gown</a>
+										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Suit</a>
 									</div>
 								</li>
 
@@ -219,7 +219,7 @@
 						</nav>
 
 						<!-- Mobile Overlay (shown when sidebar menu is active) -->
-						<div id="overlay" class="fixed inset-0 bg-[#000000b3] bg-opacity-50 z-[999] hidden xl:hidden"></div>
+						<div id="overlay" class="fixed inset-0 bg-[#000000b3] bg-opacity-50 z-[98] hidden xl:hidden"></div>
 					</div>	
 
 					<!-- === Right Section: Header Icons (Search, Cart, Wishlist, User) === -->
@@ -231,9 +231,9 @@
 						</a>
 
 						<!-- Cart Icon with Count -->
-						<a href="#" class="relative sm:px-4 px-3 py-3 xl:border-r xl:border-r-[#0000001A]">
-							<img src="assets/images/icons/cart.svg" alt="cart">
-							<span class="absolute top-[1px] right-1.5 text-[14px] bg-[var(--primary-color)] border-2 border-white text-white min-w-[22px] px-[5px] h-[22px] rounded-full flex items-center justify-center leading-0">5</span>
+						<a href="#" id="cartToggle" class="relative sm:px-4 px-3 py-3 xl:border-r xl:border-r-[#0000001A] z-[9] inline-block">
+							<img src="assets/images/icons/cart.svg" alt="cart" class="w-6 h-6">
+							<span class="absolute top-[1px] right-1.5 text-[14px] bg-[var(--primary-color,#e11d48)] border-2 border-white text-white min-w-[22px] px-[5px] h-[22px] rounded-full flex items-center justify-center leading-0">5</span>
 						</a>
 
 						<!-- Wishlist Icon (hidden on mobile) -->
@@ -241,6 +241,7 @@
 							<img src="assets/images/icons/like.svg" alt="like">
 							<span class="absolute top-[1px] right-1.5 text-[14px] bg-[var(--primary-color)] border-2 border-white text-white min-w-[22px] px-[5px] h-[22px] rounded-full flex items-center justify-center leading-0">3</span>
 						</a>
+						
 						<!-- User/Profile Icon (hidden on mobile) -->
 						<a href="#" class="xl:px-4 px-3 xl:py-3 max-xl:hidden">
 							<img src="assets/images/icons/user.svg" alt="user">
@@ -804,7 +805,7 @@
 				</div>
 
 				<!-- Video Modal -->
-				<div id="videoModal" class="fixed inset-0 bg-black/80 z-[9999] hidden p-4 flex justify-center items-center">
+				<div id="videoModal" class="fixed inset-0 bg-black/80 z-[999] hidden p-4 flex justify-center items-center">
 					<div class="relative w-full max-w-3xs">
 						<button id="modalClose" class="absolute top-2 right-2 z-10 cursor-pointer">
 							<img src="assets/images/icons/close.svg" alt="close" class="w-3">
@@ -1143,7 +1144,7 @@
 		<!-- End Footer -->
 
 		<!-- Bottom Nav (Only on Mobile) -->
-		<div class="sticky bottom-0 left-0 w-full bg-white z-[99] xl:hidden border-b border-gray-300 shadow-[0_0_9px_rgba(0,0,0,0.12)]" style="padding-bottom: env(safe-area-inset-bottom);">
+		<div class="sticky bottom-0 left-0 w-full bg-white z-[97] xl:hidden border-b border-gray-300 shadow-[0_0_9px_rgba(0,0,0,0.12)]" style="padding-bottom: env(safe-area-inset-bottom);">
 			<div class="flex justify-around items-center text-center">
 				<!-- Home -->
 				<a href="index.html" class="flex flex-col col-span-1 py-2 border-r border-gray-300 w-full items-center">
@@ -1169,6 +1170,132 @@
 					<span class="text-sm">Account</span>
 				</a>
 			</div>	
+		</div>
+
+
+		<!-- Backdrop Overlay -->
+  		<div id="cartBackdrop" class="fixed inset-0 bg-black/50 z-[1000] hidden"></div>
+
+		<!-- Cart Sidebar -->
+		<div id="cartSidebar" class="fixed right-0 top-0 w-[350px] max-w-full h-full bg-white shadow-lg z-[1004] transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+			 <div class="flex items-center justify-between p-4 border-b shrink-0">
+				<h2 class="text-lg font-semibold">Shopping Cart</h2>
+				<button id="closeCart" class="cursor-pointer">
+					<img src="assets/images/icons/close.svg" alt="close" class="w-5 h-auto">
+				</button>
+			</div>
+		
+			<!-- Cart Content -->
+			<div class="flex-1 overflow-y-auto px-4 space-y-6 custom-scroll">
+				<!-- Item 1 -->
+				<div class="flex gap-4 border-b py-4">
+					<img src="assets/images/latest-products/latest-products-1.png" alt="Product" class="w-[120px] h-40 object-cover rounded-2xl">
+					<div class="flex-1">
+						<h3 class="text-sm font-medium line-clamp-2">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</h3>
+						<span class="text-sm text-[var(--primary-color)] mr-3"><span>₹</span><span>2,780</span> <span>INR</span> </span>
+						<span class="text-sm line-through text-[#767676]"><span>₹</span><span>4,999</span> <span>INR</span> </span>
+						<div class="flex border max-w-fit rounded overflow-hidden my-4">
+							<button type="button" class="sm:p-2 p-[4px] cursor-pointer" onclick="decrementValue(this)">-</button>
+							<input type="number" class="p-2 w-[52px] text-center" step="1" min="1" value="1" max="1000" pattern="[0-9]*">
+							<button type="button" class="sm:p-2 p-[4px] cursor-pointer" onclick="incrementValue(this)">+</button>
+						</div>
+						<button class="ml-auto text-[#767676] hover:text-[var(--primary-color)] cursor-pointer">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M1 7h22M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<!-- Item 2 -->
+				<div class="flex gap-4 border-b py-4">
+					<img src="assets/images/latest-products/latest-products-2.png" alt="Product" class="w-[120px] h-40 object-cover rounded-2xl">
+					<div class="flex-1">
+						<h3 class="text-sm font-medium line-clamp-2">Classic Charm Georgette Suit Set- Stitched 3 Pc</h3>
+						<span class="text-sm text-[var(--primary-color)] mr-3"><span>₹</span><span>3,660</span> <span>INR</span> </span>
+						<span class="text-sm line-through text-[#767676]"><span>₹</span><span>5,230</span> <span>INR</span> </span>
+						<div class="flex border max-w-fit rounded overflow-hidden my-4">
+							<button type="button" class="sm:p-2 p-[4px] cursor-pointer" onclick="decrementValue(this)">-</button>
+							<input type="number" class="p-2 w-[52px] text-center" step="1" min="1" value="1" max="1000" pattern="[0-9]*">
+							<button type="button" class="sm:p-2 p-[4px] cursor-pointer" onclick="incrementValue(this)">+</button>
+						</div>
+						<button class="ml-auto text-[#767676] hover:text-[var(--primary-color)] cursor-pointer">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M1 7h22M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<!-- Item 3 -->
+				<div class="flex gap-4 border-b py-4">
+					<img src="assets/images/latest-products/latest-products-3.png" alt="Product" class="w-[120px] h-40 object-cover rounded-2xl">
+					<div class="flex-1">
+						<h3 class="text-sm font-medium line-clamp-2">Rosette Whispers | Chinon Silk Suit Set- Stitched 3 Pc</h3>
+						<span class="text-sm text-[var(--primary-color)] mr-3"><span>₹</span><span>2,780</span> <span>INR</span> </span>
+						<span class="text-sm line-through text-[#767676]"><span>₹</span><span>4,999</span> <span>INR</span> </span>
+						<div class="flex border max-w-fit rounded overflow-hidden my-4">
+							<button type="button" class="sm:p-2 p-[4px] cursor-pointer" onclick="decrementValue(this)">-</button>
+							<input type="number" class="p-2 w-[52px] text-center" step="1" min="1" value="1" max="1000" pattern="[0-9]*">
+							<button type="button" class="sm:p-2 p-[4px] cursor-pointer" onclick="incrementValue(this)">+</button>
+						</div>
+						<button class="ml-auto text-[#767676] hover:text-[var(--primary-color)] cursor-pointer">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M1 7h22M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<!-- Item 4 -->
+				<div class="flex gap-4 border-b py-4">
+					<img src="assets/images/latest-products/latest-products-4.png" alt="Product" class="w-[120px] h-40 object-cover rounded-2xl">
+					<div class="flex-1">
+						<h3 class="text-sm font-medium line-clamp-2">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</h3>
+						<span class="text-sm text-[var(--primary-color)] mr-3"><span>₹</span><span>2,780</span> <span>INR</span> </span>
+						<span class="text-sm line-through text-[#767676]"><span>₹</span><span>4,999</span> <span>INR</span> </span>
+						<div class="flex border max-w-fit rounded overflow-hidden my-4">
+							<button type="button" class="sm:p-2 p-[4px] cursor-pointer" onclick="decrementValue(this)">-</button>
+							<input type="number" class="p-2 w-[52px] text-center" step="1" min="1" value="1" max="1000" pattern="[0-9]*">
+							<button type="button" class="sm:p-2 p-[4px] cursor-pointer" onclick="incrementValue(this)">+</button>
+						</div>
+						<button class="ml-auto text-[#767676] hover:text-[var(--primary-color)] cursor-pointer">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M1 7h22M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+				<!-- Item 5 -->
+				<div class="flex gap-4 py-4">
+					<img src="assets/images/latest-products/latest-products-5.png" alt="Product" class="w-[120px] h-40 object-cover rounded-2xl">
+					<div class="flex-1">
+						<h3 class="text-sm font-medium line-clamp-2">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</h3>
+						<span class="text-sm text-[var(--primary-color)] mr-3"><span>₹</span><span>2,780</span> <span>INR</span> </span>
+						<span class="text-sm line-through text-[#767676]"><span>₹</span><span>4,999</span> <span>INR</span> </span>
+						<div class="flex border max-w-fit rounded overflow-hidden my-4">
+							<button type="button" class="sm:p-2 p-[4px] cursor-pointer" onclick="decrementValue(this)">-</button>
+							<input type="number" class="p-2 w-[52px] text-center" step="1" min="1" value="1" max="1000" pattern="[0-9]*">
+							<button type="button" class="sm:p-2 p-[4px] cursor-pointer" onclick="incrementValue(this)">+</button>
+						</div>
+						<button class="ml-auto text-[#767676] hover:text-[var(--primary-color)] cursor-pointer">
+							<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M1 7h22M9 3h6a1 1 0 011 1v1H8V4a1 1 0 011-1z" />
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+			<!-- Subtotal and Checkout -->
+			<div class="py-4 px-4 border-t shrink-0 bg-white">
+				<div class="flex justify-between text-lg">
+					<span class="font-semibold">Subtotal:</span>
+					<span class="font-medium">Rs. 11,046.00</span>
+				</div>
+				<p class="text-xs mt-2">Tax included. Shipping & discounts at checkout.</p>
+				<label class="flex items-center text-xs mt-2 cursor-pointer">
+					<input type="checkbox" class="mr-2">
+					I agree with the terms and conditions.
+				</label>
+				<button class="w-full mt-4 bg-black hover:bg-[var(--primary-color)] cursor-pointer text-white py-2 font-semibold text-sm transition duration-200">CHECK OUT</button>
+  			</div>
 		</div>
 
 		<!-- Swiper JS -->

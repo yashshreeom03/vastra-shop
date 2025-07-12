@@ -39,9 +39,9 @@ function initDropdownBehavior() {
 
   document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
     const dropdown = toggle.nextElementSibling;
-    const icon = toggle.querySelector('.chevron-icon');
+    const icon = toggle.querySelector('.dropdown-icon');
 
-    // Remove mobile-only inline styles when on desktop
+    // On desktop: remove mobile dropdown styles
     if (isDesktop) {
       dropdown.style.maxHeight = null;
       icon?.classList.remove('rotate-180');
@@ -49,34 +49,42 @@ function initDropdownBehavior() {
   });
 }
 
-// Dropdown click
- document.addEventListener('DOMContentLoaded', function () {
-      const toggles = document.querySelectorAll('.dropdown-toggle');
+// Dropdown toggle click – only for < 1280px screens
+document.addEventListener('DOMContentLoaded', function () {
+  const toggles = document.querySelectorAll('.dropdown-toggle');
 
-      toggles.forEach(toggle => {
-        toggle.addEventListener('click', function (e) {
-          const isXL = window.innerWidth >= 1280;
-          if (isXL) return;
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', function (e) {
+      const isXL = window.innerWidth >= 1280;
+      if (isXL) return;
 
-          e.preventDefault();
-          const dropdown = this.nextElementSibling;
-          const icon = this.querySelector('.dropdown-icon');
+      e.preventDefault();
 
-          document.querySelectorAll('.dropdown-menu').forEach(menu => {
-            if (menu !== dropdown) {
-              menu.style.maxHeight = '0';
-            }
-          });
-          document.querySelectorAll('.dropdown-icon').forEach(ic => {
-            if (ic !== icon) ic.classList.remove('rotate-180');
-          });
-          dropdown.style.maxHeight = dropdown.style.maxHeight === '0px' || !dropdown.style.maxHeight
-            ? dropdown.scrollHeight + 'px'
-            : '0';
-          icon.classList.toggle('rotate-180');
-        });
+      const dropdown = this.nextElementSibling;
+      const icon = this.querySelector('.dropdown-icon');
+
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        if (menu !== dropdown) {
+          menu.style.maxHeight = '0';
+        }
       });
+
+      document.querySelectorAll('.dropdown-icon').forEach(ic => {
+        if (ic !== icon) ic.classList.remove('rotate-180');
+      });
+
+      dropdown.style.maxHeight =
+        dropdown.style.maxHeight === '0px' || !dropdown.style.maxHeight
+          ? dropdown.scrollHeight + 'px'
+          : '0';
+      icon.classList.toggle('rotate-180');
     });
+  });
+
+  window.addEventListener('resize', initDropdownBehavior);
+  initDropdownBehavior();
+});
+
 
 // sticy Header
 window.addEventListener("scroll", function () {
@@ -188,3 +196,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const firstActive = document.querySelector('.testimonialSwiper .swiper-slide-active');
     if (firstActive) firstActive.classList.add('active-slide');
 });
+
+
+// cart
+const cartToggle = document.getElementById("cartToggle");
+const cartSidebar = document.getElementById("cartSidebar");
+const closeCart = document.getElementById("closeCart");
+const cartBackdrop = document.getElementById("cartBackdrop");
+
+cartToggle.addEventListener("click", (e) => {
+  e.preventDefault();
+  cartSidebar.classList.remove("translate-x-full");
+  cartBackdrop.classList.remove("hidden");
+
+  if (window.innerWidth <= 1024) {
+    body.classList.add("overflow-hidden");
+  }
+});
+
+function closeCartSidebar() {
+  cartSidebar.classList.add("translate-x-full");
+  cartBackdrop.classList.add("hidden");
+  body.classList.remove("overflow-hidden");
+}
+
+closeCart.addEventListener("click", closeCartSidebar);
+cartBackdrop.addEventListener("click", closeCartSidebar);
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 1024) {
+    body.classList.remove("overflow-hidden");
+  }
+});
+
+// Quick View Modal number count
+function incrementValue(button) {
+  const input = button.parentElement.querySelector('input[type="number"]');
+  let currentValue = parseInt(input.value) || 0;
+  const max = parseInt(input.max) || 1000;
+    if (currentValue < max) {
+      input.value = currentValue + 1;
+    }
+}
+function decrementValue(button) {
+  const input = button.parentElement.querySelector('input[type="number"]');
+  let currentValue = parseInt(input.value) || 1;
+  const min = parseInt(input.min) || 1;
+    if (currentValue > min) {
+      input.value = currentValue - 1;
+    }
+}
