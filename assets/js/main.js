@@ -56,13 +56,12 @@ function initDropdownBehavior() {
       toggles.forEach(toggle => {
         toggle.addEventListener('click', function (e) {
           const isXL = window.innerWidth >= 1280;
-          if (isXL) return; // XL and above: handled by hover
+          if (isXL) return;
 
           e.preventDefault();
           const dropdown = this.nextElementSibling;
           const icon = this.querySelector('.dropdown-icon');
 
-          // Close other dropdowns
           document.querySelectorAll('.dropdown-menu').forEach(menu => {
             if (menu !== dropdown) {
               menu.style.maxHeight = '0';
@@ -71,17 +70,13 @@ function initDropdownBehavior() {
           document.querySelectorAll('.dropdown-icon').forEach(ic => {
             if (ic !== icon) ic.classList.remove('rotate-180');
           });
-
-          // Toggle current dropdown
           dropdown.style.maxHeight = dropdown.style.maxHeight === '0px' || !dropdown.style.maxHeight
             ? dropdown.scrollHeight + 'px'
             : '0';
-
           icon.classList.toggle('rotate-180');
         });
       });
     });
-
 
 // sticy Header
 window.addEventListener("scroll", function () {
