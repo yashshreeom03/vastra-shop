@@ -1,37 +1,70 @@
-// side nav bar
-const menuToggle = document.getElementById('menuToggle');
-const menuClose = document.getElementById('menuClose');
-const sidebarMenu = document.getElementById('sidebarMenu');
-const overlay = document.getElementById('overlay');
-const body = document.body;
 
-function openMenu() {
-  sidebarMenu.classList.remove('-translate-x-full');
-  sidebarMenu.classList.add('translate-x-0');
-  overlay.classList.remove('hidden');
-  if (window.innerWidth <= 1024) {
-    body.classList.add('overflow-hidden');
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+
+  // MENU SIDEBAR CODE
+  const menuToggle = document.getElementById('menuToggle');
+  const menuClose = document.getElementById('menuClose');
+  const sidebarMenu = document.getElementById('sidebarMenu');
+  const overlay = document.getElementById('overlay');
+
+  if (menuToggle && menuClose && sidebarMenu && overlay) {
+    function openMenu() {
+      sidebarMenu.classList.remove('-translate-x-full');
+      sidebarMenu.classList.add('translate-x-0');
+      overlay.classList.remove('hidden');
+      if (window.innerWidth <= 1024) {
+        body.classList.add('overflow-hidden');
+      }
+    }
+
+    function closeMenu() {
+      sidebarMenu.classList.add('-translate-x-full');
+      sidebarMenu.classList.remove('translate-x-0');
+      overlay.classList.add('hidden');
+      if (window.innerWidth <= 1024) {
+        body.classList.remove('overflow-hidden');
+      }
+    }
+
+    menuToggle.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
   }
-}
 
-function closeMenu() {
-  sidebarMenu.classList.add('-translate-x-full');
-  sidebarMenu.classList.remove('translate-x-0');
-  overlay.classList.add('hidden');
-  if (window.innerWidth <= 1024) {
-    body.classList.remove('overflow-hidden');
+    // CART SIDEBAR CODE
+  const cartToggle = document.getElementById("cartToggle");
+  const cartSidebar = document.getElementById("cartSidebar");
+  const closeCart = document.getElementById("closeCart");
+  const cartBackdrop = document.getElementById("cartBackdrop");
+
+  if (cartToggle && cartSidebar && closeCart && cartBackdrop) {
+    cartToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      cartSidebar.classList.remove("translate-x-full");
+      cartBackdrop.classList.remove("hidden");
+
+      if (window.innerWidth <= 1024) {
+        body.classList.add("overflow-hidden");
+      }
+    });
+
+    function closeCartSidebar() {
+      cartSidebar.classList.add("translate-x-full");
+      cartBackdrop.classList.add("hidden");
+      body.classList.remove("overflow-hidden");
+    }
+
+    closeCart.addEventListener("click", closeCartSidebar);
+    cartBackdrop.addEventListener("click", closeCartSidebar);
   }
-}
 
-menuToggle.addEventListener('click', openMenu);
-menuClose.addEventListener('click', closeMenu);
-overlay.addEventListener('click', closeMenu);
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth > 1024) {
-    body.classList.remove('overflow-hidden');
-  }
+  // WINDOW RESIZE: Remove scroll lock always
+  window.addEventListener("resize", () => {
+    body.classList.remove("overflow-hidden");
+  });
 });
+
 
 // Dropdown menu
 function initDropdownBehavior() {
@@ -141,31 +174,36 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Top Picks Video Pop
-const modal = document.getElementById("videoModal");
-const modalVideo = document.getElementById("modalVideo");
-const closeBtn = document.getElementById("modalClose");
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("videoModal");
+  const modalVideo = document.getElementById("modalVideo");
+  const closeBtn = document.getElementById("modalClose");
 
-  document.querySelectorAll(".video-thumb").forEach((video) => {
-    video.addEventListener("click", () => {
-      const videoSrc = video.getAttribute("data-src");
-      modalVideo.src = videoSrc;
-      modal.classList.remove("hidden");
+  if (modal && modalVideo && closeBtn) {
+    document.querySelectorAll(".video-thumb").forEach((video) => {
+      video.addEventListener("click", () => {
+        const videoSrc = video.getAttribute("data-src");
+        modalVideo.src = videoSrc;
+        modal.classList.remove("hidden");
+      });
     });
-  });
 
-  closeBtn.addEventListener("click", () => {
-    modal.classList.add("hidden");
-    modalVideo.pause();
-    modalVideo.src = "";
-  });
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
+    closeBtn.addEventListener("click", () => {
       modal.classList.add("hidden");
       modalVideo.pause();
       modalVideo.src = "";
-    }
-  });
+    });
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+        modalVideo.pause();
+        modalVideo.src = "";
+      }
+    });
+  }
+});
+
 
 // Testimonials
 const swiper = new Swiper(".testimonialSwiper", {
@@ -198,36 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// cart
-const cartToggle = document.getElementById("cartToggle");
-const cartSidebar = document.getElementById("cartSidebar");
-const closeCart = document.getElementById("closeCart");
-const cartBackdrop = document.getElementById("cartBackdrop");
-
-cartToggle.addEventListener("click", (e) => {
-  e.preventDefault();
-  cartSidebar.classList.remove("translate-x-full");
-  cartBackdrop.classList.remove("hidden");
-
-  if (window.innerWidth <= 1024) {
-    body.classList.add("overflow-hidden");
-  }
-});
-
-function closeCartSidebar() {
-  cartSidebar.classList.add("translate-x-full");
-  cartBackdrop.classList.add("hidden");
-  body.classList.remove("overflow-hidden");
-}
-
-closeCart.addEventListener("click", closeCartSidebar);
-cartBackdrop.addEventListener("click", closeCartSidebar);
-
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 1024) {
-    body.classList.remove("overflow-hidden");
-  }
-});
 
 // Quick View Modal number count
 function incrementValue(button) {
@@ -246,3 +254,4 @@ function decrementValue(button) {
       input.value = currentValue - 1;
     }
 }
+
