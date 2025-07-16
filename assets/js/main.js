@@ -157,6 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
+
   // Top Picks
   new Swiper(".videoSlider", {
     slidesPerView: 2,
@@ -168,6 +169,25 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       1024: {
         slidesPerView: 6,
+      },
+    },
+  });
+
+  // Top Picks
+  new Swiper(".recently-viewed", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 4,
       },
     },
   });
@@ -284,3 +304,87 @@ function toggleDropdown() {
     console.log("Fetching products by:", selectedValue);
     // Add your product fetching logic here
   }
+
+
+
+  const images = [
+      'assets/images/collection-details/collection-details-1.png',
+      'assets/images/collection-details/collection-details-2.png',
+      'assets/images/collection-details/collection-details-3.png',
+      'assets/images/collection-details/collection-details-4.png'
+    ];
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = images[currentIndex];
+      lightboxImg.classList.remove("scale-150", "cursor-zoom-out");
+      lightboxImg.classList.add("cursor-zoom-in");
+      document.getElementById("lightbox").classList.remove("hidden");
+      document.getElementById("lightbox").classList.add("flex");
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.remove("flex");
+      document.getElementById("lightbox").classList.add("hidden");
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateLightboxImage();
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateLightboxImage();
+    }
+
+    function updateLightboxImage() {
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = images[currentIndex];
+      lightboxImg.classList.remove("scale-150", "cursor-zoom-out");
+      lightboxImg.classList.add("cursor-zoom-in");
+    }
+
+    function toggleZoom() {
+      const img = document.getElementById("lightbox-img");
+      if (img.classList.contains("scale-150")) {
+        img.classList.remove("scale-150", "cursor-zoom-out");
+        img.classList.add("cursor-zoom-in");
+      } else {
+        img.classList.add("scale-150", "cursor-zoom-out");
+        img.classList.remove("cursor-zoom-in");
+      }
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
+
+
+  function toggleAccordion(id) {
+      const content = document.getElementById(`content-${id}`);
+      const icon = document.getElementById(`icon-${id}`);
+      const isOpen = content.classList.contains('max-h-[1000px]');
+
+      // Close all
+      document.querySelectorAll('.accordion-content').forEach(el => {
+        el.classList.remove('max-h-[1000px]');
+        el.classList.add('max-h-0');
+      });
+
+      document.querySelectorAll('svg[id^="icon-"]').forEach(el => {
+        el.classList.remove('rotate-180');
+      });
+
+      // Toggle clicked item
+      if (!isOpen) {
+        content.classList.remove('max-h-0');
+        content.classList.add('max-h-[1000px]');
+        icon.classList.add('rotate-180'); // rotates arrow upward (⬆)
+      }
+    }

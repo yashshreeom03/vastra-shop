@@ -76,7 +76,8 @@ input:focus-visible{
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active,
-.testimonialSwiper .swiper-pagination-bullet.swiper-pagination-bullet-active{
+.testimonialSwiper .swiper-pagination-bullet.swiper-pagination-bullet-active,
+.recently-viewed .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
 	background-color: var(--primary-color);
 	opacity: 1;
 }
@@ -131,7 +132,8 @@ input:focus-visible{
 	bottom: -60px;
 }
 
-.testimonialSwiper .swiper-pagination-bullet{
+.testimonialSwiper .swiper-pagination-bullet,
+.recently-viewed .swiper-pagination .swiper-pagination-bullet{
 	background-color: black;
 }
 
@@ -157,4 +159,8 @@ input:focus-visible{
     to {
         transform: rotate(360deg);
     }
+}
+
+.accordion-content {
+      transition: max-height 0.4s ease;
 }
