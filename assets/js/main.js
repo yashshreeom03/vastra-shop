@@ -255,3 +255,32 @@ function decrementValue(button) {
     }
 }
 
+
+
+function toggleDropdown() {
+    const menu = document.getElementById('Sort-dropdownMenu');
+    menu.classList.toggle('hidden');
+  }
+
+  function changeSort(element) {
+    const name = element.getAttribute('data-name');
+    document.getElementById('selectedSort').textContent = name;
+    document.getElementById('Sort-dropdownMenu').classList.add('hidden');
+
+    // Optional: trigger fetch function
+    ChangeProductFetchType(element);
+  }
+
+  // Optional: close dropdown if clicking outside
+  document.addEventListener('click', function (e) {
+    const container = document.getElementById('sortByContainer');
+    if (!container.contains(e.target)) {
+      document.getElementById('Sort-dropdownMenu').classList.add('hidden');
+    }
+  });
+
+  function ChangeProductFetchType(el) {
+    const selectedValue = el.getAttribute('data-value');
+    console.log("Fetching products by:", selectedValue);
+    // Add your product fetching logic here
+  }

@@ -258,7 +258,7 @@
                 <div>
                     <ol class="text-lg flex items-center gap-3.5">
                         <li class="flex items-center gap-3.5 text-[#6B6A6A]"><a href="index.html">Home</a> <img src="assets/images/icons/chevron-right.svg" alt="chevron-right"></li>
-                        <li class="">Wishlist</li>
+                        <li class="">Kurta Suit Set</li>
                     </ol>
                 </div>
             </div>
@@ -268,41 +268,119 @@
         <!-- End Wishlist Section -->
         <section class="py-14">
             <div class="container">
-                <p class="text-lg flex justify-center font-semibold">Your wishlist is empty</p>
+            <div class="flex flex-col lg:flex-row gap-6">
+                    <div id="filterPanel" class="sticky lg:top-[150px] lg:max-h-fit max-lg:fixed inset-y-0 left-0 max-lg:z-[999999] w-3/4 max-w-[386px] bg-white p-4 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out overflow-y-auto space-y-6">  </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-6 gap-4 max-sm:flex-col">
+                            <p>Showing all <span>9</span> results</p>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-7 sm:gap-y-[60px] sm:mb-[88px] mb-10">
-					<div class="relative group">
-						<div class="relative overflow-hidden rounded-3xl mb-3">
+                            <!-- Sort dropdown (always visible or adjust as needed) -->
+                            <!-- Container -->
+                            <div class="flex items-center gap-6">
+                                <div class="relative viewshortby list-none md:border-r md:pr-5 md:border-r-[#0000001A]" id="sortByContainer">
+                                    <button onclick="toggleDropdown()" class="flex items-center font-medium text-[#767676]">
+                                        Sort By:
+                                        <label id="selectedSort" class="ml-1 text-[#2D1F21]">Relevance</label>
+                                            <svg class="ml-1 w-4 h-4 text-[#767676]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                            </svg>
+                                    </button>
+                                    <div id="Sort-dropdownMenu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10 hidden">
+                                        <span class="block p-3 text-gray-700 hover:bg-gray-100 cursor-pointer" data-value="POPULAR" data-name="Relevance" onclick="changeSort(this)">Relevance</span>
+                                        <span class="block p-3 text-gray-700 hover:bg-gray-100 cursor-pointer" data-value="PRODUCT" data-name="Latest Arrivals" onclick="changeSort(this)">Latest Arrivals</span>
+                                        <span class="block p-3 text-gray-700 hover:bg-gray-100 cursor-pointer" data-value="HIGH" data-name="Price: High to Low" onclick="changeSort(this)">Price: High to Low</span>
+                                        <span class="block p-3 text-gray-700 hover:bg-gray-100 cursor-pointer" data-value="LOW" data-name="Price: Low to High" onclick="changeSort(this)">Price: Low to High</span>
+                                        <span class="block p-3 text-gray-700 hover:bg-gray-100 cursor-pointer" data-value="BESTSELLER" data-name="Bestseller" onclick="changeSort(this)">Bestseller</span>
+                                    </div>
+                                </div>
+                                <button class="text-[#767676] hover:text-[#FB2944] cursor-pointer max-md:hidden">
+                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.1875 0H4.8125C2.15462 0 0 2.15462 0 4.8125V17.1875C0 19.8454 2.15462 22 4.8125 22H17.1875C19.8454 22 22 19.8454 22 17.1875V4.8125C22 2.15462 19.8454 0 17.1875 0ZM20.625 17.1875C20.625 19.086 19.086 20.625 17.1875 20.625H4.8125C2.91401 20.625 1.375 19.086 1.375 17.1875V4.8125C1.375 2.91401 2.91401 1.375 4.8125 1.375H17.1875C19.086 1.375 20.625 2.91401 20.625 4.8125V17.1875Z" fill="currentColor"/>
+                                        <path d="M17.1875 5.5H8.9375V6.875H17.1875V5.5Z" fill="currentColor"/>
+                                        <path d="M17.1875 10.3125H8.9375V11.6875H17.1875V10.3125Z" fill="currentColor"/>
+                                        <path d="M17.1875 15.125H8.9375V16.5H17.1875V15.125Z" fill="currentColor"/>
+                                        <path d="M6.1875 7.5625C6.94689 7.5625 7.5625 6.94689 7.5625 6.1875C7.5625 5.42811 6.94689 4.8125 6.1875 4.8125C5.42811 4.8125 4.8125 5.42811 4.8125 6.1875C4.8125 6.94689 5.42811 7.5625 6.1875 7.5625Z" fill="currentColor"/>
+                                        <path d="M6.1875 12.375C6.94689 12.375 7.5625 11.7594 7.5625 11C7.5625 10.2406 6.94689 9.625 6.1875 9.625C5.42811 9.625 4.8125 10.2406 4.8125 11C4.8125 11.7594 5.42811 12.375 6.1875 12.375Z" fill="currentColor"/>
+                                        <path d="M6.1875 17.1875C6.94689 17.1875 7.5625 16.5719 7.5625 15.8125C7.5625 15.0531 6.94689 14.4375 6.1875 14.4375C5.42811 14.4375 4.8125 15.0531 4.8125 15.8125C4.8125 16.5719 5.42811 17.1875 6.1875 17.1875Z" fill="currentColor"/>
+                                    </svg>
+                                </button>
+                                <button class="text-[#767676] hover:text-[#FB2944] cursor-pointer max-md:hidden">
+                                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6.80938 9.32776H2.51835C1.12956 9.32776 0 8.19819 0 6.8094V2.51836C0 1.12957 1.12956 0 2.51835 0H6.80938C8.19816 0 9.32773 1.12957 9.32773 2.51836V6.8094C9.32773 8.19778 8.19775 9.32776 6.80938 9.32776ZM2.51835 1.16238C1.77064 1.16238 1.16238 1.77064 1.16238 2.51836V6.8094C1.16238 7.55712 1.77064 8.16538 2.51835 8.16538H6.80938C7.55709 8.16538 8.16535 7.55712 8.16535 6.8094V2.51836C8.16535 1.77064 7.55709 1.16238 6.80938 1.16238H2.51835Z" fill="currentColor"/>
+                                        <path d="M18.4817 9.32776H14.1907C12.8019 9.32776 11.6724 8.19819 11.6724 6.8094V2.51836C11.6724 1.12957 12.8019 0 14.1907 0H18.4817C19.8705 0 21.0001 1.12957 21.0001 2.51836V6.8094C21.0001 8.19778 19.8705 9.32776 18.4817 9.32776ZM14.1907 1.16238C13.443 1.16238 12.8347 1.77064 12.8347 2.51836V6.8094C12.8347 7.55712 13.443 8.16538 14.1907 8.16538H18.4817C19.2295 8.16538 19.8377 7.55712 19.8377 6.8094V2.51836C19.8377 1.77064 19.2295 1.16238 18.4817 1.16238H14.1907Z" fill="currentColor"/>
+                                        <path d="M18.4817 21H14.1907C12.8019 21 11.6724 19.8705 11.6724 18.4817V14.1906C11.6724 12.8018 12.8019 11.6723 14.1907 11.6723H18.4817C19.8705 11.6723 21.0001 12.8018 21.0001 14.1906V18.4817C21.0001 19.8701 19.8705 21 18.4817 21ZM14.1907 12.8347C13.443 12.8347 12.8347 13.4429 12.8347 14.1906V18.4817C12.8347 19.2294 13.443 19.8377 14.1907 19.8377H18.4817C19.2295 19.8377 19.8377 19.2294 19.8377 18.4817V14.1906C19.8377 13.4429 19.2295 12.8347 18.4817 12.8347H14.1907Z" fill="currentColor"/>
+                                        <path d="M6.80938 21H2.51835C1.12956 21 0 19.8701 0 18.4817V14.1906C0 12.8018 1.12956 11.6723 2.51835 11.6723H6.80938C8.19816 11.6723 9.32773 12.8018 9.32773 14.1906V18.4817C9.32773 19.8701 8.19775 21 6.80938 21ZM2.51835 12.8347C1.77064 12.8347 1.16238 13.4429 1.16238 14.1906V18.4817C1.16238 19.2294 1.77064 19.8377 2.51835 19.8377H6.80938C7.55709 19.8377 8.16535 19.2294 8.16535 18.4817V14.1906C8.16535 13.4429 7.55709 12.8347 6.80938 12.8347H2.51835Z" fill="currentColor"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-7 sm:gap-y-[60px]">
+                            <!-- Latest Products 1 -->
+                            <div class="relative group">
+                                <div class="relative overflow-hidden rounded-3xl mb-3">
 
-							<!-- Front Product Image (visible by default) -->
-							<img src="assets/images/latest-products/latest-products-1.JPG" alt="gown Front" class="max-h-[502px] mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
-							<!-- Back Product Image (visible on hover) -->
-							<img src="assets/images/latest-products/latest-products-1-back.JPG" alt="gown Back" class="max-h-[502px] mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-							
-							<!-- Add to Cart Button (slides up on hover) -->
-							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
-								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
-								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
-								<img src="assets/images/icons/cart-white.svg" alt="cart-white" class="mr-2.5">
-								<span class="text-white text-[17px] font-medium">ADD TO CART</span>
-							</a>
+                                    <!-- Front Product Image (visible by default) -->
+                                    <img src="assets/images/latest-products/latest-products-1.JPG" alt="gown Front" class="max-h-[502px] mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+                                    <!-- Back Product Image (visible on hover) -->
+                                    <img src="assets/images/latest-products/latest-products-1-back.JPG" alt="gown Back" class="max-h-[502px] mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    
+                                    <!-- Add to Cart Button (slides up on hover) -->
+                                    <a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
+                                        lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
+                                        lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+                                        <img src="assets/images/icons/cart-white.svg" alt="cart-white" class="mr-2.5">
+                                        <span class="text-white text-[17px] font-medium">ADD TO CART</span>
+                                    </a>
 
-							<!-- Wishlist/Heart Button (appears on hover) -->
-							<button class="bg-[#F02D46] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5">
-								<img src="assets/images/icons/like-white.svg" alt="like-white">
-							</button>
-						</div>
+                                    <!-- Wishlist/Heart Button (appears on hover) -->
+                                    <button class="bg-[#F02D46] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5">
+                                        <img src="assets/images/icons/like-white.svg" alt="like-white">
+                                    </button>
+                                </div>
 
-						<!-- Product Title -->
-						<a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</a>
-						
-						<!-- Product Pricing -->
-						<div class="text-lg font-medium">
-							<span class="text-[var(--primary-color)] mr-2"><span>₹</span>2,780 <span>INR</span></span>
-							<span class="line-through text-[#767676]"><span>₹</span>4,999 <span>INR</span></span>
-						</div>
-					</div>
-				</div>
+                                <!-- Product Title -->
+                                <a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</a>
+                                
+                                <!-- Product Pricing -->
+                                <div class="text-lg font-medium">
+                                    <span class="text-[var(--primary-color)] mr-2"><span>₹</span>2,780 <span>INR</span></span>
+                                    <span class="line-through text-[#767676]"><span>₹</span>4,999 <span>INR</span></span>
+                                </div>
+                            </div>
+                            <div class="relative group">
+                                <div class="relative overflow-hidden rounded-3xl mb-3">
+
+                                    <!-- Front Product Image (visible by default) -->
+                                    <img src="assets/images/latest-products/latest-products-1.JPG" alt="gown Front" class="max-h-[502px] mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+                                    <!-- Back Product Image (visible on hover) -->
+                                    <img src="assets/images/latest-products/latest-products-1-back.JPG" alt="gown Back" class="max-h-[502px] mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    
+                                    <!-- Add to Cart Button (slides up on hover) -->
+                                    <a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
+                                        lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
+                                        lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+                                        <img src="assets/images/icons/cart-white.svg" alt="cart-white" class="mr-2.5">
+                                        <span class="text-white text-[17px] font-medium">ADD TO CART</span>
+                                    </a>
+
+                                    <!-- Wishlist/Heart Button (appears on hover) -->
+                                    <button class="bg-[#F02D46] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5">
+                                        <img src="assets/images/icons/like-white.svg" alt="like-white">
+                                    </button>
+                                </div>
+
+                                <!-- Product Title -->
+                                <a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</a>
+                                
+                                <!-- Product Pricing -->
+                                <div class="text-lg font-medium">
+                                    <span class="text-[var(--primary-color)] mr-2"><span>₹</span>2,780 <span>INR</span></span>
+                                    <span class="line-through text-[#767676]"><span>₹</span>4,999 <span>INR</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- End Wishlist Section -->
