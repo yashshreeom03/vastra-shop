@@ -287,11 +287,10 @@ function toggleDropdown() {
     document.getElementById('selectedSort').textContent = name;
     document.getElementById('Sort-dropdownMenu').classList.add('hidden');
 
-    // Optional: trigger fetch function
+    // Optional: trigger fetch
     ChangeProductFetchType(element);
   }
 
-  // Optional: close dropdown if clicking outside
   document.addEventListener('click', function (e) {
     const container = document.getElementById('sortByContainer');
     if (!container.contains(e.target)) {
@@ -302,7 +301,7 @@ function toggleDropdown() {
   function ChangeProductFetchType(el) {
     const selectedValue = el.getAttribute('data-value');
     console.log("Fetching products by:", selectedValue);
-    // Add your product fetching logic here
+    // Your fetch logic here
   }
 
 
@@ -388,3 +387,172 @@ function toggleDropdown() {
         icon.classList.add('rotate-180'); // rotates arrow upward (⬆)
       }
     }
+
+
+
+// FIlter in Range Count
+const minR = document.getElementById('minRange');
+const maxR = document.getElementById('maxRange');
+const minP = document.getElementById('minPrice');
+const maxP = document.getElementById('maxPrice');
+const highlight = document.getElementById('rangeHighlight');
+const maxVal = 17249;
+
+const format = v => `₹${(+v).toLocaleString('en-IN', { minimumFractionDigits: 2 })}`;
+
+const update = () => {
+  const min = +minR.value;
+  const max = +maxR.value;
+
+  // Clamp only visually, no push effect
+  const percentMin = Math.min((min / maxVal) * 100, 100);
+  const percentMax = Math.min((max / maxVal) * 100, 100);
+
+  highlight.style.left = `${percentMin}%`;
+  highlight.style.right = `${100 - percentMax}%`;
+
+  minP.textContent = format(min);
+  maxP.textContent = format(max);
+};
+
+minR.addEventListener('input', () => {
+  if (+minR.value > +maxR.value) minR.value = maxR.value;
+  update();
+});
+
+maxR.addEventListener('input', () => {
+  if (+maxR.value < +minR.value) maxR.value = minR.value;
+  update();
+});
+
+update();
+
+
+// Filter Toggle
+const toggleBtn     = document.getElementById('filterToggle');
+const filterPanel   = document.getElementById('filterPanel');
+const filterOverlay = document.getElementById('filterOverlay');
+const filterClose   = document.getElementById('filterClose');
+
+function openFilters() {
+  filterPanel.classList.remove('-translate-x-full');
+  filterOverlay.classList.remove('hidden');
+  if (window.innerWidth <= 1024) {
+    document.body.classList.add('overflow-hidden');
+  }
+}
+function closeFilters() {
+  filterPanel.classList.add('-translate-x-full');
+  filterOverlay.classList.add('hidden');
+  if (window.innerWidth <= 1024) {
+    document.body.classList.remove('overflow-hidden');
+  }
+}
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 1024) {
+    document.body.classList.remove('overflow-hidden');
+  }
+});
+
+toggleBtn.addEventListener('click', openFilters);
+filterOverlay.addEventListener('click', closeFilters);
+filterClose.addEventListener('click', closeFilters);
+
+
+
+function toggleAccordion(btn) {
+  const content = btn.nextElementSibling;
+  const chevron = btn.querySelector(".chevron");
+
+  const isOpen = content.style.maxHeight || content.hasAttribute("data-open");
+
+  if (isOpen) {
+    content.style.maxHeight = null;
+    chevron.style.transform = "rotate(0deg)";
+    content.removeAttribute("data-open");
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+    chevron.style.transform = "rotate(180deg)";
+    content.setAttribute("data-open", "");
+  }
+}
+
+// Open by default if element has data-open
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".filter-content[data-open]").forEach(content => {
+    content.style.maxHeight = content.scrollHeight + "px";
+    const chevron = content.previousElementSibling.querySelector(".chevron");
+    if (chevron) chevron.style.transform = "rotate(180deg)";
+  });
+});
+
+
+
+const productGrid = document.getElementById("productGrid");
+const rowViewBtn = document.querySelector(".row-viwe");
+const gridViewBtn = document.querySelector(".grid-viwe");
+
+const toggleProductBoxes = (isRow) => {
+  document.querySelectorAll(".product-box").forEach(box => {
+    const img = box.querySelector(".main-img");
+    const productDetails = box.querySelector(".product-details");
+
+    if (isRow) {
+      box.classList.add("flex", "gap-4");
+      img.classList.remove("max-h-[502px]");
+      img.classList.add("max-h-[240px]", "min-h-[240px]");
+      productDetails.classList.remove("hidden");
+    } else {
+      box.classList.remove("flex", "gap-4");
+      img.classList.remove("max-h-[240px]", "min-h-[240px]");
+      img.classList.add("max-h-[502px]");
+      productDetails.classList.add("hidden");
+    }
+  });
+};
+
+const setButtonStyles = (isRow) => {
+  if (isRow) {
+    rowViewBtn.classList.add("text-[#FB2944]");
+    rowViewBtn.classList.remove("hover:text-black");
+    gridViewBtn.classList.remove("text-[#FB2944]");
+    gridViewBtn.classList.add("hover:text-black");
+  } else {
+    gridViewBtn.classList.add("text-[#FB2944]");
+    gridViewBtn.classList.remove("hover:text-black");
+    rowViewBtn.classList.remove("text-[#FB2944]");
+    rowViewBtn.classList.add("hover:text-black");
+  }
+};
+
+// Default: Grid view
+gridViewBtn.classList.add("text-[#FB2944]");
+toggleProductBoxes(false);
+
+rowViewBtn.addEventListener("click", () => {
+  if (window.innerWidth >= 768) {
+    productGrid.classList.remove("grid", "sm:grid-cols-2", "lg:grid-cols-3");
+    productGrid.classList.add("flex", "flex-col", "gap-y-7");
+    setButtonStyles(true);
+    toggleProductBoxes(true);
+  } else {
+    alert("Row view is only available on medium screens and above (≥768px).");
+  }
+});
+
+gridViewBtn.addEventListener("click", () => {
+  productGrid.classList.remove("flex", "flex-col", "gap-y-7");
+  productGrid.classList.add("grid", "sm:grid-cols-2", "lg:grid-cols-3");
+  setButtonStyles(false);
+  toggleProductBoxes(false);
+});
+
+// Reset to grid view if resized below md
+window.addEventListener("resize", () => {
+  if (window.innerWidth < 768) {
+    productGrid.classList.remove("flex", "flex-col", "gap-y-7");
+    productGrid.classList.add("grid", "sm:grid-cols-2", "lg:grid-cols-3");
+    setButtonStyles(false);
+    toggleProductBoxes(false);
+  }
+});
