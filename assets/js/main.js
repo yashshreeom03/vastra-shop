@@ -496,17 +496,26 @@ const toggleProductBoxes = (isRow) => {
   document.querySelectorAll(".product-box").forEach(box => {
     const img = box.querySelector(".main-img");
     const productDetails = box.querySelector(".product-details");
+    const imageWrapper = box.querySelector(".image-wrapper");
+    const hoverBtn = imageWrapper.querySelector("a");
+    const rowAddBtn = box.querySelector(".row-add-btn");
 
     if (isRow) {
-      box.classList.add("flex", "gap-4");
+      box.classList.add("md:flex", "md:gap-4");
       img.classList.remove("max-h-[502px]");
       img.classList.add("max-h-[240px]", "min-h-[240px]");
       productDetails.classList.remove("hidden");
+      if (hoverBtn) hoverBtn.classList.add("hidden");
+      if (rowAddBtn) rowAddBtn.classList.remove("hidden");
+      imageWrapper.classList.remove("mb-3"); // ✅ Remove margin in row-view
     } else {
-      box.classList.remove("flex", "gap-4");
+      box.classList.remove("md:flex", "md:gap-4");
       img.classList.remove("max-h-[240px]", "min-h-[240px]");
       img.classList.add("max-h-[502px]");
       productDetails.classList.add("hidden");
+      if (hoverBtn) hoverBtn.classList.remove("hidden");
+      if (rowAddBtn) rowAddBtn.classList.add("hidden");
+      imageWrapper.classList.add("mb-3"); // ✅ Restore margin in grid-view
     }
   });
 };
@@ -525,7 +534,7 @@ const setButtonStyles = (isRow) => {
   }
 };
 
-// Default: Grid view
+// Default grid view on load
 gridViewBtn.classList.add("text-[#FB2944]");
 toggleProductBoxes(false);
 
@@ -547,7 +556,6 @@ gridViewBtn.addEventListener("click", () => {
   toggleProductBoxes(false);
 });
 
-// Reset to grid view if resized below md
 window.addEventListener("resize", () => {
   if (window.innerWidth < 768) {
     productGrid.classList.remove("flex", "flex-col", "gap-y-7");

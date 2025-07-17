@@ -281,7 +281,7 @@
 						</div>
 						<div>
 							<div class="border-b border-b-[#0000001A] py-6 max-xl:px-3">
-								<button type="button" onclick="toggleAccordion(this)" class="w-full flex justify-between items-center font-semibold text-[17px]">
+								<button type="button" onclick="toggleAccordion(this)" class="w-full flex justify-between items-center font-semibold text-[17px] cursor-pointer">
 									By Price
 									<img src="assets/images/icons/chevron-down.svg" alt="" class="chevron transition-transform duration-300">
 								</button>
@@ -290,8 +290,8 @@
 										<div class="relative h-6">
 											<div class="absolute top-1/2 left-0 right-0 h-1 bg-gray-300 rounded transform -translate-y-1/2 cursor-ew-resize"></div>
 											<div id="rangeHighlight" class="absolute top-1/2 h-1 bg-black rounded transform -translate-y-1/2"></div>
-											<input type="range" id="minRange" min="0" max="17249" value="0" class="absolute pointer-events-none w-full h-6 appearance-none bg-transparent [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-[3px] [&::-webkit-slider-thumb]:border-black [&::-webkit-slider-thumb]:appearance-none">
-											<input type="range" id="maxRange" min="0" max="17249" value="17249" class="absolute pointer-events-none w-full h-6 appearance-none bg-transparent [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-[3px] [&::-webkit-slider-thumb]:border-black [&::-webkit-slider-thumb]:appearance-none">
+											<input type="range" id="minRange" min="0" max="17249" value="0" class="absolute pointer-events-none cursor-pointer w-full h-6 appearance-none bg-transparent [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-[3px] [&::-webkit-slider-thumb]:border-black [&::-webkit-slider-thumb]:appearance-none">
+											<input type="range" id="maxRange" min="0" max="17249" value="17249" class="absolute pointer-events-none cursor-pointer w-full h-6 appearance-none bg-transparent [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-[3px] [&::-webkit-slider-thumb]:border-black [&::-webkit-slider-thumb]:appearance-none">
 										</div>
 										<div class="flex items-center gap-1 text-[17px] font-medium mt-3">
 											<span class="text-[15px] text-[#767676]">Price:</span>
@@ -303,46 +303,46 @@
 							</div>
 
 							<div class="border-b border-b-[#0000001A] py-6 max-xl:px-3">
-								<button type="button" onclick="toggleAccordion(this)" class="w-full flex justify-between items-center font-semibold text-[17px]">
+								<button type="button" onclick="toggleAccordion(this)" class="w-full flex justify-between items-center font-semibold text-[17px] cursor-pointer">
 									By Size
 									<img src="assets/images/icons/chevron-down.svg" alt="" class="chevron transition-transform duration-300">
 								</button>
 								<div class="filter-content overflow-hidden max-h-0 transition-all duration-300 space-y-1 text-sm pr-1" data-open>
 									<div class="max-h-56 overflow-y-auto mt-3 space-y-4 custom-scroll">
-										<label class="flex items-center gap-3 text-[17px] font-medium">
+										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer">
 											<input type="checkbox" class="accent-black" /> <span>L <span class="text-base text-[#767676]">(17)</span></span>
 										</label>
-										<label class="flex items-center gap-3 text-[17px] font-medium">
+										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer">
 											<input type="checkbox" class="accent-black" /> <span>S <span class="text-base text-[#767676]">(10)</span></span>
 										</label>
-										<label class="flex items-center gap-3 text-[17px] font-medium">
+										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer">
 											<input type="checkbox" class="accent-black" /> <span>M <span class="text-base text-[#767676]">(12)</span></span>
 										</label>
-										<label class="flex items-center gap-3 text-[17px] font-medium">
+										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer">
 											<input type="checkbox" class="accent-black" /> <span>Xl <span class="text-base text-[#767676]">(32)</span></span>
 										</label>
-										<label class="flex items-center gap-3 text-[17px] font-medium">
+										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer">
 											<input type="checkbox" class="accent-black" /> <span>Xs <span class="text-base text-[#767676]">(45)</span></span>
 										</label>
-										<label class="flex items-center gap-3 text-[17px] font-medium">
+										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer">
 											<input type="checkbox" class="accent-black" /> <span>Xxl <span class="text-base text-[#767676]">(21)</span></span>
 										</label>
-										<label class="flex items-center gap-3 text-[17px] font-medium">
+										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer">
 											<input type="checkbox" class="accent-black" /> <span>Xx <span class="text-base text-[#767676]">(17)</span></span>
 										</label>
 									</div>
     							</div>
 							</div>
 							<div class="border-b border-b-[#0000001A] py-6 max-xl:px-3">
-								<button type="button" onclick="toggleAccordion(this)" class="w-full flex justify-between items-center font-semibold text-[17px]">
+								<button type="button" onclick="toggleAccordion(this)" class="w-full flex justify-between items-center font-semibold text-[17px] cursor-pointer">
 									By Color
 									<img src="assets/images/icons/chevron-down.svg" alt="" class="chevron transition-transform duration-300">
 								</button>
 								<div class="filter-content overflow-hidden max-h-0 transition-all duration-300" data-open>
 									<ul class="max-h-56 overflow-y-auto mt-3 space-y-4 custom-scroll">
 										<li>
-											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium">
-												<div class="rounded-full h-[30px] w-[30px] p-0.5 duration-150 border-[1px] block border-[#CECECE]">
+											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium cursor-pointer">
+												<div class="rounded-full h-[30px] w-[30px] p-0.5 duration-150 border-[1px] block filter-color group-hover:border-[#CECECE] active">
 													<span class="inline-block w-full h-full rounded-full bg-[#FF98DD]"></span>
 												</div>
 												Baby Pink and Pink
@@ -350,8 +350,8 @@
 											</a>
 										</li>
 										<li>
-											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium">
-												<div class="rounded-full h-[30px] w-[30px] p-0.5 duration-150 border-[1px] block border-transparent group-hover:border-[#CECECE]">
+											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium cursor-pointer">
+												<div class="rounded-full h-[30px] w-[30px] p-0.5 duration-150 border-[1px] block border-transparent filter-color group-hover:border-[#CECECE]">
 													<span class="inline-block w-full h-full rounded-full bg-[#000000]"></span>
 												</div>
 												Black
@@ -359,8 +359,8 @@
 											</a>
 										</li>
 										<li>
-											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium">
-												<div class="rounded-full h-[30px] w-[30px] p-0.5 duration-150 border-[1px] block border-transparent group-hover:border-[#CECECE]">
+											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium cursor-pointer">
+												<div class="rounded-full h-[30px] w-[30px] p-0.5 duration-150 border-[1px] block border-transparent filter-color group-hover:border-[#CECECE]">
 													<span class="inline-block w-full h-full rounded-full bg-[#AE35FF]"></span>
 												</div>
 												Purple
@@ -368,8 +368,8 @@
 											</a>
 										</li>
 										<li>
-											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium">
-												<div class="rounded-full h-[30px] w-[30px] p-0.5 duration-150 border-[1px] block border-transparent group-hover:border-[#CECECE]">
+											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium cursor-pointer">
+												<div class="rounded-full h-[30px] w-[30px] p-0.5 duration-150 border-[1px] block border-transparent filter-color group-hover:border-[#CECECE]">
 													<span class="inline-block w-full h-full rounded-full bg-[#69CDFF]"></span>
 												</div>
 												Multi Sky
@@ -377,8 +377,8 @@
 											</a>
 										</li>
 										<li>
-											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium">
-												<div class="rounded-full h-[30px] w-[30px] p-0.5 duration-150 border-[1px] block border-transparent group-hover:border-[#CECECE]">
+											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium cursor-pointer">
+												<div class="rounded-full h-[30px] w-[30px] p-0.5 duration-150 border-[1px] block border-transparent filter-color group-hover:border-[#CECECE]">
 													<span class="inline-block w-full h-full rounded-full bg-[#20CF98]"></span>
 												</div>
 												Green
@@ -386,8 +386,8 @@
 											</a>
 										</li>
 										<li>
-											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium">
-												<div class="rounded-full h-[30px] w-[30px] p-0.5 duration-150 border-[1px] block border-transparent group-hover:border-[#CECECE]">
+											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium cursor-pointer">
+												<div class="rounded-full h-[30px] w-[30px] p-0.5 duration-150 border-[1px] block border-transparent filter-color group-hover:border-[#CECECE]">
 													<span class="inline-block w-full h-full rounded-full bg-[#AE35FF]"></span>
 												</div>
 												Purple
@@ -402,7 +402,7 @@
 									Product status
 								</h3>
 								<div class="mt-3">
-									<label class="flex items-center gap-3 text-[17px] font-medium">
+									<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer">
 											<input type="checkbox" class="accent-black" />In stock
 									</label>
 								</div>
@@ -427,7 +427,7 @@
 										</svg>
 									</button>
 
-									<div id="Sort-dropdownMenu" class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10 hidden transition-all duration-300 ease-in-out">
+									<div id="Sort-dropdownMenu" class="absolute max-md:right-0 md:-left-14 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10 hidden transition-all duration-300 ease-in-out">
 										<span class="block p-3 hover:bg-gray-100 cursor-pointer" onclick="changeSort(this)" data-name="Relevance" data-value="relevance">Relevance</span>
 										<span class="block p-3 hover:bg-gray-100 cursor-pointer" onclick="changeSort(this)" data-name="Latest Arrivals" data-value="latest">Latest Arrivals</span>
 										<span class="block p-3 hover:bg-gray-100 cursor-pointer" onclick="changeSort(this)" data-name="Price: High to Low" data-value="high-low">Price: High to Low</span>
@@ -482,6 +482,10 @@
 										<span class="line-through text-[#767676]">₹4,999 INR</span>
 									</div>
 									<p class="product-details hidden mt-2 text-sm text-[#555]">Product Description  Effortless Elegance In Seconds! Introducing Our Ready-To-Wear Draped Saree Set – A Perfect Blend Of Modern Style And Traditional Charm. Designed In Flowy Georgette With Sparkling Sequin Embroidery.</p>
+									<a href="#" class="hidden row-add-btn flex items-center py-3.5 px-4 bg-[#2D1F21] hover:bg-[var(--primary-color,#F02D46)] mt-9 max-w-fit rounded-lg">
+										<img src="assets/images/icons/cart-white.svg" alt="cart" class="mr-2.5" />
+										<span class="text-white text-[15px] font-medium">Add to Cart</span>
+									</a>
 								</div>
 							</div>
 						</div>

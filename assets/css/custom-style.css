@@ -170,4 +170,6 @@ input:focus-visible{
   padding-left: 21px;
 }
 
-
+.filter-color.active{
+	border-color: #CECECE;
+}
