@@ -571,18 +571,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   colorLinks.forEach(link => {
     link.addEventListener("click", (e) => {
-      e.preventDefault(); 
+      e.preventDefault();
 
       const clickedFilter = link.querySelector(".filter-color");
       const allFilters = document.querySelectorAll("#colorFilter .filter-color");
+
+      const isAlreadyActive = clickedFilter.classList.contains("active");
 
       allFilters.forEach(fc => {
         fc.classList.remove("border-gray-400", "active");
         fc.querySelector(".check-icon")?.classList.add("hidden");
       });
 
-      clickedFilter.classList.add("border-gray-400", "active");
-      clickedFilter.querySelector(".check-icon")?.classList.remove("hidden");
+      if (!isAlreadyActive) {
+        clickedFilter.classList.add("border-gray-400", "active");
+        clickedFilter.querySelector(".check-icon")?.classList.remove("hidden");
+      }
     });
   });
 });
