@@ -564,3 +564,26 @@ window.addEventListener("resize", () => {
     toggleProductBoxes(false);
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const colorLinks = document.querySelectorAll("#colorFilter a");
+
+  colorLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault(); 
+
+      const clickedFilter = link.querySelector(".filter-color");
+      const allFilters = document.querySelectorAll("#colorFilter .filter-color");
+
+      allFilters.forEach(fc => {
+        fc.classList.remove("border-gray-400", "active");
+        fc.querySelector(".check-icon")?.classList.add("hidden");
+      });
+
+      clickedFilter.classList.add("border-gray-400", "active");
+      clickedFilter.querySelector(".check-icon")?.classList.remove("hidden");
+    });
+  });
+});
+

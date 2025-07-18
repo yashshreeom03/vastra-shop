@@ -173,3 +173,40 @@ input:focus-visible{
 .filter-color.active{
 	border-color: #CECECE;
 }
+
+
+.group:hover .filter-checkbox {
+    border-color: var(--primary-color);
+}
+
+.filter-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 1.1rem;
+    width: 1.1rem;
+    border: 2px solid #333;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.filter-checkbox:checked::after {
+    content: '✔';
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.filter-checkbox:checked {
+    background-color: #000;
+    border-color: #000;
+}
+
+.group:hover .filter-checkbox:checked {
+	background-color: var(--primary-color);
+}
+
