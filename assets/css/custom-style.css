@@ -210,3 +210,18 @@ input:focus-visible{
 	background-color: var(--primary-color);
 }
 
+.added_to_cart.wc-forward{
+	display:none !important;
+}
+
+.woocommerce a.remove{
+	display: inline;
+}
+
+.woocommerce a.remove,.woocommerce a.remove:hover{
+	color: #767676 !important;
+}
+
+.woocommerce #cartLoader .loader::before{
+	background: none;
+}
