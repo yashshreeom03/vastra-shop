@@ -459,34 +459,26 @@ filterOverlay.addEventListener('click', closeFilters);
 filterClose.addEventListener('click', closeFilters);
 
 
+// accordions
+function toggleAccordion(id) {
+  const content = document.getElementById(`content-${id}`);
+  const icon = document.getElementById(`icon-${id}`);
 
-function toggleAccordion(btn) {
-  const content = btn.nextElementSibling;
-  const chevron = btn.querySelector(".chevron");
+  const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
 
-  const isOpen = content.style.maxHeight || content.hasAttribute("data-open");
+  // Close all open accordions
+  document.querySelectorAll('.accordion-content').forEach(item => {
+    item.style.maxHeight = null;
+  });
+  document.querySelectorAll('.chevron').forEach(icon => {
+    icon.style.transform = 'rotate(0deg)';
+  });
 
-  if (isOpen) {
-    content.style.maxHeight = null;
-    chevron.style.transform = "rotate(0deg)";
-    content.removeAttribute("data-open");
-  } else {
+  if (!isOpen) {
     content.style.maxHeight = content.scrollHeight + "px";
-    chevron.style.transform = "rotate(180deg)";
-    content.setAttribute("data-open", "");
+    icon.style.transform = "rotate(180deg)";
   }
 }
-
-// Open by default if element has data-open
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".filter-content[data-open]").forEach(content => {
-    content.style.maxHeight = content.scrollHeight + "px";
-    const chevron = content.previousElementSibling.querySelector(".chevron");
-    if (chevron) chevron.style.transform = "rotate(180deg)";
-  });
-});
-
-
 
 const productGrid = document.getElementById("productGrid");
 const rowViewBtn = document.querySelector(".row-viwe");
@@ -507,7 +499,7 @@ const toggleProductBoxes = (isRow) => {
       productDetails.classList.remove("hidden");
       if (hoverBtn) hoverBtn.classList.add("hidden");
       if (rowAddBtn) rowAddBtn.classList.remove("hidden");
-      imageWrapper.classList.remove("mb-3"); // ✅ Remove margin in row-view
+      imageWrapper.classList.remove("mb-3");
     } else {
       box.classList.remove("md:flex", "md:gap-4");
       img.classList.remove("max-h-[240px]", "min-h-[240px]");
@@ -515,7 +507,7 @@ const toggleProductBoxes = (isRow) => {
       productDetails.classList.add("hidden");
       if (hoverBtn) hoverBtn.classList.remove("hidden");
       if (rowAddBtn) rowAddBtn.classList.add("hidden");
-      imageWrapper.classList.add("mb-3"); // ✅ Restore margin in grid-view
+      imageWrapper.classList.add("mb-3"); 
     }
   });
 };
