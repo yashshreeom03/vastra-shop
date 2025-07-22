@@ -82,10 +82,6 @@ input:focus-visible{
 	opacity: 1;
 }
 
-.rotate-180 {
-  transform: rotate(180deg);
-}
-
 @media (min-width: 1280px) {
     .group:hover .dropdown-icon {
       	transform: rotate(180deg);

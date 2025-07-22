@@ -364,32 +364,6 @@ function toggleDropdown() {
       }
     });
 
-
-  function toggleAccordion(id) {
-      const content = document.getElementById(`content-${id}`);
-      const icon = document.getElementById(`icon-${id}`);
-      const isOpen = content.classList.contains('max-h-[1000px]');
-
-      // Close all
-      document.querySelectorAll('.accordion-content').forEach(el => {
-        el.classList.remove('max-h-[1000px]');
-        el.classList.add('max-h-0');
-      });
-
-      document.querySelectorAll('svg[id^="icon-"]').forEach(el => {
-        el.classList.remove('rotate-180');
-      });
-
-      // Toggle clicked item
-      if (!isOpen) {
-        content.classList.remove('max-h-0');
-        content.classList.add('max-h-[1000px]');
-        icon.classList.add('rotate-180'); // rotates arrow upward (⬆)
-      }
-    }
-
-
-
 // FIlter in Range Count
 const minR = document.getElementById('minRange');
 const maxR = document.getElementById('maxRange');
@@ -466,7 +440,7 @@ function toggleAccordion(id) {
 
   const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
 
-  // Close all open accordions
+  // Close all other accordions
   document.querySelectorAll('.accordion-content').forEach(item => {
     item.style.maxHeight = null;
   });
@@ -479,6 +453,7 @@ function toggleAccordion(id) {
     icon.style.transform = "rotate(180deg)";
   }
 }
+
 
 const productGrid = document.getElementById("productGrid");
 const rowViewBtn = document.querySelector(".row-viwe");
@@ -583,3 +558,47 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function toggleAccordion(arg) {
+  if (typeof arg === 'string') {
+    const content = document.getElementById(`content-${arg}`);
+    const icon = document.getElementById(`icon-${arg}`);
+
+    const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+    document.querySelectorAll('.accordion-content').forEach(item => {
+      item.style.maxHeight = null;
+    });
+    document.querySelectorAll('.chevron').forEach(icon => {
+      icon.style.transform = 'rotate(0deg)';
+    });
+
+    if (!isOpen) {
+      content.style.maxHeight = content.scrollHeight + "px";
+      icon.style.transform = "rotate(180deg)";
+    }
+
+  } else {
+    const content = arg.nextElementSibling;
+    const chevron = arg.querySelector(".filterchevron");
+
+    const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+
+    if (isOpen) {
+      content.style.maxHeight = null;
+      chevron?.classList.remove("rotate-180");
+      chevron?.classList.add("rotate-0");
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+      chevron?.classList.remove("rotate-0");
+      chevron?.classList.add("rotate-180");
+    }
+  }
+}
+
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".filter-content").forEach((content) => {
+    content.style.maxHeight = content.scrollHeight + "px";
+    content.previousElementSibling.querySelector(".filterchevron")?.classList.add("rotate-180");
+  });
+});
