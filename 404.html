@@ -252,343 +252,18 @@
 		</header>
 		<!-- End Header Area -->
 
-		<!-- Start Page Banner Section -->
-		<section class="sm:mt-[96px] mt-[92px] py-6 bg-[#F8F8F8]">
-            <div class="container">
-                <div>
-                    <ol class="text-lg flex items-center gap-3.5">
-                        <li class="flex items-center gap-3.5 text-[#6B6A6A]"><a href="index.html">Home</a> <img src="assets/images/icons/chevron-right.svg" alt="chevron-right"></li>
-                        <li class="">Kurta Suit Set</li>
-                    </ol>
-                </div>
-            </div>
+		<!-- Start 404 Section -->
+		<section class="sm:mt-[96px] mt-[92px] lg:py-52 py-20 text-center">
+  			<div class="container">
+                <h1 class="text-[80px] font-medium">404</h1>
+                <p class="text-lg font-medium my-3.5">Sorry! Page you are looking can’t be found.</p>
+                <p class="text-sm">Go back to the <a href="index.html" rel="home" class="px-1 py-0.5 border-b border-b-[#222] hover:bg-[#222] hover:text-white transition duration-300">homepage</a></p>
+			</div>
 		</section>
-		<!-- End Page Banner Section -->
-
-        <!-- End Collection Section -->
-        <section class="py-14">
-            <div class="container">
-                <div class="flex flex-col lg:flex-row gap-6">
-                    <!-- Filter Panel -->
-					<div id="filterOverlay" class="fixed inset-0 bg-black/50 z-[9991] hidden xl:hidden"></div>
-					<div id="filterPanel" class="sticky xl:top-[100px] xl:max-h-fit max-xl:fixed inset-y-0 left-0 max-xl:z-[999999] w-[300px] xl:min-w-[350px] xl-p-3 bg-white py-4 max-xl:transform -translate-x-full xl:translate-x-0 transition-transform duration-300 ease-in-out overflow-x-hidden overflow-y-auto">
-						<button id="filterClose" class="absolute top-4 right-4 text-xl xl:hidden" aria-label="Close filters" >
-                           <img src="assets/images/icons/close.svg" alt="close" class="w-3">
-                        </button>
-						<div class="flex justify-between items-center xl:mt-2 border-b border-b-[#0000001A] pb-4 mt-7 max-xl:px-3">
-							<h2 class="text-lg font-medium tracking-[1px] font-vietnam flex items-center gap-2"><img src="assets/images/icons/filter.svg" alt=""> Filter</h2>
-							<a href="#" class="underline">Clear All</a>
-						</div>
-						<div>
-							<div class="border-b border-b-[#0000001A] py-6 max-xl:px-3">
-								<button type="button" onclick="toggleAccordion(this)" class="w-full flex justify-between items-center font-semibold text-[17px] cursor-pointer">
-									By Price
-									<img src="assets/images/icons/chevron-down.svg" alt="" class="filterchevron transition-transform duration-300">
-								</button>
-								<div class="filter-content overflow-hidden max-h-0 transition-all duration-300" data-open>
-									<div class="w-full mt-3.5">
-										<div class="relative h-6">
-											<div class="absolute top-1/2 left-0 right-0 h-1 bg-gray-300 rounded transform -translate-y-1/2 cursor-ew-resize"></div>
-											<div id="rangeHighlight" class="absolute top-1/2 h-1 bg-black rounded transform -translate-y-1/2"></div>
-											<input type="range" id="minRange" min="0" max="17249" value="0" class="absolute pointer-events-none cursor-pointer w-full h-6 appearance-none bg-transparent [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-[3px] [&::-webkit-slider-thumb]:border-black [&::-webkit-slider-thumb]:appearance-none">
-											<input type="range" id="maxRange" min="0" max="17249" value="17249" class="absolute pointer-events-none cursor-pointer w-full h-6 appearance-none bg-transparent [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-[3px] [&::-webkit-slider-thumb]:border-black [&::-webkit-slider-thumb]:appearance-none">
-										</div>
-										<div class="flex items-center gap-1 text-[17px] font-medium mt-3">
-											<span class="text-[15px] text-[#767676]">Price:</span>
-											<span id="minPrice">₹1,949.00</span>-
-											<span id="maxPrice">₹7,499.00</span>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="border-b border-b-[#0000001A] py-6 max-xl:px-3">
-								<button type="button" onclick="toggleAccordion(this)" class="w-full flex justify-between items-center font-semibold text-[17px] cursor-pointer">
-									By Size
-									<img src="assets/images/icons/chevron-down.svg" alt="" class="filterchevron transition-transform duration-300">
-								</button>
-								<div class="filter-content overflow-hidden max-h-0 transition-all duration-300 space-y-1 text-sm pr-1" data-open>
-									<div class="max-h-56 overflow-y-auto mt-3 space-y-4 custom-scroll">
-										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer group hover:text-[var(--primary-color)]">
-											<input type="checkbox" class="filter-checkbox" /> <span>L <span class="text-base text-[#767676] group-hover:text-[var(--primary-color)]">(17)</span></span>
-										</label>
-										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer group hover:text-[var(--primary-color)]">
-											<input type="checkbox" class="filter-checkbox" /> <span>S <span class="text-base text-[#767676] group-hover:text-[var(--primary-color)]">(10)</span></span>
-										</label>
-										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer group hover:text-[var(--primary-color)]">
-											<input type="checkbox" class="filter-checkbox" /> <span>M <span class="text-base text-[#767676] group-hover:text-[var(--primary-color)]">(12)</span></span>
-										</label>
-										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer group hover:text-[var(--primary-color)]">
-											<input type="checkbox" class="filter-checkbox" /> <span>Xl <span class="text-base text-[#767676] group-hover:text-[var(--primary-color)]">(32)</span></span>
-										</label>
-										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer group hover:text-[var(--primary-color)]">
-											<input type="checkbox" class="filter-checkbox" /> <span>Xs <span class="text-base text-[#767676] group-hover:text-[var(--primary-color)]">(45)</span></span>
-										</label>
-										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer group hover:text-[var(--primary-color)]">
-											<input type="checkbox" class="filter-checkbox" /> <span>Xxl <span class="text-base text-[#767676] group-hover:text-[var(--primary-color)]">(21)</span></span>
-										</label>
-										<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer group hover:text-[var(--primary-color)]">
-											<input type="checkbox" class="filter-checkbox" /> <span>Xx <span class="text-base text-[#767676] group-hover:text-[var(--primary-color)]">(17)</span></span>
-										</label>
-									</div>
-    							</div>
-							</div>
-							<div class="border-b border-b-[#0000001A] py-6 max-xl:px-3">
-								<button type="button" onclick="toggleAccordion(this)" class="w-full flex justify-between items-center font-semibold text-[17px] cursor-pointer">
-									By Color
-									<img src="assets/images/icons/chevron-down.svg" alt="" class="filterchevron transition-transform duration-300">
-								</button>
-								<div class="filter-content overflow-hidden max-h-0 transition-all duration-300" data-open>
-									<ul class="max-h-56 overflow-y-auto mt-3 space-y-4 custom-scroll" id="colorFilter">
-										<li>
-											<a href="#" class="group flex items-center gap-2 text-[17px] font-medium cursor-pointer">
-												<div class="relative rounded-full h-[30px] w-[30px] p-0.5 border-[1px] border-transparent filter-color">
-													<span class="inline-block w-full h-full rounded-full bg-[#FF98DD]"></span>
-													<svg class="check-icon hidden absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-														<path d="M5 13l4 4L19 7" />
-													</svg>
-												</div>
-												Baby Pink and Pink <span class="text-[#767676]">(1)</span>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="group flex items-center gap-2 text-[17px] font-medium cursor-pointer">
-												<div class="relative rounded-full h-[30px] w-[30px] p-0.5 border-[1px] border-transparent filter-color">
-													<span class="inline-block w-full h-full rounded-full bg-[#000000]"></span>
-													<svg class="check-icon hidden absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-														<path d="M5 13l4 4L19 7" />
-													</svg>
-												</div>
-												Black <span class="text-[#767676]">(2)</span>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="group flex items-center gap-2 text-[17px] font-medium cursor-pointer">
-												<div class="relative rounded-full h-[30px] w-[30px] p-0.5 border-[1px] border-transparent filter-color">
-													<span class="inline-block w-full h-full rounded-full bg-[#AE35FF]"></span>
-													<svg class="check-icon hidden absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-														<path d="M5 13l4 4L19 7" />
-													</svg>
-												</div>
-												Purple <span class="text-[#767676]">(1)</span>
-											</a>
-										</li>
-
-										<li>
-											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium cursor-pointer">
-												<div class="relative rounded-full h-[30px] w-[30px] p-0.5 border-[1px] border-transparent filter-color">
-													<span class="inline-block w-full h-full rounded-full bg-[#69CDFF]"></span>
-													<svg class="check-icon hidden absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-														<path d="M5 13l4 4L19 7" />
-													</svg>
-												</div>
-												Multi Sky
-												<span class="text-[#767676]">(1)</span>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium cursor-pointer">
-												<div class="relative rounded-full h-[30px] w-[30px] p-0.5 border-[1px] border-transparent filter-color">
-													<span class="inline-block w-full h-full rounded-full bg-[#20CF98]"></span>
-													<svg class="check-icon hidden absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-														<path d="M5 13l4 4L19 7" />
-													</svg>
-												</div>
-												Green
-												<span class="text-[#767676]">(3)</span>
-											</a>
-										</li>
-										<li>
-											<a href="#" class="group flex items-center gap-1 text-[17px] font-medium cursor-pointer">
-												<div class="relative rounded-full h-[30px] w-[30px] p-0.5 border-[1px] border-transparent filter-color">
-													<span class="inline-block w-full h-full rounded-full bg-[#AE35FF]"></span>
-													<svg class="check-icon hidden absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-														<path d="M5 13l4 4L19 7" />
-													</svg>
-												</div>
-												Purple
-												<span class="text-[#767676]">(1)</span>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="py-6 max-xl:px-3">
-								<h3 type="button" class="w-full flex justify-between items-center font-semibold text-[17px] font-vietnam">
-									Product status
-								</h3>
-								<div class="mt-3">
-									<label class="flex items-center gap-3 text-[17px] font-medium cursor-pointer group hover:text-[var(--primary-color)]">
-											<input type="checkbox" class="filter-checkbox" />In stock
-									</label>
-								</div>
-							</div>
-						</div>
-					</div>
-
-                    <!-- Product Content -->
-					<div class="relative w-full"> 
-						<div class="flex items-center justify-between py-[22px] mb-8 border-b border-b-[#0000001A] gap-4">
-							<p class="font-medium max-xl:hidden">Showing all <span>9</span> results</p>
-							<button id="filterToggle" class="max-xl:inline-flex xl:hidden items-center gap-2 p-2">
-								<img src="assets/images/icons/filter.svg" alt="">
-								<span class="tracking-[1px]">Filter</span>
-							</button>
-							<div class="flex items-center gap-6">
-								<div class="relative viewshortby list-none md:border-r md:pr-5 md:border-r-[#0000001A]" id="sortByContainer">
-									<button onclick="toggleDropdown()" class="flex items-center font-medium text-[#767676]">
-										<span id="selectedSort">Sort By</span>
-										<svg class="ml-1 w-4 h-4 text-[#767676]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-										</svg>
-									</button>
-
-									<div id="Sort-dropdownMenu" class="absolute max-md:right-0 md:-left-14 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10 hidden transition-all duration-300 ease-in-out">
-										<span class="block p-3 hover:bg-gray-100 cursor-pointer" onclick="changeSort(this)" data-name="Relevance" data-value="relevance">Relevance</span>
-										<span class="block p-3 hover:bg-gray-100 cursor-pointer" onclick="changeSort(this)" data-name="Latest Arrivals" data-value="latest">Latest Arrivals</span>
-										<span class="block p-3 hover:bg-gray-100 cursor-pointer" onclick="changeSort(this)" data-name="Price: High to Low" data-value="high-low">Price: High to Low</span>
-										<span class="block p-3 hover:bg-gray-100 cursor-pointer" onclick="changeSort(this)" data-name="Price: Low to High" data-value="low-high">Price: Low to High</span>
-										<span class="block p-3 hover:bg-gray-100 cursor-pointer" onclick="changeSort(this)" data-name="Bestseller" data-value="bestseller">Bestseller</span>
-									</div>
-								</div>
-								<button id="rowViewBtn" class="text-[#767676] hover:text-[#FB2944] cursor-pointer max-md:hidden row-viwe">
-									<!-- Row View Icon -->
-									<svg width="22" height="22" fill="currentColor" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-									<path d="M17.1875 0H4.8125C2.15462 0 0 2.15462 0 4.8125V17.1875C0 19.8454 2.15462 22 4.8125 22H17.1875C19.8454 22 22 19.8454 22 17.1875V4.8125C22 2.15462 19.8454 0 17.1875 0ZM20.625 17.1875C20.625 19.086 19.086 20.625 17.1875 20.625H4.8125C2.91401 20.625 1.375 19.086 1.375 17.1875V4.8125C1.375 2.91401 2.91401 1.375 4.8125 1.375H17.1875C19.086 1.375 20.625 2.91401 20.625 4.8125V17.1875Z" />
-									<path d="M17.1875 5.5H8.9375V6.875H17.1875V5.5Z" />
-									<path d="M17.1875 10.3125H8.9375V11.6875H17.1875V10.3125Z" />
-									<path d="M17.1875 15.125H8.9375V16.5H17.1875V15.125Z" />
-									<circle cx="6.1875" cy="6.1875" r="1.375" />
-									<circle cx="6.1875" cy="11" r="1.375" />
-									<circle cx="6.1875" cy="15.8125" r="1.375" />
-									</svg>
-								</button>
-
-								<button id="gridViewBtn" class="text-[#767676] hover:text-[#FB2944] cursor-pointer max-md:hidden grid-viwe text-[#FB2944]">
-									<!-- Grid View Icon -->
-									<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M6.80938 9.32776H2.51835C1.12956 9.32776 0 8.19819 0 6.8094V2.51836C0 1.12957 1.12956 0 2.51835 0H6.80938C8.19816 0 9.32773 1.12957 9.32773 2.51836V6.8094C9.32773 8.19778 8.19775 9.32776 6.80938 9.32776ZM2.51835 1.16238C1.77064 1.16238 1.16238 1.77064 1.16238 2.51836V6.8094C1.16238 7.55712 1.77064 8.16538 2.51835 8.16538H6.80938C7.55709 8.16538 8.16535 7.55712 8.16535 6.8094V2.51836C8.16535 1.77064 7.55709 1.16238 6.80938 1.16238H2.51835Z" fill="currentColor"/>
-										<path d="M18.4817 9.32776H14.1907C12.8019 9.32776 11.6724 8.19819 11.6724 6.8094V2.51836C11.6724 1.12957 12.8019 0 14.1907 0H18.4817C19.8705 0 21.0001 1.12957 21.0001 2.51836V6.8094C21.0001 8.19778 19.8705 9.32776 18.4817 9.32776ZM14.1907 1.16238C13.443 1.16238 12.8347 1.77064 12.8347 2.51836V6.8094C12.8347 7.55712 13.443 8.16538 14.1907 8.16538H18.4817C19.2295 8.16538 19.8377 7.55712 19.8377 6.8094V2.51836C19.8377 1.77064 19.2295 1.16238 18.4817 1.16238H14.1907Z" fill="currentColor"/>
-										<path d="M18.4817 21H14.1907C12.8019 21 11.6724 19.8705 11.6724 18.4817V14.1906C11.6724 12.8018 12.8019 11.6723 14.1907 11.6723H18.4817C19.8705 11.6723 21.0001 12.8018 21.0001 14.1906V18.4817C21.0001 19.8701 19.8705 21 18.4817 21ZM14.1907 12.8347C13.443 12.8347 12.8347 13.4429 12.8347 14.1906V18.4817C12.8347 19.2294 13.443 19.8377 14.1907 19.8377H18.4817C19.2295 19.8377 19.8377 19.2294 19.8377 18.4817V14.1906C19.8377 13.4429 19.2295 12.8347 18.4817 12.8347H14.1907Z" fill="currentColor"/>
-										<path d="M6.80938 21H2.51835C1.12956 21 0 19.8701 0 18.4817V14.1906C0 12.8018 1.12956 11.6723 2.51835 11.6723H6.80938C8.19816 11.6723 9.32773 12.8018 9.32773 14.1906V18.4817C9.32773 19.8701 8.19775 21 6.80938 21ZM2.51835 12.8347C1.77064 12.8347 1.16238 13.4429 1.16238 14.1906V18.4817C1.16238 19.2294 1.77064 19.8377 2.51835 19.8377H6.80938C7.55709 19.8377 8.16535 19.2294 8.16535 18.4817V14.1906C8.16535 13.4429 7.55709 12.8347 6.80938 12.8347H2.51835Z" fill="currentColor"/>
-									</svg>
-								</button>
-							</div>
-						</div>
-
-						<!-- Product Grid -->
-						<div id="productGrid" class="grid-cols-1 gap-x-6 sm:gap-y-[60px] gap-y-7 sm:mb-[88px] mb-10 grid sm:grid-cols-2 lg:grid-cols-3">
-							<!-- Latest Products 1 -->
-							<div class="product-box relative group transition-all duration-300">
-								<div class="image-wrapper relative overflow-hidden rounded-3xl mb-3 aspect-[6/7]">
-									<img src="assets/images/latest-products/latest-products-1.JPG" alt="Front" class="main-img max-h-[502px] mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
-									<img src="assets/images/latest-products/latest-products-1-back.JPG" alt="Back" class="max-h-[502px] mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-									<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center lg:opacity-0 lg:translate-y-[103%] transition-all duration-300 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 overflow-hidden">
-										<img src="assets/images/icons/cart-white.svg" alt="cart" class="mr-2.5" />
-										<span class="text-white text-[17px] font-medium">ADD TO CART</span>
-									</a>
-									<button class="bg-[#F02D46] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5">
-										<img src="assets/images/icons/like-white.svg" alt="like-white">
-									</button>
-								</div>
-								<div>
-									<a href="collections-details.html" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden"> Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</a>
-									<div class="text-lg font-medium">
-										<span class="text-[var(--primary-color)] mr-2">₹2,780 INR</span>
-										<span class="line-through text-[#767676]">₹4,999 INR</span>
-									</div>
-									<p class="product-details hidden mt-2 text-sm text-[#555]">Product Description  Effortless Elegance In Seconds! Introducing Our Ready-To-Wear Draped Saree Set – A Perfect Blend Of Modern Style And Traditional Charm. Designed In Flowy Georgette With Sparkling Sequin Embroidery.</p>
-									<a href="#" class="hidden row-add-btn flex items-center py-3.5 px-4 bg-[#2D1F21] hover:bg-[var(--primary-color,#F02D46)] mt-9 max-w-fit rounded-lg">
-										<img src="assets/images/icons/cart-white.svg" alt="cart" class="mr-2.5" />
-										<span class="text-white text-[15px] font-medium">Add to Cart</span>
-									</a>
-								</div>
-							</div>
-							<div class="product-box relative group transition-all duration-300">
-								<div class="image-wrapper relative overflow-hidden rounded-3xl mb-3 aspect-[6/7]">
-									<img src="assets/images/latest-products/latest-products-1.JPG" alt="Front" class="main-img max-h-[502px] mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
-									<img src="assets/images/latest-products/latest-products-1-back.JPG" alt="Back" class="max-h-[502px] mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-									<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center lg:opacity-0 lg:translate-y-[103%] transition-all duration-300 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 overflow-hidden">
-										<img src="assets/images/icons/cart-white.svg" alt="cart" class="mr-2.5" />
-										<span class="text-white text-[17px] font-medium">ADD TO CART</span>
-									</a>
-									<button class="bg-[#F02D46] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5">
-										<img src="assets/images/icons/like-white.svg" alt="like-white">
-									</button>
-								</div>
-								<div>
-									<a href="collections-details.html" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden"> Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</a>
-									<div class="text-lg font-medium">
-										<span class="text-[var(--primary-color)] mr-2">₹2,780 INR</span>
-										<span class="line-through text-[#767676]">₹4,999 INR</span>
-									</div>
-									<p class="product-details hidden mt-2 text-sm text-[#555]">Product Description  Effortless Elegance In Seconds! Introducing Our Ready-To-Wear Draped Saree Set – A Perfect Blend Of Modern Style And Traditional Charm. Designed In Flowy Georgette With Sparkling Sequin Embroidery.</p>
-									<a href="#" class="hidden row-add-btn flex items-center py-3.5 px-4 bg-[#2D1F21] hover:bg-[var(--primary-color,#F02D46)] mt-9 max-w-fit rounded-lg">
-										<img src="assets/images/icons/cart-white.svg" alt="cart" class="mr-2.5" />
-										<span class="text-white text-[15px] font-medium">Add to Cart</span>
-									</a>
-								</div>
-							</div>
-							<div class="product-box relative group transition-all duration-300">
-								<div class="image-wrapper relative overflow-hidden rounded-3xl mb-3 aspect-[6/7]">
-									<img src="assets/images/latest-products/latest-products-1.JPG" alt="Front" class="main-img max-h-[502px] mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
-									<img src="assets/images/latest-products/latest-products-1-back.JPG" alt="Back" class="max-h-[502px] mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-									<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center lg:opacity-0 lg:translate-y-[103%] transition-all duration-300 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 overflow-hidden">
-										<img src="assets/images/icons/cart-white.svg" alt="cart" class="mr-2.5" />
-										<span class="text-white text-[17px] font-medium">ADD TO CART</span>
-									</a>
-									<button class="bg-[#F02D46] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5">
-										<img src="assets/images/icons/like-white.svg" alt="like-white">
-									</button>
-								</div>
-								<div>
-									<a href="collections-details.html" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden"> Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</a>
-									<div class="text-lg font-medium">
-										<span class="text-[var(--primary-color)] mr-2">₹2,780 INR</span>
-										<span class="line-through text-[#767676]">₹4,999 INR</span>
-									</div>
-									<p class="product-details hidden mt-2 text-sm text-[#555]">Product Description  Effortless Elegance In Seconds! Introducing Our Ready-To-Wear Draped Saree Set – A Perfect Blend Of Modern Style And Traditional Charm. Designed In Flowy Georgette With Sparkling Sequin Embroidery.</p>
-									<a href="#" class="hidden row-add-btn flex items-center py-3.5 px-4 bg-[#2D1F21] hover:bg-[var(--primary-color,#F02D46)] mt-9 max-w-fit rounded-lg">
-										<img src="assets/images/icons/cart-white.svg" alt="cart" class="mr-2.5" />
-										<span class="text-white text-[15px] font-medium">Add to Cart</span>
-									</a>
-								</div>
-							</div>
-							<div class="product-box relative group transition-all duration-300">
-								<div class="image-wrapper relative overflow-hidden rounded-3xl mb-3 aspect-[6/7]">
-									<img src="assets/images/latest-products/latest-products-1.JPG" alt="Front" class="main-img max-h-[502px] mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
-									<img src="assets/images/latest-products/latest-products-1-back.JPG" alt="Back" class="max-h-[502px] mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-									<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center lg:opacity-0 lg:translate-y-[103%] transition-all duration-300 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 overflow-hidden">
-										<img src="assets/images/icons/cart-white.svg" alt="cart" class="mr-2.5" />
-										<span class="text-white text-[17px] font-medium">ADD TO CART</span>
-									</a>
-									<button class="bg-[#F02D46] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5">
-										<img src="assets/images/icons/like-white.svg" alt="like-white">
-									</button>
-								</div>
-								<div>
-									<a href="collections-details.html" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden"> Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</a>
-									<div class="text-lg font-medium">
-										<span class="text-[var(--primary-color)] mr-2">₹2,780 INR</span>
-										<span class="line-through text-[#767676]">₹4,999 INR</span>
-									</div>
-									<p class="product-details hidden mt-2 text-sm text-[#555]">Product Description  Effortless Elegance In Seconds! Introducing Our Ready-To-Wear Draped Saree Set – A Perfect Blend Of Modern Style And Traditional Charm. Designed In Flowy Georgette With Sparkling Sequin Embroidery.</p>
-									<a href="#" class="hidden row-add-btn flex items-center py-3.5 px-4 bg-[#2D1F21] hover:bg-[var(--primary-color,#F02D46)] mt-9 max-w-fit rounded-lg">
-										<img src="assets/images/icons/cart-white.svg" alt="cart" class="mr-2.5" />
-										<span class="text-white text-[15px] font-medium">Add to Cart</span>
-									</a>
-								</div>
-							</div>
-						</div>
-						<p class="text-2xl font-mediumm h-[50vh] flex items-center justify-center">We couldn't find a  match</p>
-					</div>
-                </div>
-            </div>
-        </section>
-        <!-- End Collection  Section -->
+		<!-- End 404 Section -->
 
 		<!-- Start Footer -->
-		<footer class="bg-black text-white">
+		<footer class="bg-black text-white mt-[75px]">
 			<div class="container">
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-x-3 gap-y-8 py-24">
 					<!-- Logo & Description -->
@@ -696,11 +371,6 @@
 		</footer>
 		<!-- End Footer -->
 
-		<!-- Loader -->
-		<div id="pageLoader" class="hidden fixed inset-0 bg-[#ffffffed] z-[9999] flex items-center justify-center">
-			<div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-10 w-10"></div>
-		</div>
-
 		<!-- Bottom Nav (Only on Mobile) -->
 		<div class="sticky bottom-0 left-0 w-full bg-white z-[97] xl:hidden border-b border-gray-300 shadow-[0_0_9px_rgba(0,0,0,0.12)]" style="padding-bottom: env(safe-area-inset-bottom);">
 			<div class="flex justify-around items-center text-center">
@@ -730,6 +400,7 @@
 			</div>	
 		</div>
 
+
 		<!-- Backdrop Overlay -->
   		<div id="cartBackdrop" class="fixed inset-0 bg-black/50 z-[1000] hidden"></div>
 
@@ -745,20 +416,19 @@
 			<!-- Cart Content -->
 			<div class="flex-1 overflow-y-auto px-4 custom-scroll">
 				<!-- <p class="h-full flex items-center justify-center text-xl font-semibold">Your cart is currently empty</p> -->
-				<div class="flex gap-4 border-b border-b-[#0000001A] py-[26px]">
+				<div class="flex gap-4 border-b border-b-[#0000001A] last:border-b-0 py-[26px]">
 					<img src="assets/images/latest-products/latest-products-1.JPG" alt="Product" class="w-[120px] h-40 object-cover rounded-2xl">
 					<div class="flex-1">
 						<h3 class="text-[15px] text-[#3D393F] font-medium line-clamp-2 sm:mb-4 mb-2.5 font-vietnam">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</h3>
 						<span class="font-medium block sm:mb-6 mb-2.5"><span>₹</span><span>2,780</span> <span>INR</span> </span>
-						<div class="flex sm:items-center max-sm:flex-col space-x-3 text-[15px] font-medium text-[#000000] sm:mb-6 mb-2.5">
-							<div class="flex items-center space-x-1">
+						<div class="variation flex gap-3 items-center text-[15px] font-medium text-[#000000] divide-x divide-gray-300 sm:mb-6 mb-2.5">
+							<div class="flex items-center space-x-1 pr-3">
 								<span class="text-[#595959]">Color:</span>
-								<span>Light Green</span>
+								<span><p>Red</p></span>
 							</div>
-							<div class="sm:h-4 sm:border-l sm:border-gray-300"></div>
 							<div class="flex items-center space-x-1">
 								<span class="text-[#595959]">Size:</span>
-								<span>M</span>
+								<span><p>S</p></span>
 							</div>
 						</div>
 						<div class="flex items-center justify-between">
@@ -775,20 +445,19 @@
 						</div>
 					</div>
 				</div>
-				<div class="flex gap-4 border-b border-b-[#0000001A] py-[26px]">
+				<div class="flex gap-4 border-b border-b-[#0000001A] last:border-b-0 py-[26px]">
 					<img src="assets/images/latest-products/latest-products-1.JPG" alt="Product" class="w-[120px] h-40 object-cover rounded-2xl">
 					<div class="flex-1">
 						<h3 class="text-[15px] text-[#3D393F] font-medium line-clamp-2 sm:mb-4 mb-2.5 font-vietnam">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</h3>
 						<span class="font-medium block sm:mb-6 mb-2.5"><span>₹</span><span>2,780</span> <span>INR</span> </span>
-						<div class="flex sm:items-center max-sm:flex-col space-x-3 text-[15px] font-medium text-[#000000] sm:mb-6 mb-2.5">
-							<div class="flex items-center space-x-1">
+						<div class="variation flex gap-3 items-center text-[15px] font-medium text-[#000000] divide-x divide-gray-300 sm:mb-6 mb-2.5">
+							<div class="flex items-center space-x-1 pr-3">
 								<span class="text-[#595959]">Color:</span>
-								<span>Light Green</span>
+								<span><p>Red</p></span>
 							</div>
-							<div class="sm:h-4 sm:border-l sm:border-gray-300"></div>
 							<div class="flex items-center space-x-1">
 								<span class="text-[#595959]">Size:</span>
-								<span>M</span>
+								<span><p>S</p></span>
 							</div>
 						</div>
 						<div class="flex items-center justify-between">
@@ -805,20 +474,19 @@
 						</div>
 					</div>
 				</div>
-				<div class="flex gap-4 border-b border-b-[#0000001A] py-[26px]">
+				<div class="flex gap-4 border-b border-b-[#0000001A] last:border-b-0 py-[26px]">
 					<img src="assets/images/latest-products/latest-products-1.JPG" alt="Product" class="w-[120px] h-40 object-cover rounded-2xl">
 					<div class="flex-1">
 						<h3 class="text-[15px] text-[#3D393F] font-medium line-clamp-2 sm:mb-4 mb-2.5 font-vietnam">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</h3>
 						<span class="font-medium block sm:mb-6 mb-2.5"><span>₹</span><span>2,780</span> <span>INR</span> </span>
-						<div class="flex sm:items-center max-sm:flex-col space-x-3 text-[15px] font-medium text-[#000000] sm:mb-6 mb-2.5">
-							<div class="flex items-center space-x-1">
+						<div class="variation flex items-center text-[15px] gap-3 font-medium text-[#000000] divide-x divide-gray-300 sm:mb-6 mb-2.5">
+							<div class="flex items-center space-x-1 pr-3">
 								<span class="text-[#595959]">Color:</span>
-								<span>Light Green</span>
+								<span><p>Red</p></span>
 							</div>
-							<div class="sm:h-4 sm:border-l sm:border-gray-300"></div>
 							<div class="flex items-center space-x-1">
 								<span class="text-[#595959]">Size:</span>
-								<span>M</span>
+								<span><p>S</p></span>
 							</div>
 						</div>
 						<div class="flex items-center justify-between">
