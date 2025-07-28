@@ -283,164 +283,52 @@
                         <button class="tab-link py-2 px-2 sm:px-4 font-medium text-red-600 hover:bg-red-100" data-tab="logout">Log out</button>
                     </div>
 
-                    <!-- Tabs Content -->
-                    <div id="tabContent">
-                        <!-- Dashboard -->
-                        <div class="tab-pane hidden" id="dashboard">
-                            <h3 class="text-xl font-semibold mb-4">Dashboard</h3>
-                        </div>
+                   <form action="#">
+                        <div id="reviewForm" class="mt-2 w-full bg-white shadow-lg rounded p-4 border border-gray-200">
+                            <!-- Dropdown Select -->
+                            <label class="block mb-2 text-sm font-medium text-gray-700">Select Service</label>
+                            <select class="w-full border border-gray-300 rounded px-3 py-2 mb-4">
+                                <option value="">Choose...</option>
+                                <option value="product1">Party Wear Multi Color Premium Printed Georgette Full Embroidery Work Ready To Wear Saree</option>
+                                <option value="product2">Ceremony Wear Sky Color Japan Satin Digital Printed Hands-Free Ready To Wear Saree</option>
+                                <option value="product3">Black Printed Cotton Blend Saree With Unstitched Blouse Piece</option>
+                            </select>
 
-                        <!-- Orders -->
-                        <div class="tab-pane block" id="orders">
-                            <h3 class="text-xl font-semibold mb-4">Orders</h3>
-                            <div class="space-y-4">
-                                <div class="bg-white rounded-xl shadow-sm border border-[#f0f4f8] p-4">
-                                    <div class="mb-3.5">
-                                        <span class="px-2 py-1 bg-green-700 text-white inline-block font-semibold">Delivered</span>
-                                    </div>
+                            <!-- Rating -->
+                            <label class="block mb-2 text-sm font-medium text-gray-700">Rating</label>
+                            <div id="svgStarRating" class="flex gap-2 mb-4">
+                                <svg data-value="1" xmlns="http://www.w3.org/2000/svg" class="star w-6 h-6 cursor-pointer text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.27 3.905a1 1 0 00.95.69h4.104c.969 0 1.371 1.24.588 1.81l-3.32 2.413a1 1 0 00-.364 1.118l1.27 3.905c.3.921-.755 1.688-1.538 1.118l-3.32-2.413a1 1 0 00-1.176 0l-3.32 2.413c-.782.57-1.837-.197-1.538-1.118l1.27-3.905a1 1 0 00-.364-1.118L2.137 9.332c-.783-.57-.38-1.81.588-1.81h4.104a1 1 0 00.95-.69l1.27-3.905z"/>
+                                </svg>
 
-                                    <!-- Product Images -->
-                                    <div class="flex gap-2 flex-wrap mb-3.5">
-                                        <img src="assets/images/latest-products/latest-products-1.JPG" alt="Product 1" class="w-14 h-20 rounded-md object-cover" />
-                                        <img src="assets/images/latest-products/latest-products-1.JPG" alt="Product 1" class="w-14 h-20 rounded-md object-cover" />
-                                        <img src="assets/images/latest-products/latest-products-1.JPG" alt="Product 1" class="w-14 h-20 rounded-md object-cover" />
-                                        <img src="assets/images/latest-products/latest-products-1.JPG" alt="Product 1" class="w-14 h-20 rounded-md object-cover" />
-                                        <img src="assets/images/latest-products/latest-products-2.JPG" alt="Product 2" class="w-14 h-20 rounded-md object-cover" />
-                                    </div>
-
-                                    <!-- Top Row: Images and Status -->
-                                    <div class="flex sm:flex-row flex-col sm:items-center sm:justify-between">
-                                        <!-- Order Info -->
-                                        <div class="flex-1">
-                                            <p class="font-semibold flex items-center gap-1 mb-1">
-                                                Order No: 
-                                                <span>25564845</span>
-                                            </p>
-                                            <p>
-                                                Placed at 22nd Jul 2025, 07:40 pm
-                                            </p>
-                                        </div>
-
-                                        <!-- Price -->
-                                        <div class="font-semibold text-2xl whitespace-nowrap">
-                                            ₹116.19
-                                        </div>
-                                    </div>
-
-                                    <div class="flex gap-3 mt-3 pt-3 border-dashed border-t flex-wrap border-t-gray-500">
-                                        <a href="#" class="bg-purple-100 text-gray-800 font-semibold px-4 py-2 rounded">View</a>
-                                        <a href="#" class="bg-blue-100 text-gray-800 font-semibold px-4 py-2 rounded">Review</a>
-                                        <a href="#" class="bg-pink-100 text-gray-800 font-semibold px-4 py-2 rounded">Invoice</a>
-                                    </div>
-
-
-                                    <!-- Rating Row -->
-                                    <div class="mt-3 pt-3 border-dashed border-t border-t-gray-500">
-                                        <p class="flex gap-2 items-center">
-                                            Rating:
-                                            <span class="flex gap-0.5">
-                                                <img src="assets/images/icons/star.svg" alt="star" class="h-5">
-                                                <img src="assets/images/icons/star.svg" alt="star" class="h-5">
-                                                <img src="assets/images/icons/star.svg" alt="star" class="h-5">
-                                                <img src="assets/images/icons/star.svg" alt="star" class="h-5">
-                                                <img src="assets/images/icons/star.svg" alt="star" class="h-5">
-                                            </span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded-xl shadow-sm border border-[#f0f4f8] p-4">
-                                    <div class="mb-3.5">
-                                        <span class="px-2 py-1 bg-yellow-500 text-white inline-block font-semibold">Shipped</span>
-                                    </div>
-
-                                    <!-- Product Images -->
-                                    <div class="flex gap-2 flex-wrap mb-3.5">
-                                        <img src="assets/images/latest-products/latest-products-1.JPG" alt="Product 1" class="w-14 h-20 rounded-md object-cover" />
-                                        <img src="assets/images/latest-products/latest-products-1.JPG" alt="Product 1" class="w-14 h-20 rounded-md object-cover" />
-                                        <img src="assets/images/latest-products/latest-products-1.JPG" alt="Product 1" class="w-14 h-20 rounded-md object-cover" />
-                                        <img src="assets/images/latest-products/latest-products-1.JPG" alt="Product 1" class="w-14 h-20 rounded-md object-cover" />
-                                        <img src="assets/images/latest-products/latest-products-2.JPG" alt="Product 2" class="w-14 h-20 rounded-md object-cover" />
-                                    </div>
-
-                                    <!-- Top Row: Images and Status -->
-                                    <div class="flex sm:flex-row flex-col sm:items-center sm:justify-between">
-                                        <!-- Order Info -->
-                                        <div class="flex-1">
-                                            <p class="font-semibold flex items-center gap-1 mb-1">
-                                                Order No: 
-                                                <span>25564845</span>
-                                            </p>
-                                            <p>
-                                                Placed at 22nd Jul 2025, 07:40 pm
-                                            </p>
-                                        </div>
-
-                                        <!-- Price -->
-                                        <div class="font-semibold text-2xl whitespace-nowrap">
-                                            ₹116.19
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bg-white rounded-xl shadow-sm border border-[#f0f4f8] p-4">
-                                    <div class="mb-3.5">
-                                        <span class="px-2 py-1 bg-red-600 text-white inline-block font-semibold">cancelled</span>
-                                    </div>
-
-                                    <!-- Product Images -->
-                                    <div class="flex gap-2 flex-wrap mb-3.5">
-                                        <img src="assets/images/latest-products/latest-products-1.JPG" alt="Product 1" class="w-14 h-20 rounded-md object-cover" />
-                                        <img src="assets/images/latest-products/latest-products-1.JPG" alt="Product 1" class="w-14 h-20 rounded-md object-cover" />
-                                        <img src="assets/images/latest-products/latest-products-1.JPG" alt="Product 1" class="w-14 h-20 rounded-md object-cover" />
-                                        <img src="assets/images/latest-products/latest-products-1.JPG" alt="Product 1" class="w-14 h-20 rounded-md object-cover" />
-                                        <img src="assets/images/latest-products/latest-products-2.JPG" alt="Product 2" class="w-14 h-20 rounded-md object-cover" />
-                                    </div>
-
-                                    <!-- Top Row: Images and Status -->
-                                    <div class="flex sm:flex-row flex-col sm:items-center sm:justify-between">
-                                        <!-- Order Info -->
-                                        <div class="flex-1">
-                                            <p class="font-semibold flex items-center gap-1 mb-1">
-                                                Order No: 
-                                                <span>25564845</span>
-                                            </p>
-                                            <p>
-                                                Placed at 22nd Jul 2025, 07:40 pm
-                                            </p>
-                                        </div>
-
-                                        <!-- Price -->
-                                        <div class="font-semibold text-2xl whitespace-nowrap">
-                                            ₹116.19
-                                        </div>
-                                    </div>
-                                </div>
+                                <!-- Repeat 4 more stars -->
+                                <svg data-value="2" xmlns="http://www.w3.org/2000/svg" class="star w-6 h-6 cursor-pointer text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.27 3.905a1 1 0 00.95.69h4.104c.969 0 1.371 1.24.588 1.81l-3.32 2.413a1 1 0 00-.364 1.118l1.27 3.905c.3.921-.755 1.688-1.538 1.118l-3.32-2.413a1 1 0 00-1.176 0l-3.32 2.413c-.782.57-1.837-.197-1.538-1.118l1.27-3.905a1 1 0 00-.364-1.118L2.137 9.332c-.783-.57-.38-1.81.588-1.81h4.104a1 1 0 00.95-.69l1.27-3.905z"/>
+                                </svg>
+                                <svg data-value="3" xmlns="http://www.w3.org/2000/svg" class="star w-6 h-6 cursor-pointer text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.27 3.905a1 1 0 00.95.69h4.104c.969 0 1.371 1.24.588 1.81l-3.32 2.413a1 1 0 00-.364 1.118l1.27 3.905c.3.921-.755 1.688-1.538 1.118l-3.32-2.413a1 1 0 00-1.176 0l-3.32 2.413c-.782.57-1.837-.197-1.538-1.118l1.27-3.905a1 1 0 00-.364-1.118L2.137 9.332c-.783-.57-.38-1.81.588-1.81h4.104a1 1 0 00.95-.69l1.27-3.905z"/>
+                                </svg>
+                                <svg data-value="4" xmlns="http://www.w3.org/2000/svg" class="star w-6 h-6 cursor-pointer text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.27 3.905a1 1 0 00.95.69h4.104c.969 0 1.371 1.24.588 1.81l-3.32 2.413a1 1 0 00-.364 1.118l1.27 3.905c.3.921-.755 1.688-1.538 1.118l-3.32-2.413a1 1 0 00-1.176 0l-3.32 2.413c-.782.57-1.837-.197-1.538-1.118l1.27-3.905a1 1 0 00-.364-1.118L2.137 9.332c-.783-.57-.38-1.81.588-1.81h4.104a1 1 0 00.95-.69l1.27-3.905z"/>
+                                </svg>
+                                <svg data-value="5" xmlns="http://www.w3.org/2000/svg" class="star w-6 h-6 cursor-pointer text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.27 3.905a1 1 0 00.95.69h4.104c.969 0 1.371 1.24.588 1.81l-3.32 2.413a1 1 0 00-.364 1.118l1.27 3.905c.3.921-.755 1.688-1.538 1.118l-3.32-2.413a1 1 0 00-1.176 0l-3.32 2.413c-.782.57-1.837-.197-1.538-1.118l1.27-3.905a1 1 0 00-.364-1.118L2.137 9.332c-.783-.57-.38-1.81.588-1.81h4.104a1 1 0 00.95-.69l1.27-3.905z"/>
+                                </svg>
                             </div>
-                        </div>
 
-                        <!-- Downloads -->
-                        <div class="tab-pane hidden" id="downloads">
-                            <h3 class="text-xl font-semibold mb-4">Your Downloads</h3>
-                            <p class="text-gray-700">Access all your downloadable products and receipts here.</p>
-                        </div>
+                            <!-- Hidden Input to Capture Selected Rating -->
+                            <input type="hidden" id="ratingValue" name="rating" value="">
 
-                        <!-- Addresses -->
-                        <div class="tab-pane hidden" id="addresses">
-                            <h3 class="text-xl font-semibold mb-4">Saved Addresses</h3>
-                            <p class="text-gray-700">Manage your shipping and billing addresses for fast checkout.</p>
-                        </div>
+                            <!-- Description -->
+                            <label class="block mb-2 text-sm font-medium text-gray-700">Description</label>
+                            <textarea rows="4" class="w-full border border-gray-300 rounded px-3 py-2 mb-4 resize-none" placeholder="Write your review here..."></textarea>
 
-                        <!-- Account details -->
-                        <div class="tab-pane hidden" id="account">
-                            <h3 class="text-xl font-semibold mb-4">Account Details</h3>
-                            <p class="text-gray-700">Update your name, email address, and change your password.</p>
+                            <!-- Submit Button -->
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">
+                                Submit Review
+                            </button>
                         </div>
-
-                        <!-- Logout -->
-                        <div class="tab-pane hidden" id="logout">
-                            <h3 class="text-xl font-semibold mb-4">Log Out</h3>
-                            <p class="text-gray-700">You have been successfully logged out.</p>
-                        </div>
-                    </div>
+                   </form>
                 </div>
             </div>
 		</section>

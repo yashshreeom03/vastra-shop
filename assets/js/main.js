@@ -691,3 +691,26 @@ window.addEventListener("scroll", function () {
       });
     });
   });
+
+ document.addEventListener("DOMContentLoaded", function () {
+    const stars = document.querySelectorAll("#svgStarRating .star");
+    const ratingInput = document.getElementById("ratingValue");
+
+    stars.forEach(star => {
+      star.addEventListener("click", function () {
+        const selected = parseInt(this.getAttribute("data-value"));
+        ratingInput.value = selected;
+
+        stars.forEach(s => {
+          const val = parseInt(s.getAttribute("data-value"));
+          if (val <= selected) {
+            s.classList.remove("text-gray-400");
+            s.classList.add("text-yellow-400");
+          } else {
+            s.classList.remove("text-yellow-400");
+            s.classList.add("text-gray-400");
+          }
+        });
+      });
+    });
+  });
