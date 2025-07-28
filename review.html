@@ -20,6 +20,7 @@
 		<link rel="stylesheet" href="assets/css/custom-style.css">
 		<!-- Custom Style CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="src/output.css">
 	</head>
 	<body>   
 	
@@ -316,7 +317,7 @@
                             <div class="mb-4">
                                 <label class="block font-medium mb-2">Upload Images (max 5)</label>
 
-                                <div id="uploadBox" class="w-full border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-blue-400 transition">
+                                <div id="uploadBox" class="w-full border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-[var(--primary-color)] transition">
                                     <p class="text-gray-500">Drag & drop images here or click to upload</p>
                                     <input type="file" id="imageUploader" accept=".jpg,.jpeg,.png,image/jpeg,image/png" multiple class="hidden">
                                 </div>
@@ -327,7 +328,7 @@
                             <div  class="mb-4">
                                 <label class="block font-medium mb-2">Upload Video (max 1)</label>
 
-                                <div id="videoUploadBox" class="w-full border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-blue-400 transition">
+                                <div id="videoUploadBox" class="w-full border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-[var(--primary-color)] transition">
                                     <p class="text-gray-500">Click to upload a video (MP4 only)</p>
                                     <input type="file" id="videoUploader" accept="video/mp4" class="hidden">
                                 </div>
@@ -335,7 +336,7 @@
                                 <div id="previewVideo" class="mt-4"></div>
                             </div>
 
-                            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">
+                            <button class="bg-black hover:bg-[var(--primary-color)] text-white font-semibold px-4 py-2 rounded">
                                 Submit Review
                             </button>
                         </div>
