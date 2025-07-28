@@ -20,7 +20,6 @@
 		<link rel="stylesheet" href="assets/css/custom-style.css">
 		<!-- Custom Style CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
-		<link rel="stylesheet" href="src/output.css">
 	</head>
 	<body>   
 	
@@ -268,12 +267,10 @@
 		</header>
 		<!-- End Header Area -->
 
-		<!-- Start Oreder Section -->
+		<!-- Start Review Section -->
 		<section class="sm:mt-[96px] mt-[92px] py-[50px]">
             <div class="container">
-                <!-- Container -->
                 <div class="w-full max-w-6xl mx-auto">
-                    <!-- Tabs Navigation -->
                     <div class="flex flex-wrap justify-around border-b border-gray-200 mb-6" id="tabNav">
                         <button class="tab-link py-2 px-2 sm:px-4 font-medium text-[#878787] hover:text-black" data-tab="dashboard">Dashboard</button>
                         <button class="tab-link py-2 px-2 sm:px-4 font-medium text-[#878787] hover:text-black active" data-tab="orders">Orders</button>
@@ -285,8 +282,6 @@
 
                    <form action="#">
                         <div id="reviewForm" class="mt-2 w-full bg-white shadow-lg rounded p-4 border border-gray-200">
-                            <!-- Dropdown Select -->
-                            <label class="block mb-2 text-sm font-medium text-gray-700">Select Service</label>
                             <select class="w-full border border-gray-300 rounded px-3 py-2 mb-4">
                                 <option value="">Choose...</option>
                                 <option value="product1">Party Wear Multi Color Premium Printed Georgette Full Embroidery Work Ready To Wear Saree</option>
@@ -294,14 +289,12 @@
                                 <option value="product3">Black Printed Cotton Blend Saree With Unstitched Blouse Piece</option>
                             </select>
 
-                            <!-- Rating -->
-                            <label class="block mb-2 text-sm font-medium text-gray-700">Rating</label>
+                            <label class="block mb-2 font-medium">Rating</label>
                             <div id="svgStarRating" class="flex gap-2 mb-4">
                                 <svg data-value="1" xmlns="http://www.w3.org/2000/svg" class="star w-6 h-6 cursor-pointer text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.27 3.905a1 1 0 00.95.69h4.104c.969 0 1.371 1.24.588 1.81l-3.32 2.413a1 1 0 00-.364 1.118l1.27 3.905c.3.921-.755 1.688-1.538 1.118l-3.32-2.413a1 1 0 00-1.176 0l-3.32 2.413c-.782.57-1.837-.197-1.538-1.118l1.27-3.905a1 1 0 00-.364-1.118L2.137 9.332c-.783-.57-.38-1.81.588-1.81h4.104a1 1 0 00.95-.69l1.27-3.905z"/>
                                 </svg>
 
-                                <!-- Repeat 4 more stars -->
                                 <svg data-value="2" xmlns="http://www.w3.org/2000/svg" class="star w-6 h-6 cursor-pointer text-gray-400" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.27 3.905a1 1 0 00.95.69h4.104c.969 0 1.371 1.24.588 1.81l-3.32 2.413a1 1 0 00-.364 1.118l1.27 3.905c.3.921-.755 1.688-1.538 1.118l-3.32-2.413a1 1 0 00-1.176 0l-3.32 2.413c-.782.57-1.837-.197-1.538-1.118l1.27-3.905a1 1 0 00-.364-1.118L2.137 9.332c-.783-.57-.38-1.81.588-1.81h4.104a1 1 0 00.95-.69l1.27-3.905z"/>
                                 </svg>
@@ -316,14 +309,32 @@
                                 </svg>
                             </div>
 
-                            <!-- Hidden Input to Capture Selected Rating -->
                             <input type="hidden" id="ratingValue" name="rating" value="">
 
-                            <!-- Description -->
-                            <label class="block mb-2 text-sm font-medium text-gray-700">Description</label>
                             <textarea rows="4" class="w-full border border-gray-300 rounded px-3 py-2 mb-4 resize-none" placeholder="Write your review here..."></textarea>
 
-                            <!-- Submit Button -->
+                            <div class="mb-4">
+                                <label class="block font-medium mb-2">Upload Images (max 5)</label>
+
+                                <div id="uploadBox" class="w-full border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-blue-400 transition">
+                                    <p class="text-gray-500">Drag & drop images here or click to upload</p>
+                                    <input type="file" id="imageUploader" accept=".jpg,.jpeg,.png,image/jpeg,image/png" multiple class="hidden">
+                                </div>
+
+                                <div id="previewImages" class="mt-4 grid grid-cols-3 sm:grid-cols-5 gap-4"></div>
+                            </div>
+
+                            <div  class="mb-4">
+                                <label class="block font-medium mb-2">Upload Video (max 1)</label>
+
+                                <div id="videoUploadBox" class="w-full border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-blue-400 transition">
+                                    <p class="text-gray-500">Click to upload a video (MP4 only)</p>
+                                    <input type="file" id="videoUploader" accept="video/mp4" class="hidden">
+                                </div>
+
+                                <div id="previewVideo" class="mt-4"></div>
+                            </div>
+
                             <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded">
                                 Submit Review
                             </button>
@@ -332,7 +343,7 @@
                 </div>
             </div>
 		</section>
-		<!-- End Oreder Section -->
+		<!-- End Review Section -->
 
 		<!-- Start Footer -->
 		<footer class="bg-black text-white mt-[75px]">
