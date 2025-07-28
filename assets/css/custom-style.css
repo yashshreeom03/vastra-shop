@@ -223,3 +223,27 @@ input:focus-visible{
 }
 
 
+.woocommerce form.login, .woocommerce form.registe{
+	padding: 32px !important;
+}
+
+
+@media (max-width: 640px) {
+	.woocommerce form.login, .woocommerce form.registe{
+		padding: 24px !important;
+	}
+}
+
+
+.tab-link.active {
+    color: #000;
+}
+
+.woocommerce-message {
+    border-top-color: #35ae1b;
+	line-height: 36px;
+}
+
+.woocommerce-message::before {
+    color: #35ae1b;
+}

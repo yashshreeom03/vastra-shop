@@ -119,16 +119,16 @@
 // });
 
 
-// // sticy Header
-// window.addEventListener("scroll", function () {
-//   const header = document.getElementById("siteHeader");
+// sticy Header
+window.addEventListener("scroll", function () {
+  const header = document.getElementById("siteHeader");
 
-//   if (window.scrollY > 180) {
-//     header.classList.add("fixed-header");
-//   } else {
-//     header.classList.remove("fixed-header");
-//   }
-// });
+  if (window.scrollY > 180) {
+    header.classList.add("fixed-header");
+  } else {
+    header.classList.remove("fixed-header");
+  }
+});
 
 // document.addEventListener("DOMContentLoaded", function () {
 //   // Hero Swiper
@@ -662,6 +662,32 @@
       window.scrollTo({
         top: 0,
         behavior: "smooth"
+      });
+    });
+  });
+
+   document.addEventListener("DOMContentLoaded", () => {
+    const tabLinks = document.querySelectorAll(".tab-link");
+    const tabPanes = document.querySelectorAll(".tab-pane");
+
+    tabLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        const target = link.getAttribute("data-tab");
+
+        // Set active tab
+        tabLinks.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+
+        // Show corresponding content
+        tabPanes.forEach(pane => {
+          if (pane.id === target) {
+            pane.classList.remove("hidden");
+            pane.classList.add("block");
+          } else {
+            pane.classList.remove("block");
+            pane.classList.add("hidden");
+          }
+        });
       });
     });
   });
