@@ -842,3 +842,43 @@ document.addEventListener('DOMContentLoaded', () => {
       previewContainer.appendChild(wrapper);
     });
   });
+
+   function openLightbox(el, type) {
+    const lightbox = document.querySelector(".custom-lightbox");
+    const contentBox = document.getElementById("lightboxContent");
+
+    // Clear previous content
+    contentBox.innerHTML = "";
+
+    if (type === 'image') {
+      const img = document.createElement("img");
+      img.src = el.src;
+      img.alt = "Full View";
+      img.className = "max-w-full max-h-[80vh] rounded";
+      contentBox.appendChild(img);
+    } else if (type === 'video') {
+      const videoSrc = el.getAttribute("data-video");
+      const video = document.createElement("video");
+      video.src = videoSrc;
+      video.controls = true;
+      video.autoplay = true;
+      video.className = "max-w-full max-h-[80vh] rounded";
+      contentBox.appendChild(video);
+    }
+
+    lightbox.classList.remove("hidden");
+  }
+
+  function closeLightbox() {
+    const lightbox = document.querySelector(".custom-lightbox");
+    const contentBox = document.getElementById("lightboxContent");
+    contentBox.innerHTML = ""; // Clear on close
+    lightbox.classList.add("hidden");
+  }
+
+  // Optional: close on clicking outside
+  document.querySelector(".custom-lightbox").addEventListener("click", function (e) {
+    if (e.target.classList.contains("custom-lightbox")) {
+      closeLightbox();
+    }
+  });

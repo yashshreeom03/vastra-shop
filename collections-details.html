@@ -484,20 +484,55 @@
         </section>
         <!-- End Collection Details Section -->
 
+		<section class="lg:mb-[130px] mb-14">
+			<div class="container">
+				<h2 class="border-b text-2xl py-3 font-vietnam font-semibold mb-3">Total Review <span>[10]</span></h2>
+				<!-- Review Card -->
+
+				<p class="font-medium">There are no reviews yet.</p>
+				<p class="font-medium">Only logged in customers who have purchased this product may leave a review.</p>
+				<div class="sm:p-4 sm:pt-0 pt-0 p-3 border-b relative">
+					<div>
+						<h3 class="font-semibold text-xl mb-2.5">kaushik nakrani</h3>
+						<div class="flex items-center space-x-2 mb-2">
+							<img src="assets/images/icons/star.svg" alt="">
+							<img src="assets/images/icons/star.svg" alt="">
+							<img src="assets/images/icons/star.svg" alt="">
+							<img src="assets/images/icons/star.svg" alt="">
+							<img src="assets/images/icons/star.svg" alt="">
+						</div>
+						<p class="font-medium">28 Jun, 2025</p>
+					</div>
+
+					<p class="text-gray-700 mb-3">It's good and also less price color and quality is good</p>
+
+					<div class="flex gap-3 flex-wrap">
+						<img src="assets/images/latest-products/latest-products-1.jpg" alt="Image 1" class="w-20 h-20 object-cover rounded cursor-pointer" onclick="openLightbox(this, 'image')">
+						<img src="assets/images/latest-products/latest-products-2.jpg" alt="Image 2" class="w-20 h-20 object-cover rounded cursor-pointer" onclick="openLightbox(this, 'image')">
+						<img src="assets/images/latest-products/latest-products-3.jpg" alt="Image 3" class="w-20 h-20 object-cover rounded cursor-pointer" onclick="openLightbox(this, 'image')">
+						<video src="assets/videos/top-picks-1.mp4" alt="Video 1" class="w-20 h-20 object-cover rounded cursor-pointer" onclick="openLightbox(this, 'video')" data-video="assets/videos/top-picks-1.mp4">
+					</div>
+
+					<div class="custom-lightbox fixed inset-0 bg-black/80 flex items-center justify-center z-[9998] hidden">
+						<div class="relative px-4">
+							<div id="lightboxContent" class="mx-auto max-w-full max-h-[80vh]"></div>
+							<button onclick="closeLightbox()" class="absolute top-[-32px] right-0 text-white text-3xl font-bold cursor-pointer">&times;</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<!-- Start Also Like Section -->
 		<section class="lg:mb-[115px] mb-14">
 			<div class="container">
 
 				<!-- Section Header -->
 				<div class="text-center mb-14">
-					<div class="relative flex items-center justify-center mb-2.5">
-						<!-- Left Line -->
-  						<div class="flex-1 relative sm:before:absolute sm:before:left-0 sm:before:top-1/2 sm:before:-translate-y-1/2 sm:before:w-full sm:before:h-[53px] sm:before:bg-[url('../images/icons/decorative-line.svg')] sm:before:bg-repeat-x sm:before:bg-center"></div>
- 		 				<!-- Heading Text -->
-						<h2 class="sm:px-16 px-3.5 text-2xl md:text-[45px] font-medium text-[var(--gray-color)]">You may also like</h2>
-						<!-- Right Line -->
-						<div class="flex-1 relative sm:after:absolute sm:after:right-0 sm:after:top-1/2 sm:after:-translate-y-1/2 sm:after:w-full sm:after:h-[53px] sm:after:bg-[url('../images/icons/decorative-line.svg')] sm:after:bg-repeat-x sm:after:bg-center"></div>
-					</div>		
+					<div class="decorated-heading-wrapper">
+						<h2 class="bg-white sm:px-16 px-3.5 text-2xl md:text-[45px] font-medium text-[var(--gray-color)]">You may also like</h2>
+					</div>
+
 				</div>
 
 				<!-- Also Like Slider -->

@@ -247,3 +247,32 @@ input:focus-visible{
 .woocommerce-message::before {
     color: #35ae1b;
 }
+
+.decorated-heading-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.decorated-heading-wrapper::before{
+  content: "";
+  background-image: url('../images/icons/decorative-line.svg');
+  background-repeat: repeat-x;
+  background-position: center;
+  height: 53px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 100%;
+  margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+	.decorated-heading-wrapper::before{
+		display: none;
+	}
+}	
