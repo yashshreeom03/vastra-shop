@@ -225,35 +225,35 @@ window.addEventListener("scroll", function () {
 // });
 
 
-// // Testimonials
-// const swiper = new Swiper(".testimonialSwiper", {
-//   loop: true,
-//   centeredSlides: true,
-//   slidesPerView: 1.2,
-//   spaceBetween: 20,
-//   pagination: {
-//     el: ".swiper-pagination",
-//     clickable: true,
-//   },
-//   breakpoints: {
-//     640: { slidesPerView: 1.5 },
-//     768: { slidesPerView: 2 },
-//     1024: { slidesPerView: 3 },
-//   },
-//   on: {
-//     slideChangeTransitionEnd: function () {
-//       document.querySelectorAll('.testimonialSwiper .swiper-slide').forEach(slide => {
-//         slide.classList.remove('active-slide');
-//       });
-//       const activeSlide = document.querySelector('.testimonialSwiper .swiper-slide-active');
-//       if (activeSlide) activeSlide.classList.add('active-slide');
-//     }
-//   }
-// });
-// document.addEventListener('DOMContentLoaded', () => {
-//     const firstActive = document.querySelector('.testimonialSwiper .swiper-slide-active');
-//     if (firstActive) firstActive.classList.add('active-slide');
-// });
+// Testimonials
+const swiper = new Swiper(".testimonialSwiper", {
+  loop: true,
+  centeredSlides: true,
+  slidesPerView: 1.2,
+  spaceBetween: 20,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    640: { slidesPerView: 1.5 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+  },
+  on: {
+    slideChangeTransitionEnd: function () {
+      document.querySelectorAll('.testimonialSwiper .swiper-slide').forEach(slide => {
+        slide.classList.remove('active-slide');
+      });
+      const activeSlide = document.querySelector('.testimonialSwiper .swiper-slide-active');
+      if (activeSlide) activeSlide.classList.add('active-slide');
+    }
+  }
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const firstActive = document.querySelector('.testimonialSwiper .swiper-slide-active');
+    if (firstActive) firstActive.classList.add('active-slide');
+});
 
 
 
