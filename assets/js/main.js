@@ -306,63 +306,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-//   const images = [
-//       'assets/images/collection-details/collection-details-1.png',
-//       'assets/images/collection-details/collection-details-2.png',
-//       'assets/images/collection-details/collection-details-3.png',
-//       'assets/images/collection-details/collection-details-4.png'
-//     ];
+  const images = [
+      'assets/images/collection-details/collection-details-1.png',
+      'assets/images/collection-details/collection-details-2.png',
+      'assets/images/collection-details/collection-details-3.png',
+      'assets/images/collection-details/collection-details-4.png'
+    ];
 
-//     let currentIndex = 0;
+    let currentIndex = 0;
 
-//     function openLightbox(index) {
-//       currentIndex = index;
-//       const lightboxImg = document.getElementById("lightbox-img");
-//       lightboxImg.src = images[currentIndex];
-//       lightboxImg.classList.remove("scale-150", "cursor-zoom-out");
-//       lightboxImg.classList.add("cursor-zoom-in");
-//       document.getElementById("lightbox").classList.remove("hidden");
-//       document.getElementById("lightbox").classList.add("flex");
-//     }
+    function openLightbox(index) {
+      currentIndex = index;
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = images[currentIndex];
+      lightboxImg.classList.remove("scale-150", "cursor-zoom-out");
+      lightboxImg.classList.add("cursor-zoom-in");
+      document.getElementById("lightbox").classList.remove("hidden");
+      document.getElementById("lightbox").classList.add("flex");
+    }
 
-//     function closeLightbox() {
-//       document.getElementById("lightbox").classList.remove("flex");
-//       document.getElementById("lightbox").classList.add("hidden");
-//     }
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.remove("flex");
+      document.getElementById("lightbox").classList.add("hidden");
+    }
 
-//     function prevSlide() {
-//       currentIndex = (currentIndex - 1 + images.length) % images.length;
-//       updateLightboxImage();
-//     }
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateLightboxImage();
+    }
 
-//     function nextSlide() {
-//       currentIndex = (currentIndex + 1) % images.length;
-//       updateLightboxImage();
-//     }
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateLightboxImage();
+    }
 
-//     function updateLightboxImage() {
-//       const lightboxImg = document.getElementById("lightbox-img");
-//       lightboxImg.src = images[currentIndex];
-//       lightboxImg.classList.remove("scale-150", "cursor-zoom-out");
-//       lightboxImg.classList.add("cursor-zoom-in");
-//     }
+    function updateLightboxImage() {
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = images[currentIndex];
+      lightboxImg.classList.remove("scale-150", "cursor-zoom-out");
+      lightboxImg.classList.add("cursor-zoom-in");
+    }
 
-//     function toggleZoom() {
-//       const img = document.getElementById("lightbox-img");
-//       if (img.classList.contains("scale-150")) {
-//         img.classList.remove("scale-150", "cursor-zoom-out");
-//         img.classList.add("cursor-zoom-in");
-//       } else {
-//         img.classList.add("scale-150", "cursor-zoom-out");
-//         img.classList.remove("cursor-zoom-in");
-//       }
-//     }
+    function toggleZoom() {
+      const img = document.getElementById("lightbox-img");
+      if (img.classList.contains("scale-150")) {
+        img.classList.remove("scale-150", "cursor-zoom-out");
+        img.classList.add("cursor-zoom-in");
+      } else {
+        img.classList.add("scale-150", "cursor-zoom-out");
+        img.classList.remove("cursor-zoom-in");
+      }
+    }
 
-//     document.addEventListener('keydown', function(event) {
-//       if (event.key === "Escape") {
-//         closeLightbox();
-//       }
-//     });
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") {
+        closeLightbox();
+      }
+    });
 
 // // FIlter in Range Count
 // const minR = document.getElementById('minRange');
@@ -843,8 +843,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-   function openLightbox(el, type) {
-    const lightbox = document.querySelector(".custom-lightbox");
+   function openLightboxreview(el, type) {
+    const lightbox = document.querySelector(".review-lightbox");
     const contentBox = document.getElementById("lightboxContent");
 
     // Clear previous content
@@ -869,16 +869,16 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.classList.remove("hidden");
   }
 
-  function closeLightbox() {
-    const lightbox = document.querySelector(".custom-lightbox");
+  function closeLightboxreview() {
+    const lightbox = document.querySelector(".review-lightbox");
     const contentBox = document.getElementById("lightboxContent");
     contentBox.innerHTML = ""; // Clear on close
     lightbox.classList.add("hidden");
   }
 
   // Optional: close on clicking outside
-  document.querySelector(".custom-lightbox").addEventListener("click", function (e) {
-    if (e.target.classList.contains("custom-lightbox")) {
-      closeLightbox();
+  document.querySelector(".review-lightbox").addEventListener("click", function (e) {
+    if (e.target.classList.contains("review-lightbox")) {
+      closeLightboxreview();
     }
   });
