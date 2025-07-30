@@ -276,3 +276,12 @@ input:focus-visible{
 		display: none;
 	}
 }	
+
+.aws-search-result .aws_result_title{
+    color: #800000;
+    font-size: 15px;
+}
+
+.aws-search-result .aws_result_price{
+    font-size: 14px;
+}
