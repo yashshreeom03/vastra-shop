@@ -56,7 +56,7 @@
 				<div class="w-full flex justify-between items-center gap-1">
 
 					<!-- === Left Section: Logo and Mobile Menu Toggle === -->
-					<div class="flex gap-3">
+					<div class="flex items-center gap-3">
 
 						<!-- Mobile Menu Toggle Icon (visible on small screens) -->
 						<a href="javascript:void(0)" id="menuToggle" class="xl:hidden flex items-center">
@@ -66,177 +66,178 @@
 						<!-- Site Logo -->
 						<div>
 							<a href="index.html">
-								<img src="assets/images/logo/logo.png" alt="logo" class="max-sm:w-[150px]">
+								<img src="assets/images/logo/logo.png" alt="logo" class="max-sm:w-20">
 							</a>
 						</div>
+						<!-- === Center Section: Navigation Menu === -->
+						<div class="ml-7">
+							<nav id="sidebarMenu" class="fixed top-0 left-0 z-[99] bg-white w-[300px] h-full transform -translate-x-full transition-transform duration-300 xl:translate-x-0 xl:static xl:h-auto xl:w-auto max-xl:overflow-y-scroll">
+								
+								<!-- Mobile Menu Close Button -->
+								<div id="menuClose" class="absolute top-[18px] right-[18px] cursor-pointer xl:hidden">
+									<img src="assets/images/icons/close.svg" alt="close" class="w-6 h-auto">
+								</div>
+
+								<!-- Navigation Links -->
+								<ul class="min-h-[50px] xl:flex font-vietnam justify-center items-center text-base max-xl:mt-[70px]">
+
+									<!-- Dropdown Item: Premium Collection -->
+									<li class="relative group">
+										<a href="collections.html"
+											class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto text-black max-xl:border-b max-xl:border-[#81818133]">
+											Premium Collection
+											<span class="ml-1 dropdown-icon transition-transform duration-300">
+												<img src="assets/images/icons/separator.svg" alt="chevron-down">
+											</span>
+										</a>
+
+										<!-- Submenu: Premium Collection -->
+										<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
+												xl:overflow-visible xl:max-h-none
+												xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
+												xl:rounded-[3px] xl:text-sm xl:leading-[1.4] xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
+												xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
+											<a href="collections.html" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Saree</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Sharara</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Lehenga</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Gown</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Suit</a>
+										</div>
+									</li>
+
+									<!-- Dropdown Item: Lehenga Choli -->
+									<li class="relative group">
+										<a href="javascript:void(0)"
+											class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
+											Lehenga Choli
+											<span class="ml-1 dropdown-icon transition-transform duration-300">
+												<img src="assets/images/icons/separator.svg" alt="chevron-down">
+											</span>
+										</a>
+
+										<!-- Submenu: Lehenga Choli -->
+										<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
+												xl:overflow-visible xl:max-h-none
+												xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
+												xl:rounded-[3px] xl:text-sm xl:leading-[1.4] xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
+												xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Designer Lehenga</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Traditional Lehenga</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Bridal Lehenga</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Navratri Collection</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Organza Lehenga</a>
+										</div>
+									</li>
+
+									<!-- Dropdown Item: Saree -->
+									<li class="relative group">
+										<a href="javascript:void(0)"
+											class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
+											Saree
+											<span class="ml-1 dropdown-icon transition-transform duration-300">
+												<img src="assets/images/icons/separator.svg" alt="chevron-down">
+											</span>
+										</a>
+
+										<!-- Submenu: Saree -->
+										<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
+												xl:overflow-visible xl:max-h-none
+												xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
+												xl:rounded-[3px] xl:text-sm xl:leading-[1.4] xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
+												xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Bollywood Saree</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Designer Saree</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Linen Saree</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Organza Saree</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Printed Saree</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Sequin Saree</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Pleated Saree</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Silk Sarees</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Ready To Wear Saree</a>
+										</div>
+									</li>
+
+									<!-- Dropdown Item: Indian Dresses -->
+									<li class="relative group">
+										<a href="javascript:void(0)"
+											class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
+											Indian Dresses
+											<span class="ml-1 dropdown-icon transition-transform duration-300">
+												<img src="assets/images/icons/separator.svg" alt="chevron-down">
+											</span>
+										</a>
+
+										<!-- Submenu: Indian Dresses -->
+										<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
+												xl:overflow-visible xl:max-h-none
+												xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
+												xl:rounded-[3px] xl:text-sm xl:leading-[1.4] xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
+												xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Designer Gown</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Sharara Suit</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Suit</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Gown</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Velvet Suit</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Palazzo Suit</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Salwar Suit</a>
+										</div>
+									</li>
+
+									<!-- Dropdown Item: Pakistani Suit -->
+									<li class="relative group">
+										<a href="javascript:void(0)"
+											class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
+											Pakistani Suit
+											<span class="ml-1 dropdown-icon transition-transform duration-300">
+												<img src="assets/images/icons/separator.svg" alt="chevron-down">
+											</span>
+										</a>
+
+										<!-- Submenu: Pakistani Suit -->
+										<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
+												xl:overflow-visible xl:max-h-none
+												xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
+												xl:rounded-[3px] xl:text-sm xl:leading-[1.4] xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
+												xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Sharara Suit</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Suit</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Gown</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Velvet Suit</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Palazzo Suit</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Salwar Suit</a>
+										</div>
+									</li>
+
+									<!-- Dropdown Item: Kids Wear -->
+									<li class="relative group">
+										<a href="javascript:void(0)"
+											class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
+											Kids Wear
+											<span class="ml-1 dropdown-icon transition-transform duration-300">
+												<img src="assets/images/icons/separator.svg" alt="chevron-down">
+											</span>
+										</a>
+
+										<!-- Submenu: Kids Wear -->
+										<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
+												xl:overflow-visible xl:max-h-none
+												xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
+												xl:rounded-[3px] xl:text-sm xl:leading-[1.4] xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
+												xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Sharara Suit</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Suit</a>
+											<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Gown</a>
+										</div>
+									</li>
+								</ul>
+							</nav>
+
+							<!-- Mobile Overlay (shown when sidebar menu is active) -->
+							<div id="overlay" class="fixed inset-0 bg-[#000000b3] bg-opacity-50 z-[98] hidden xl:hidden"></div>
+						</div>	
 					</div>
 
-					<!-- === Center Section: Navigation Menu === -->
-					<div>
-						<nav id="sidebarMenu" class="fixed top-0 left-0 z-[99] bg-white w-[300px] h-full transform -translate-x-full transition-transform duration-300 xl:translate-x-0 xl:static xl:h-auto xl:w-auto max-xl:overflow-y-scroll">
-							
-							<!-- Mobile Menu Close Button -->
-							<div id="menuClose" class="absolute top-[18px] right-[18px] cursor-pointer xl:hidden">
-								<img src="assets/images/icons/close.svg" alt="close" class="w-6 h-auto">
-							</div>
 
-							<!-- Navigation Links -->
-							<ul class="min-h-[50px] xl:flex font-vietnam justify-center items-center text-base max-xl:mt-[70px]">
-
-								<!-- Dropdown Item: Premium Collection -->
-								<li class="relative group">
-									<a href="collections.html"
-										class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto text-black max-xl:border-b max-xl:border-[#81818133]">
-										Premium Collection
-										<span class="ml-1 dropdown-icon transition-transform duration-300">
-											<img src="assets/images/icons/separator.svg" alt="chevron-down">
-										</span>
-									</a>
-
-									<!-- Submenu: Premium Collection -->
-									<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
-											xl:overflow-visible xl:max-h-none
-											xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
-											xl:rounded-[3px] xl:text-sm xl:leading-[1.4] xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
-											xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
-										<a href="collections.html" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Sharara</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Lehenga</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Gown</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Suit</a>
-									</div>
-								</li>
-
-								<!-- Dropdown Item: Lehenga Choli -->
-								<li class="relative group">
-									<a href="javascript:void(0)"
-										class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
-										Lehenga Choli
-										<span class="ml-1 dropdown-icon transition-transform duration-300">
-											<img src="assets/images/icons/separator.svg" alt="chevron-down">
-										</span>
-									</a>
-
-									<!-- Submenu: Lehenga Choli -->
-									<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
-											xl:overflow-visible xl:max-h-none
-											xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
-											xl:rounded-[3px] xl:text-sm xl:leading-[1.4] xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
-											xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Designer Lehenga</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Traditional Lehenga</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Bridal Lehenga</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Navratri Collection</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Organza Lehenga</a>
-									</div>
-								</li>
-
-								<!-- Dropdown Item: Saree -->
-								<li class="relative group">
-									<a href="javascript:void(0)"
-										class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
-										Saree
-										<span class="ml-1 dropdown-icon transition-transform duration-300">
-											<img src="assets/images/icons/separator.svg" alt="chevron-down">
-										</span>
-									</a>
-
-									<!-- Submenu: Saree -->
-									<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
-											xl:overflow-visible xl:max-h-none
-											xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
-											xl:rounded-[3px] xl:text-sm xl:leading-[1.4] xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
-											xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Bollywood Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Designer Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Linen Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Organza Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Printed Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Sequin Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Pleated Saree</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Silk Sarees</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Ready To Wear Saree</a>
-									</div>
-								</li>
-
-								<!-- Dropdown Item: Indian Dresses -->
-								<li class="relative group">
-									<a href="javascript:void(0)"
-										class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
-										Indian Dresses
-										<span class="ml-1 dropdown-icon transition-transform duration-300">
-											<img src="assets/images/icons/separator.svg" alt="chevron-down">
-										</span>
-									</a>
-
-									<!-- Submenu: Indian Dresses -->
-									<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
-											xl:overflow-visible xl:max-h-none
-											xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
-											xl:rounded-[3px] xl:text-sm xl:leading-[1.4] xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
-											xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Designer Gown</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Sharara Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Gown</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Velvet Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Palazzo Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Salwar Suit</a>
-									</div>
-								</li>
-
-								<!-- Dropdown Item: Pakistani Suit -->
-								<li class="relative group">
-									<a href="javascript:void(0)"
-										class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
-										Pakistani Suit
-										<span class="ml-1 dropdown-icon transition-transform duration-300">
-											<img src="assets/images/icons/separator.svg" alt="chevron-down">
-										</span>
-									</a>
-
-									<!-- Submenu: Pakistani Suit -->
-									<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
-											xl:overflow-visible xl:max-h-none
-											xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
-											xl:rounded-[3px] xl:text-sm xl:leading-[1.4] xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
-											xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Sharara Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Gown</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Velvet Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Palazzo Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Salwar Suit</a>
-									</div>
-								</li>
-
-								<!-- Dropdown Item: Kids Wear -->
-								<li class="relative group">
-									<a href="javascript:void(0)"
-										class="dropdown-toggle flex h-[50px] items-center justify-between px-1.5 2xl:px-[10px] w-full xl:w-auto max-xl:border-b max-xl:border-[#81818133] text-black">
-										Kids Wear
-										<span class="ml-1 dropdown-icon transition-transform duration-300">
-											<img src="assets/images/icons/separator.svg" alt="chevron-down">
-										</span>
-									</a>
-
-									<!-- Submenu: Kids Wear -->
-									<div class="dropdown-menu overflow-hidden max-h-0 transition-all duration-300 ease-in-out
-											xl:overflow-visible xl:max-h-none
-											xl:absolute xl:top-full xl:left-0 xl:w-[260px] xl:bg-white xl:shadow-md xl:z-[380]
-											xl:rounded-[3px] xl:text-sm xl:leading-[1.4] xl:opacity-0 xl:invisible xl:pointer-events-none xl:translate-y-4
-											xl:group-hover:opacity-100 xl:group-hover:visible xl:group-hover:pointer-events-auto xl:group-hover:translate-y-0">
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Sharara Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Suit</a>
-										<a href="#" class="block text-[#878787] hover:text-black p-4 border-b border-gray-200">Anarkali Gown</a>
-									</div>
-								</li>
-							</ul>
-						</nav>
-
-						<!-- Mobile Overlay (shown when sidebar menu is active) -->
-						<div id="overlay" class="fixed inset-0 bg-[#000000b3] bg-opacity-50 z-[98] hidden xl:hidden"></div>
-					</div>	
 
 					<!-- === Right Section: Header Icons (Search, Cart, Wishlist, User) === -->
 					<div class="flex items-center">
@@ -269,7 +270,7 @@
 		<!-- End Header Area -->
 
 		<!-- Start Hero Section -->
-		<section class="sm:mt-[96px] mt-[92px] hero-section">
+		<section class="sm:mt-[126px] mt-[99px] hero-section">
   			<div class="swiper hero-swiper">
 
 				<!-- Swiper Slides Wrapper -->
@@ -470,13 +471,15 @@
 					<div class="relative group">
 						<div class="relative overflow-hidden rounded-3xl mb-3 aspect-[6/7]">
 
-							<!-- Front Product Image (visible by default) -->
-							<img src="assets/images/latest-products/latest-products-1.JPG" alt="gown Front" class="max-h-[502px] mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
-							<!-- Back Product Image (visible on hover) -->
-							<img src="assets/images/latest-products/latest-products-1-back.JPG" alt="gown Back" class="max-h-[502px] mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+							<a href="#">
+								<!-- Front Product Image (visible by default) -->
+								<img src="assets/images/latest-products/latest-products-1.JPG" alt="gown Front" class="max-h-[502px] mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+								<!-- Back Product Image (visible on hover) -->
+								<img src="assets/images/latest-products/latest-products-1-back.JPG" alt="gown Back" class="max-h-[502px] mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+							</a>
 							
 							<!-- Add to Cart Button (slides up on hover) -->
-							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
+							<a href="collections-details.html" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
 								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
 								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
 								<img src="assets/images/icons/cart-white.svg" alt="cart-white" class="mr-2.5">

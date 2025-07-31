@@ -285,3 +285,9 @@ input:focus-visible{
 .aws-search-result .aws_result_price{
     font-size: 14px;
 }
+
+.woocommerce ul.order_details li{
+    border-right: none;
+    margin-right: 0px;
+    padding-right: 0px;
+}
