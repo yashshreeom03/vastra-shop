@@ -340,3 +340,8 @@ input:focus-visible{
   background: none;
   border: none;
 }
+
+
+.wpcf7-submit{
+    background-color: var(--primary-color);
+}
