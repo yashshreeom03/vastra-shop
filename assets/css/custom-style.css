@@ -345,3 +345,7 @@ input:focus-visible{
 .wpcf7-submit{
     background-color: var(--primary-color);
 }
+
+.wpcf7-submit:hover{
+    background-color: black;
+}
