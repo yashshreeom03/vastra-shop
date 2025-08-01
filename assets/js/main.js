@@ -616,42 +616,36 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showSearchBar() {
-    // Show overlay
     searchBarOverlay.classList.remove("hidden");
     requestAnimationFrame(() => {
       searchBarOverlay.classList.add("opacity-100");
       searchBarOverlay.classList.remove("opacity-0");
     });
 
-    // Show sidebar
     searchBar.classList.remove("hidden");
     requestAnimationFrame(() => {
       searchBar.classList.remove("translate-x-full");
       searchBar.classList.add("translate-x-0");
     });
 
-    // ✅ Lock scroll only on lg and below
     if (isLGorSmaller()) {
       body.classList.add("overflow-hidden");
     }
   }
 
   function hideSearchBar() {
-    // Hide overlay
     searchBarOverlay.classList.remove("opacity-100");
     searchBarOverlay.classList.add("opacity-0");
     setTimeout(() => {
       searchBarOverlay.classList.add("hidden");
     }, 300);
 
-    // Hide sidebar
     searchBar.classList.remove("translate-x-0");
     searchBar.classList.add("translate-x-full");
     setTimeout(() => {
       searchBar.classList.add("hidden");
     }, 300);
 
-    // Remove scroll lock always
     body.classList.remove("overflow-hidden");
   }
 
@@ -671,7 +665,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "Escape") hideSearchBar();
   });
 
-  // Safety: remove scroll lock if screen is resized up
   window.addEventListener("resize", () => {
     if (!isLGorSmaller()) {
       body.classList.remove("overflow-hidden");
