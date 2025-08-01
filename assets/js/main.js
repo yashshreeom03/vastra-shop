@@ -604,47 +604,81 @@ document.addEventListener('DOMContentLoaded', () => {
 // });
 
 
- document.addEventListener("DOMContentLoaded", function () {
-    const searchToggle = document.getElementById("searchToggle");
-    const searchBar = document.getElementById("searchBar");
-    const closeSearchBar = document.getElementById("closeSearchBar");
+document.addEventListener("DOMContentLoaded", function () {
+  const searchToggle = document.getElementById("searchToggle");
+  const searchBar = document.getElementById("searchBar");
+  const closeSearchBar = document.getElementById("closeSearchBar");
+  const searchBarOverlay = document.getElementById("searchBarOverlay");
+  const body = document.body;
 
-    function showSearchBar() {
-      searchBar.classList.remove("hidden");
-      requestAnimationFrame(() => {
-        searchBar.classList.remove("scale-y-0", "opacity-0");
-        searchBar.classList.add("scale-y-100", "opacity-100");
-      });
-    }
+  function isLGorSmaller() {
+    return window.innerWidth <= 1024;
+  }
 
-    function hideSearchBar() {
-      searchBar.classList.remove("scale-y-100", "opacity-100");
-      searchBar.classList.add("scale-y-0", "opacity-0");
-
-      setTimeout(() => {
-        searchBar.classList.add("hidden");
-      }, 300);
-    }
-
-    searchToggle.addEventListener("click", function (e) {
-      e.preventDefault();
-      if (searchBar.classList.contains("hidden")) {
-        showSearchBar();
-      } else {
-        hideSearchBar();
-      }
+  function showSearchBar() {
+    // Show overlay
+    searchBarOverlay.classList.remove("hidden");
+    requestAnimationFrame(() => {
+      searchBarOverlay.classList.add("opacity-100");
+      searchBarOverlay.classList.remove("opacity-0");
     });
 
-    closeSearchBar.addEventListener("click", function () {
+    // Show sidebar
+    searchBar.classList.remove("hidden");
+    requestAnimationFrame(() => {
+      searchBar.classList.remove("translate-x-full");
+      searchBar.classList.add("translate-x-0");
+    });
+
+    // ✅ Lock scroll only on lg and below
+    if (isLGorSmaller()) {
+      body.classList.add("overflow-hidden");
+    }
+  }
+
+  function hideSearchBar() {
+    // Hide overlay
+    searchBarOverlay.classList.remove("opacity-100");
+    searchBarOverlay.classList.add("opacity-0");
+    setTimeout(() => {
+      searchBarOverlay.classList.add("hidden");
+    }, 300);
+
+    // Hide sidebar
+    searchBar.classList.remove("translate-x-0");
+    searchBar.classList.add("translate-x-full");
+    setTimeout(() => {
+      searchBar.classList.add("hidden");
+    }, 300);
+
+    // Remove scroll lock always
+    body.classList.remove("overflow-hidden");
+  }
+
+  searchToggle.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (searchBar.classList.contains("hidden")) {
+      showSearchBar();
+    } else {
       hideSearchBar();
-    });
-
-    document.addEventListener("click", function (e) {
-      if (!searchBar.contains(e.target) && !searchToggle.contains(e.target)) {
-        hideSearchBar();
-      }
-    });
+    }
   });
+
+  closeSearchBar.addEventListener("click", hideSearchBar);
+  searchBarOverlay.addEventListener("click", hideSearchBar);
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") hideSearchBar();
+  });
+
+  // Safety: remove scroll lock if screen is resized up
+  window.addEventListener("resize", () => {
+    if (!isLGorSmaller()) {
+      body.classList.remove("overflow-hidden");
+    }
+  });
+});
+
 
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -843,42 +877,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-   function openLightboxreview(el, type) {
-    const lightbox = document.querySelector(".review-lightbox");
-    const contentBox = document.getElementById("lightboxContent");
+function openLightboxreview(el, type) {
+  const lightbox = document.querySelector(".review-lightbox");
+  const contentBox = document.getElementById("lightboxContent");
 
-    // Clear previous content
-    contentBox.innerHTML = "";
+  contentBox.innerHTML = "";
 
-    if (type === 'image') {
-      const img = document.createElement("img");
-      img.src = el.src;
-      img.alt = "Full View";
-      img.className = "max-w-full max-h-[80vh] rounded";
-      contentBox.appendChild(img);
-    } else if (type === 'video') {
-      const videoSrc = el.getAttribute("data-video");
-      const video = document.createElement("video");
-      video.src = videoSrc;
-      video.controls = true;
-      video.autoplay = true;
-      video.className = "max-w-full max-h-[80vh] rounded";
-      contentBox.appendChild(video);
-    }
-
-    lightbox.classList.remove("hidden");
+  if (type === 'image') {
+    const img = document.createElement("img");
+    img.src = el.src;
+    img.alt = "Full View";
+    contentBox.appendChild(img);
+  } else if (type === 'video') {
+    const videoSrc = el.getAttribute("data-video");
+    const video = document.createElement("video");
+    video.src = videoSrc;
+    video.controls = true;
+    video.autoplay = true;
+    contentBox.appendChild(video);
   }
 
-  function closeLightboxreview() {
-    const lightbox = document.querySelector(".review-lightbox");
-    const contentBox = document.getElementById("lightboxContent");
-    contentBox.innerHTML = ""; // Clear on close
-    lightbox.classList.add("hidden");
-  }
+  lightbox.classList.add("show");
+}
 
-  // Optional: close on clicking outside
-  document.querySelector(".review-lightbox").addEventListener("click", function (e) {
-    if (e.target.classList.contains("review-lightbox")) {
-      closeLightboxreview();
-    }
-  });
+function closeLightboxreview() {
+  const lightbox = document.querySelector(".review-lightbox");
+  const contentBox = document.getElementById("lightboxContent");
+
+  contentBox.innerHTML = "";
+  lightbox.classList.remove("show");
+}
+
+document.querySelector(".review-lightbox").addEventListener("click", function (e) {
+  if (e.target.classList.contains("review-lightbox")) {
+    closeLightboxreview();
+  }
+});
