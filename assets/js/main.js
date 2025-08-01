@@ -32,37 +32,37 @@
 //     overlay.addEventListener('click', closeMenu);
 //   }
 
-//     // CART SIDEBAR CODE
-//   const cartToggle = document.getElementById("cartToggle");
-//   const cartSidebar = document.getElementById("cartSidebar");
-//   const closeCart = document.getElementById("closeCart");
-//   const cartBackdrop = document.getElementById("cartBackdrop");
+    // CART SIDEBAR CODE
+  const cartToggle = document.getElementById("cartToggle");
+  const cartSidebar = document.getElementById("cartSidebar");
+  const closeCart = document.getElementById("closeCart");
+  const backdropOverlay = document.getElementById("backdropOverlay");
 
-//   if (cartToggle && cartSidebar && closeCart && cartBackdrop) {
-//     cartToggle.addEventListener("click", (e) => {
-//       e.preventDefault();
-//       cartSidebar.classList.remove("translate-x-full");
-//       cartBackdrop.classList.remove("hidden");
+  if (cartToggle && cartSidebar && closeCart && backdropOverlay) {
+    cartToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      cartSidebar.classList.remove("translate-x-full");
+      backdropOverlay.classList.remove("hidden");
 
-//       if (window.innerWidth <= 1024) {
-//         body.classList.add("overflow-hidden");
-//       }
-//     });
+      if (window.innerWidth <= 1024) {
+        body.classList.add("overflow-hidden");
+      }
+    });
 
-//     function closeCartSidebar() {
-//       cartSidebar.classList.add("translate-x-full");
-//       cartBackdrop.classList.add("hidden");
-//       body.classList.remove("overflow-hidden");
-//     }
+    function closeCartSidebar() {
+      cartSidebar.classList.add("translate-x-full");
+      backdropOverlay.classList.add("hidden");
+      body.classList.remove("overflow-hidden");
+    }
 
-//     closeCart.addEventListener("click", closeCartSidebar);
-//     cartBackdrop.addEventListener("click", closeCartSidebar);
-//   }
+    closeCart.addEventListener("click", closeCartSidebar);
+    backdropOverlay.addEventListener("click", closeCartSidebar);
+  }
 
-//   // WINDOW RESIZE: Remove scroll lock always
-//   window.addEventListener("resize", () => {
-//     body.classList.remove("overflow-hidden");
-//   });
+  // WINDOW RESIZE: Remove scroll lock always
+  window.addEventListener("resize", () => {
+    body.classList.remove("overflow-hidden");
+  });
 // });
 
 
@@ -608,7 +608,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchToggle = document.getElementById("searchToggle");
   const searchBar = document.getElementById("searchBar");
   const closeSearchBar = document.getElementById("closeSearchBar");
-  const searchBarOverlay = document.getElementById("searchBarOverlay");
+  const backdropOverlay = document.getElementById("backdropOverlay");
   const body = document.body;
 
   function isLGorSmaller() {
@@ -616,12 +616,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function showSearchBar() {
-    searchBarOverlay.classList.remove("hidden");
-    requestAnimationFrame(() => {
-      searchBarOverlay.classList.add("opacity-100");
-      searchBarOverlay.classList.remove("opacity-0");
-    });
+    // Instantly show overlay (no fade transition)
+    backdropOverlay.classList.remove("hidden");
 
+    // Animate sidebar
     searchBar.classList.remove("hidden");
     requestAnimationFrame(() => {
       searchBar.classList.remove("translate-x-full");
@@ -634,17 +632,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function hideSearchBar() {
-    searchBarOverlay.classList.remove("opacity-100");
-    searchBarOverlay.classList.add("opacity-0");
-    setTimeout(() => {
-      searchBarOverlay.classList.add("hidden");
-    }, 300);
+    // Instantly hide overlay
+    backdropOverlay.classList.add("hidden");
 
+    // Animate sidebar out
     searchBar.classList.remove("translate-x-0");
     searchBar.classList.add("translate-x-full");
     setTimeout(() => {
       searchBar.classList.add("hidden");
-    }, 300);
+    }, 300); // Match sidebar transition duration
 
     body.classList.remove("overflow-hidden");
   }
@@ -659,7 +655,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   closeSearchBar.addEventListener("click", hideSearchBar);
-  searchBarOverlay.addEventListener("click", hideSearchBar);
+  backdropOverlay.addEventListener("click", hideSearchBar);
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") hideSearchBar();
@@ -671,6 +667,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
 
 
 
