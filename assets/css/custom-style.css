@@ -349,3 +349,13 @@ input:focus-visible{
 .wpcf7-submit:hover{
     background-color: black;
 }
+
+@media (max-width: 425px) {
+    .xs-grid-cols-1 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}	
+
+.footer-bullet-list li{
+    padding-left: 10px;
+}

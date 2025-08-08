@@ -596,12 +596,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // }
 
 
-// window.addEventListener("DOMContentLoaded", () => {
-//   document.querySelectorAll(".filter-content").forEach((content) => {
-//     content.style.maxHeight = content.scrollHeight + "px";
-//     content.previousElementSibling.querySelector(".filterchevron")?.classList.add("rotate-180");
-//   });
-// });
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".filter-content").forEach((content) => {
+    content.style.maxHeight = content.scrollHeight + "px";
+    content.previousElementSibling.querySelector(".filterchevron")?.classList.add("rotate-180");
+  });
+});
 
 
 document.addEventListener("DOMContentLoaded", function () {
