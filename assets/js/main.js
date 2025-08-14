@@ -739,167 +739,197 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
- document.addEventListener("DOMContentLoaded", function () {
-    const uploadBox = document.getElementById("uploadBox");
-    const imageInput = document.getElementById("imageUploader");
-    const previewContainer = document.getElementById("previewImages");
+//  document.addEventListener("DOMContentLoaded", function () {
+//     const uploadBox = document.getElementById("uploadBox");
+//     const imageInput = document.getElementById("imageUploader");
+//     const previewContainer = document.getElementById("previewImages");
 
-    const MAX_FILES = 5;
-    const MAX_SIZE_MB = 2;
+//     const MAX_FILES = 5;
+//     const MAX_SIZE_MB = 2;
 
-    let selectedFiles = [];
+//     let selectedFiles = [];
 
-    uploadBox.addEventListener("click", () => {
-      imageInput.click();
+//     uploadBox.addEventListener("click", () => {
+//       imageInput.click();
+//     });
+
+//     imageInput.addEventListener("change", () => {
+//       const files = Array.from(imageInput.files);
+
+//       if (selectedFiles.length + files.length > MAX_FILES) {
+//         alert(`You can upload up to ${MAX_FILES} images in total.`);
+//         return;
+//       }
+
+//       files.forEach(file => {
+//         const validTypes = ['image/jpeg', 'image/png'];
+//         const isValidType = validTypes.includes(file.type);
+//         const isValidSize = file.size <= MAX_SIZE_MB * 1024 * 1024;
+
+//         if (!isValidType) {
+//           alert(`${file.name} is not a supported format.`);
+//           return;
+//         }
+//         if (!isValidSize) {
+//           alert(`${file.name} exceeds ${MAX_SIZE_MB}MB limit.`);
+//           return;
+//         }
+
+//         selectedFiles.push(file); 
+
+//         const reader = new FileReader();
+//         reader.onload = function (e) {
+//           const wrapper = document.createElement("div");
+//           wrapper.className = "relative group";
+
+//           const img = document.createElement("img");
+//           img.src = e.target.result;
+//           img.className = "w-full h-32 sm:h-36 md:h-52 object-cover rounded border";
+
+//           const removeBtn = document.createElement("button");
+//           removeBtn.innerHTML = "×";
+//           removeBtn.className =
+//             "absolute top-1 right-1 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold";
+
+//           removeBtn.addEventListener("click", () => {
+//             wrapper.remove();
+//             selectedFiles = selectedFiles.filter(f => f !== file);
+//           });
+
+//           wrapper.appendChild(img);
+//           wrapper.appendChild(removeBtn);
+//           previewContainer.appendChild(wrapper);
+//         };
+
+//         reader.readAsDataURL(file);
+//       });
+//       imageInput.value = '';
+//     });
+//   });
+
+
+//  document.addEventListener("DOMContentLoaded", function () {
+//     const videoUploadBox = document.getElementById("videoUploadBox");
+//     const videoInput = document.getElementById("videoUploader");
+//     const previewContainer = document.getElementById("previewVideo");
+
+//     const MAX_SIZE_MB = 20;
+
+//     if (!videoUploadBox || !videoInput || !previewContainer) {
+//       console.error("One or more elements not found.");
+//       return;
+//     }
+
+//     videoUploadBox.addEventListener("click", () => {
+//       videoInput.click(); 
+//     });
+
+//     videoInput.addEventListener("change", () => {
+//       previewContainer.innerHTML = '';
+
+//       const file = videoInput.files[0];
+//       if (!file) return;
+
+//       const isValidType = file.type === "video/mp4";
+//       const isValidSize = file.size <= MAX_SIZE_MB * 1024 * 1024;
+
+//       if (!isValidType) {
+//         alert("Only MP4 video files are allowed.");
+//         videoInput.value = '';
+//         return;
+//       }
+
+//       if (!isValidSize) {
+//         alert(`Video exceeds the ${MAX_SIZE_MB}MB size limit.`);
+//         videoInput.value = '';
+//         return;
+//       }
+
+//       const wrapper = document.createElement("div");
+//       wrapper.className = "relative inline-block";
+
+//       const closeBtn = document.createElement("button");
+//       closeBtn.innerHTML = "&times;";
+//       closeBtn.className = "absolute top-1 right-1 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm z-10";
+//       closeBtn.addEventListener("click", () => {
+//         wrapper.remove();
+//         videoInput.value = '';
+//       });
+
+//       const video = document.createElement("video");
+//       video.src = URL.createObjectURL(file);
+//       video.controls = true;
+//       video.className = "max-h-[250px] max-w-[200px] rounded border";
+
+//       wrapper.appendChild(video);
+//       wrapper.appendChild(closeBtn);
+//       previewContainer.appendChild(wrapper);
+//     });
+//   });
+
+// function openLightboxreview(el, type) {
+//   const lightbox = document.querySelector(".review-lightbox");
+//   const contentBox = document.getElementById("lightboxContent");
+
+//   contentBox.innerHTML = "";
+
+//   if (type === 'image') {
+//     const img = document.createElement("img");
+//     img.src = el.src;
+//     img.alt = "Full View";
+//     contentBox.appendChild(img);
+//   } else if (type === 'video') {
+//     const videoSrc = el.getAttribute("data-video");
+//     const video = document.createElement("video");
+//     video.src = videoSrc;
+//     video.controls = true;
+//     video.autoplay = true;
+//     contentBox.appendChild(video);
+//   }
+
+//   lightbox.classList.add("show");
+// }
+
+// function closeLightboxreview() {
+//   const lightbox = document.querySelector(".review-lightbox");
+//   const contentBox = document.getElementById("lightboxContent");
+
+//   contentBox.innerHTML = "";
+//   lightbox.classList.remove("show");
+// }
+
+// document.querySelector(".review-lightbox").addEventListener("click", function (e) {
+//   if (e.target.classList.contains("review-lightbox")) {
+//     closeLightboxreview();
+//   }
+// });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const announcementBar = document.getElementById("announcementBar");
+    const closeBtn = document.getElementById("closeAnnouncement");
+
+    closeBtn.addEventListener("click", function () {
+        announcementBar.classList.add("opacity-0", "-translate-y-full");
+
+        setTimeout(() => {
+            announcementBar.style.display = "none";
+        }, 300); 
     });
+});
 
-    imageInput.addEventListener("change", () => {
-      const files = Array.from(imageInput.files);
 
-      if (selectedFiles.length + files.length > MAX_FILES) {
-        alert(`You can upload up to ${MAX_FILES} images in total.`);
-        return;
-      }
+document.addEventListener("DOMContentLoaded", function () {
+    const reviewText = document.getElementById("reviewText");
+    const toggleBtn = document.getElementById("toggleReview");
 
-      files.forEach(file => {
-        const validTypes = ['image/jpeg', 'image/png'];
-        const isValidType = validTypes.includes(file.type);
-        const isValidSize = file.size <= MAX_SIZE_MB * 1024 * 1024;
+    toggleBtn.addEventListener("click", function () {
+        reviewText.classList.toggle("line-clamp-3");
 
-        if (!isValidType) {
-          alert(`${file.name} is not a supported format.`);
-          return;
+        if (reviewText.classList.contains("line-clamp-3")) {
+            toggleBtn.textContent = "Read more";
+        } else {
+            toggleBtn.textContent = "Read less";
         }
-        if (!isValidSize) {
-          alert(`${file.name} exceeds ${MAX_SIZE_MB}MB limit.`);
-          return;
-        }
-
-        selectedFiles.push(file); 
-
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          const wrapper = document.createElement("div");
-          wrapper.className = "relative group";
-
-          const img = document.createElement("img");
-          img.src = e.target.result;
-          img.className = "w-full h-32 sm:h-36 md:h-52 object-cover rounded border";
-
-          const removeBtn = document.createElement("button");
-          removeBtn.innerHTML = "×";
-          removeBtn.className =
-            "absolute top-1 right-1 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold";
-
-          removeBtn.addEventListener("click", () => {
-            wrapper.remove();
-            selectedFiles = selectedFiles.filter(f => f !== file);
-          });
-
-          wrapper.appendChild(img);
-          wrapper.appendChild(removeBtn);
-          previewContainer.appendChild(wrapper);
-        };
-
-        reader.readAsDataURL(file);
-      });
-      imageInput.value = '';
     });
-  });
-
-
- document.addEventListener("DOMContentLoaded", function () {
-    const videoUploadBox = document.getElementById("videoUploadBox");
-    const videoInput = document.getElementById("videoUploader");
-    const previewContainer = document.getElementById("previewVideo");
-
-    const MAX_SIZE_MB = 20;
-
-    if (!videoUploadBox || !videoInput || !previewContainer) {
-      console.error("One or more elements not found.");
-      return;
-    }
-
-    videoUploadBox.addEventListener("click", () => {
-      videoInput.click(); 
-    });
-
-    videoInput.addEventListener("change", () => {
-      previewContainer.innerHTML = '';
-
-      const file = videoInput.files[0];
-      if (!file) return;
-
-      const isValidType = file.type === "video/mp4";
-      const isValidSize = file.size <= MAX_SIZE_MB * 1024 * 1024;
-
-      if (!isValidType) {
-        alert("Only MP4 video files are allowed.");
-        videoInput.value = '';
-        return;
-      }
-
-      if (!isValidSize) {
-        alert(`Video exceeds the ${MAX_SIZE_MB}MB size limit.`);
-        videoInput.value = '';
-        return;
-      }
-
-      const wrapper = document.createElement("div");
-      wrapper.className = "relative inline-block";
-
-      const closeBtn = document.createElement("button");
-      closeBtn.innerHTML = "&times;";
-      closeBtn.className = "absolute top-1 right-1 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm z-10";
-      closeBtn.addEventListener("click", () => {
-        wrapper.remove();
-        videoInput.value = '';
-      });
-
-      const video = document.createElement("video");
-      video.src = URL.createObjectURL(file);
-      video.controls = true;
-      video.className = "max-h-[250px] max-w-[200px] rounded border";
-
-      wrapper.appendChild(video);
-      wrapper.appendChild(closeBtn);
-      previewContainer.appendChild(wrapper);
-    });
-  });
-
-function openLightboxreview(el, type) {
-  const lightbox = document.querySelector(".review-lightbox");
-  const contentBox = document.getElementById("lightboxContent");
-
-  contentBox.innerHTML = "";
-
-  if (type === 'image') {
-    const img = document.createElement("img");
-    img.src = el.src;
-    img.alt = "Full View";
-    contentBox.appendChild(img);
-  } else if (type === 'video') {
-    const videoSrc = el.getAttribute("data-video");
-    const video = document.createElement("video");
-    video.src = videoSrc;
-    video.controls = true;
-    video.autoplay = true;
-    contentBox.appendChild(video);
-  }
-
-  lightbox.classList.add("show");
-}
-
-function closeLightboxreview() {
-  const lightbox = document.querySelector(".review-lightbox");
-  const contentBox = document.getElementById("lightboxContent");
-
-  contentBox.innerHTML = "";
-  lightbox.classList.remove("show");
-}
-
-document.querySelector(".review-lightbox").addEventListener("click", function (e) {
-  if (e.target.classList.contains("review-lightbox")) {
-    closeLightboxreview();
-  }
 });

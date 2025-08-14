@@ -16,6 +16,7 @@
 		<link rel="stylesheet" href="assets/css/custom-style.css">
 		<!-- Custom Style CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="src/output.css">
 	</head>
 	<body>   
 	
@@ -264,72 +265,65 @@
         <!-- End Wishlist Section -->
         <section class="py-14">
             <div class="container">
-                <p class="text-lg flex justify-center font-semibold">Your wishlist is empty</p>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-7 sm:gap-y-[60px] sm:mb-[88px] mb-10">
-					<div class="relative group">
-						<div class="relative overflow-hidden rounded-3xl mb-3">
-
-							<!-- Front Product Image (visible by default) -->
-							<img src="assets/images/latest-products/latest-products-1.JPG" alt="gown Front" class="max-h-[502px] mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
-							<!-- Back Product Image (visible on hover) -->
-							<img src="assets/images/latest-products/latest-products-1-back.JPG" alt="gown Back" class="max-h-[502px] mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-							
-							<!-- Add to Cart Button (slides up on hover) -->
-							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
-								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
-								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
-								<img src="assets/images/icons/cart-white.svg" alt="cart-white" class="mr-2.5">
-								<span class="text-white text-[17px] font-medium">ADD TO CART</span>
-							</a>
-
-							<!-- Wishlist/Heart Button (appears on hover) -->
-							<button class="bg-[#F02D46] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5">
-								<img src="assets/images/icons/like-white.svg" alt="like-white">
-							</button>
-						</div>
-
-						<!-- Product Title -->
-						<a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</a>
-						
-						<!-- Product Pricing -->
-						<div class="text-lg font-medium">
-							<span class="text-[var(--primary-color)] mr-2"><span>₹</span>2,780 <span>INR</span></span>
-							<span class="line-through text-[#767676]"><span>₹</span>4,999 <span>INR</span></span>
-						</div>
-					</div>
-					<div class="relative group">
-						<div class="relative overflow-hidden rounded-3xl mb-3">
-
-							<!-- Front Product Image (visible by default) -->
-							<img src="assets/images/latest-products/latest-products-1.JPG" alt="gown Front" class="max-h-[502px] mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
-							<!-- Back Product Image (visible on hover) -->
-							<img src="assets/images/latest-products/latest-products-1-back.JPG" alt="gown Back" class="max-h-[502px] mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-							
-							<!-- Add to Cart Button (slides up on hover) -->
-							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
-								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
-								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
-								<img src="assets/images/icons/cart-white.svg" alt="cart-white" class="mr-2.5">
-								<span class="text-white text-[17px] font-medium">ADD TO CART</span>
-							</a>
-
-							<!-- Wishlist/Heart Button (appears on hover) -->
-							<button class="bg-[#F02D46] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5">
-								<img src="assets/images/icons/like-white.svg" alt="like-white">
-							</button>
-						</div>
-
-						<!-- Product Title -->
-						<a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</a>
-						
-						<!-- Product Pricing -->
-						<div class="text-lg font-medium">
-							<span class="text-[var(--primary-color)] mr-2"><span>₹</span>2,780 <span>INR</span></span>
-							<span class="line-through text-[#767676]"><span>₹</span>4,999 <span>INR</span></span>
-						</div>
-					</div>
+				<div class="my-24">
+					<p class="text-3xl flex justify-center font-semibold">Your wishlist is empty</p>
+					<p>You don't have any products in the wishlist yet.</p>
 				</div>
+
+                <!-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-7 sm:gap-y-[60px] sm:mb-[88px] mb-10">
+					<div class="relative group">
+						<div class="relative overflow-hidden rounded-3xl mb-3">
+
+							<img src="assets/images/latest-products/latest-products-1.JPG" alt="gown Front" class="max-h-[502px] mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+						
+							<img src="assets/images/latest-products/latest-products-1-back.JPG" alt="gown Back" class="max-h-[502px] mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+					
+							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
+								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
+								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+								<img src="assets/images/icons/cart-white.svg" alt="cart-white" class="mr-2.5">
+								<span class="text-white text-[17px] font-medium">ADD TO CART</span>
+							</a>
+
+							<button class="bg-[#F02D46] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5">
+								<img src="assets/images/icons/like-white.svg" alt="like-white">
+							</button>
+						</div>
+
+						<a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</a>
+						
+						<div class="text-lg font-medium">
+							<span class="text-[var(--primary-color)] mr-2"><span>₹</span>2,780 <span>INR</span></span>
+							<span class="line-through text-[#767676]"><span>₹</span>4,999 <span>INR</span></span>
+						</div>
+					</div>
+					<div class="relative group">
+						<div class="relative overflow-hidden rounded-3xl mb-3">
+
+							<img src="assets/images/latest-products/latest-products-1.JPG" alt="gown Front" class="max-h-[502px] mx-auto w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0" />
+					
+							<img src="assets/images/latest-products/latest-products-1-back.JPG" alt="gown Back" class="max-h-[502px] mx-auto w-full h-full object-cover absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+						
+							<a href="#" class="absolute bottom-0 left-0 right-0 h-[50px] bg-[var(--primary-color)] bg-opacity-50 flex items-center justify-center
+								lg:opacity-0 lg:translate-y-[103%] transition-all duration-300
+								lg:group-hover:opacity-100 lg:group-hover:translate-y-0">
+								<img src="assets/images/icons/cart-white.svg" alt="cart-white" class="mr-2.5">
+								<span class="text-white text-[17px] font-medium">ADD TO CART</span>
+							</a>
+
+							<button class="bg-[#F02D46] py-[11px] px-[9.5px] rounded-full cursor-pointer absolute top-5 right-5">
+								<img src="assets/images/icons/like-white.svg" alt="like-white">
+							</button>
+						</div>
+
+						<a href="#" class="line-clamp-2 block text-lg mb-4 leading-7 font-medium tracking-[1px] overflow-hidden">Ivory N Blush Embroidery Orange Suit - Stitched 3 Pc</a>
+						
+						<div class="text-lg font-medium">
+							<span class="text-[var(--primary-color)] mr-2"><span>₹</span>2,780 <span>INR</span></span>
+							<span class="line-through text-[#767676]"><span>₹</span>4,999 <span>INR</span></span>
+						</div>
+					</div>
+				</div> -->
             </div>
         </section>
         <!-- End Wishlist Section -->

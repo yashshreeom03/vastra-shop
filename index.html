@@ -16,17 +16,25 @@
 		<link rel="stylesheet" href="assets/css/custom-style.css">
 		<!-- Custom Style CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="src/output.css">
 	</head>
 	<body>   
 	
 		<!-- Announcement Bar -->
-		<div class="bg-[var(--primary-color)] text-center py-3">
-			<diV class="container">
+		<div id="announcementBar" class="bg-[var(--primary-color)] text-center py-3 px-7 relative transition-all duration-500 ease-in-out">
+			<div class="container flex items-center justify-center relative">
 				<span class="text-white text-[13px] leading-[20px]">
 					<span>Monsoon Special</span> - <span>20% Off</span> - Discount Applied at checkout !
 				</span>
-			</diV>
+			</div>
+			<!-- Close Button -->
+			<button id="closeAnnouncement" class="absolute right-1 top-1/2 -translate-y-1/2 cursor-pointer">
+				<svg width="16" height="16" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M7.04545 8.09091L0.636364 1.68182L1.5 0.818182L7.90909 7.22727L7.04545 8.09091ZM1.5 8.09091L0.636364 7.22727L7.04545 0.818182L7.90909 1.68182L1.5 8.09091Z" fill="white"/>
+				</svg>
+			</button>
 		</div>
+
 
 		<!-- Overlay -->
 		<div id="backdropOverlay" class="fixed inset-0 bg-black/50 z-[1000] hidden"></div>
@@ -46,7 +54,7 @@
 
 
 		<!-- Start Header Area -->
-		<header id="siteHeader" class="absolute left-0 right-0 bg-white transition-all z-[99] duration-300 ease-in-out py-[22px]">
+		<header id="siteHeader" class="sticky left-0 right-0 bg-white transition-all z-[99] duration-300 ease-in-out py-[22px]">
 			<div class="container">
 				
 				 <!-- === Header Inner Wrapper === -->
@@ -267,7 +275,7 @@
 		<!-- End Header Area -->
 
 		<!-- Start Hero Section -->
-		<section class="sm:mt-[109px] mt-[100px] hero-section">
+		<section class="hero-section">
   			<div class="swiper hero-swiper">
 
 				<!-- Swiper Slides Wrapper -->
@@ -857,9 +865,19 @@
 								</div>
 
 								<!-- Review Text -->
-								<p class="text-[15px] leading-7 tracking-[1px] group-[.active-slide]:text-white">
-									Such a pretty Gown.... Embroidery and colour is really very nice😄....Will give you fresh n young look.
-								</p>
+								<div class="relative">
+									<p id="reviewText"
+									class="text-[15px] leading-7 tracking-[1px] line-clamp-3 transition-all duration-300 overflow-hidden">
+										Such a pretty Gown.... Embroidery and colour is really very nice 😄.... Will give you fresh n young look.
+										This is an extra line to demonstrate the more/less button feature in action.
+									</p>
+
+									<!-- More/Less Button -->
+									<button id="toggleReview"
+											class="text-[var(--primary-color)] text-sm mt-2 underline">
+										Read more
+									</button>
+								</div>
 
 								<!-- Closing Quote Icon -->
 								<img src="assets/images/icons/quote-right.svg" alt="quote-right" class="ml-auto">
