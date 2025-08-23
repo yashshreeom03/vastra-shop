@@ -256,9 +256,11 @@ input:focus-visible{
   position: relative;
 }
 
-.decorated-heading-wrapper::before{
+.decorated-heading-wrapper::before,
+.decorated-footer::before{
   content: "";
-  background-image: url('../images/icons/decorative-line.svg');
+  background-image: url('../../assets/images/icons/decorative-line.svg');
+  /* background-image: url('../images/icons/decorative-line.svg'); */
   background-repeat: repeat-x;
   background-position: center;
   height: 53px;
@@ -350,12 +352,30 @@ input:focus-visible{
     background-color: black;
 }
 
+.footer-bullet-list li{
+    padding-left: 10px;
+}
+
+.title-clamp{
+  display: inline-block;
+  max-width: 250px;           
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+}
+
+.woocommerce-column--billing-address,
+.woocommerce-checkout .woocommerce-order .woocommerce ul.order_details::before{
+    display: none;
+}
+
+
 @media (max-width: 425px) {
     .xs-grid-cols-1 {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
+    .title-clamp{
+        max-width: 170px;         
+    }
 }	
-
-.footer-bullet-list li{
-    padding-left: 10px;
-}
